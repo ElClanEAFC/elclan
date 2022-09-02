@@ -1,12 +1,12 @@
 <%-- 
-    Document   : vendedores.jsp
-    Created on : 31 ago. 2022, 17:44:09
+    Document   : config. categoria
+    Created on : 2 set. 2022, 11:11:48
     Author     : sistemas02
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
-<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0" >
+<!--id="contact-tab-pane"  -->
+<div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0" >
     <div class=" bg-white border-top border-danger border-3">
         <div class="card">
             <div class="card-body p-t-40 " >
@@ -18,29 +18,29 @@
                             </div>
                             <div class="col-3">
                                 <select class="form-control" id="selectArea">
-                                <option  value="0">--SELECCIONE UNIDAD 1--</option>
+                                    <option  value="0">--SELECCIONE UNIDAD 3 --</option>
                                 </select>              
                             </div>
                             <div class="col-3">
                                 <select class="form-control" id="selectArea" >
-                                <option  value="0">--SELECCIONE EQUIPO--</option>
+                                    <option  value="0">--SELECCIONE EQUIPO--</option>
                                 </select>             
                             </div>
                             <div class="col-2">
-                                <button class="btn btn-success my-sm-0 text-white" onclick="validarCampoUser();">BUSCAR</button>            
+                                <button class="btn btn-success my-sm-0 text-white" >BUSCAR</button>            
                             </div>
                         </div>
                     </div>
                     <div class="col-2">                        
                     </div>
                     <div class="col-2">
-                        <button class="btn btn-success my-sm-0 text-white" onclick="validarCampoUser();">AÑADIR VENDEDOR</button>
+                        <button class=" hola btn btn-success my-sm-0 text-white" id="calcula">AÑADIR VENDEDOR</button>
                     </div>
                 </div>
                 <hr>
                 <h4 class="card-title">LISTA DE VENDEDORES</h4>
-                <!--table-bordered-->
-                <table id="tablaVendedores" class="table table-striped " width="100%" autocomplete="off">
+
+                <table id="tablaConfigCategoria" class="table table-striped " width="100%" autocomplete="off">
                     <thead>
                         <tr>
                             <th>NOMBRES</th>
@@ -64,10 +64,3 @@
     </div>
 </div>
 
-<script>
-
-
-
-
-
-</script>

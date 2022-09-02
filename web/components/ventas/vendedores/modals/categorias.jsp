@@ -1,12 +1,12 @@
 <%-- 
-    Document   : vendedores.jsp
-    Created on : 31 ago. 2022, 17:44:09
+    Document   : categorias
+    Created on : 2 set. 2022, 11:06:46
     Author     : sistemas02
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
-<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0" >
+<!-- id="profile-tab-pane"  -->
+<div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0" >
     <div class=" bg-white border-top border-danger border-3">
         <div class="card">
             <div class="card-body p-t-40 " >
@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-3">
                                 <select class="form-control" id="selectArea">
-                                <option  value="0">--SELECCIONE UNIDAD 1--</option>
+                                <option  value="0">--SELECCIONE UNIDAD 2 --</option>
                                 </select>              
                             </div>
                             <div class="col-3">
@@ -39,8 +39,9 @@
                 </div>
                 <hr>
                 <h4 class="card-title">LISTA DE VENDEDORES</h4>
-                <!--table-bordered-->
-                <table id="tablaVendedores" class="table table-striped " width="100%" autocomplete="off">
+               
+
+                <table id="tablaCategoria" class="table table-striped " width="100%" autocomplete="off">
                     <thead>
                         <tr>
                             <th>NOMBRES</th>
@@ -64,10 +65,3 @@
     </div>
 </div>
 
-<script>
-
-
-
-
-
-</script>

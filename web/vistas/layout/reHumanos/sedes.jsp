@@ -11,7 +11,7 @@
         <div class="d-flex gap-1 justify-content-between flex-wrap">
             <div class="col-md-5">
                 <form class="d-flex my-2 my-lg-0 gap-3" id="formSucursalBuscar">
-                    <input id="sedeBuscar" name="sedeBuscar" class="sedeBuscar form-control mr-sm-2 rounded" type="search" placeholder="ingrese nombre de sede">
+                    <input id="sedeBuscar" name="sedeBuscar" class="sedeBuscar form-control mr-sm-2 rounded" type="search" placeholder="INGRESE NOMBRE DE SEDE">
                     <button class="btn btn-success my-sm-0 text-white" onclick="validarCampoSedeBuscar(e);">BUSCAR</button>
                 </form>
             </div>
@@ -249,6 +249,7 @@
             }
         });
         listarSucursales();
+        
         $('#selectDpto').change(function () {
             let codDpto = this.value;
             listaProvincias(codDpto);
