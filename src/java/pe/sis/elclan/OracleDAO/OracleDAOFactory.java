@@ -15,6 +15,7 @@ import pe.sis.elclan.Clases.mantenimiento;
 import pe.sis.elclan.DAO.DAOFactory;
 import pe.sis.elclan.DAO.mantenimientoDAO;
 import pe.sis.elclan.DAO.reHumanosDAO;
+import pe.sis.elclan.DAO.ventasDAO;
 
 
 /**
@@ -102,6 +103,11 @@ public class OracleDAOFactory extends DAOFactory {
     @Override
     public mantenimientoDAO getMantenimientoDAO() {
         return new mantenimientoOracleDAO();
+    }
+
+    @Override
+    public ventasDAO getVentasDAO() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
