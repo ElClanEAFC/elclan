@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+        <servlet-name>ventasServlet</servlet-name>
+        <servlet-class>pe.sis.elclan.Servlet.ventasServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>reHumanosServlet</servlet-name>
         <servlet-class>pe.sis.elclan.Servlet.reHumanosServlet</servlet-class>
     </servlet>
@@ -8,6 +12,10 @@
         <servlet-name>mantenimientoServlet</servlet-name>
         <servlet-class>pe.sis.elclan.Servlet.mantenimientoServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>ventasServlet</servlet-name>
+        <url-pattern>/ventasServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>reHumanosServlet</servlet-name>
         <url-pattern>/reHumanosServlet</url-pattern>
