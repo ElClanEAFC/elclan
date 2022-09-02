@@ -86,7 +86,7 @@
                 "sLengthMenu": "",
                 "oPaginate":{
                     "sFirst": "Erste",
-                    "sPrevious": "Atrás",
+                    "sPrevious": "Atrï¿½s",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
                     
@@ -107,7 +107,7 @@
                 "sLengthMenu": "",
                 "oPaginate":{
                     "sFirst": "Erste",
-                    "sPrevious": "Atrás",
+                    "sPrevious": "Atrï¿½s",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
                     
@@ -128,7 +128,7 @@
                 "sLengthMenu": "",
                 "oPaginate":{
                     "sFirst": "Erste",
-                    "sPrevious": "Atrás",
+                    "sPrevious": "Atrï¿½s",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
                     
