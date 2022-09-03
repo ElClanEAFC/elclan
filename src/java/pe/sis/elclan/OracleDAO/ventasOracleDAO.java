@@ -168,8 +168,8 @@ public class ventasOracleDAO implements ventasDAO{
             cs.execute();
             rs = (ResultSet) cs.getObject(2);
             while (rs.next()) {                
-                ventas.setCodUnidad(rs.getString("COD_UNIDAD"));
-                ventas.setCodUnidad(rs.getString("COD_UNIDAD"));
+                ventas.setV_codUnidad(rs.getString("COD_UNIDAD"));
+                ventas.setV_desUnidad(rs.getString("DES_UNIDAD"));
             }
             System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
         } catch (Exception e) {
