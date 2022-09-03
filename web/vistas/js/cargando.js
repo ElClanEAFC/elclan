@@ -1,5 +1,5 @@
 
-// ================ VALIDACION GENERAL CAMPO VACIO =================
+// ================ VARIABLES GLOBALES DE SUBMODULOS =================
 // SUBMÓDULO USUARIOS
 var listaPuestos;
 var tableUsuarios;

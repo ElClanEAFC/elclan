@@ -3,7 +3,7 @@ package pe.sis.elclan.Clases;
 
 /**
  *
- * @author sistemas03
+ * @author Victor Rosales Arones
  */
 public class ventas {
     
