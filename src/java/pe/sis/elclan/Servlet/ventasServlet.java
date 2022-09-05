@@ -28,7 +28,7 @@ public class ventasServlet  extends HttpServlet{
         
         String param = req.getParameter("Accion");
         System.out.println("SERVLET Ventas(Accion): " + param);
-        
+//        if("listarUnidades").equals(req)
     }
     
     
