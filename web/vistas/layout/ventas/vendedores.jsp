@@ -23,15 +23,10 @@
         background: #fff;
         height: 40px !important;
     }
-    .nav-item>.active:focus{
-        border: 0px !important;
-    }
     .nav-item button:focus{
         border: 0px !important;
         outline: none !important;
     }
-
-
     .card-body {
         margin-top: 30px;
     }
@@ -55,7 +50,6 @@
 
 <div class="tab-content" id="myTabContent" >
     <jsp:include page="../../../components/ventas/vendedores/modals/vendedores.jsp" /> 
-
 
     <jsp:include page="../../../components/ventas/vendedores/modals/categorias.jsp" /> 
 
@@ -86,7 +80,7 @@
                 "sLengthMenu": "",
                 "oPaginate":{
                     "sFirst": "Erste",
-                    "sPrevious": "Atr�s",
+                    "sPrevious": "Atras",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
                     
@@ -107,7 +101,7 @@
                 "sLengthMenu": "",
                 "oPaginate":{
                     "sFirst": "Erste",
-                    "sPrevious": "Atr�s",
+                    "sPrevious": "Atras",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
                     
@@ -128,10 +122,9 @@
                 "sLengthMenu": "",
                 "oPaginate":{
                     "sFirst": "Erste",
-                    "sPrevious": "Atr�s",
+                    "sPrevious": "Atras",
                     "sNext": "Siguiente",
-                    "sLast": "Letzte"
-                    
+                    "sLast": "Letzte"                    
                 },
                 select:{rows:""}
             }
