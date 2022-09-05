@@ -30,7 +30,12 @@ let codAreaSend = "";
 let updateCargos = false;
 
 // SUBMÓDULO CARGAR ASISTENCIA
-let tablaUsuariosAsistencia;   
+let tablaUsuariosAsistencia; 
+
+// SUBMÓDULO PERSONAL DE VENTA
+var tablaVendedores; 
+var tablaCategoria; 
+var tablaConfigCategoria; 
 
 // =================================================================
 function msjFinal(codMsj, desMsj){
