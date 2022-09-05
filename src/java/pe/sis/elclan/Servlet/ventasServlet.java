@@ -24,11 +24,37 @@ public class ventasServlet  extends HttpServlet{
      * @throws IOException
      */
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        String param = req.getParameter("Accion");
+        String param = request.getParameter("Accion");
         System.out.println("SERVLET Ventas(Accion): " + param);
-//        if("listarUnidades").equals(req)
+        if ("listarUnidades".equals(request) ){
+            listarUnidades(request, response);
+        }
+    }
+    
+    /**
+     * *************************************************************************
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
+     * @Autor : yasub huaman ramos
+     * @fecha creacion: 29-07-2022
+     * @Descripcion : listar unidades
+     * @param request
+     * @param response
+    ***************************************************************************/
+    public void listarUnidades(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        response.setContentType("application/json");
+//        System.out.println("SERVLET reHumanos(listaJustificacion): ");
+//        String codAsistDet = request.getParameter("codAsistDet");
+//        
+//        reHumanosServices reHumanosService = new reHumanosServices();
+//        reHumanos lista = reHumanosService.listaJustificacion(codAsistDet);   
+//        //RESPUESTA TYPE-JSON
+//        ObjectMapper mapper = new ObjectMapper();
+//        String json = mapper.writeValueAsString(lista);
+//        response.getWriter().write(json);
     }
     
     
