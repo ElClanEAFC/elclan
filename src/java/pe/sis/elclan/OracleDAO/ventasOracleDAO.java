@@ -1,4 +1,3 @@
-
 package pe.sis.elclan.OracleDAO;
 
 import java.sql.CallableStatement;
@@ -12,7 +11,9 @@ import pe.sis.elclan.DAO.ventasDAO;
  *
  * @author sistemas03 Yasub Huaman
  */
-public class ventasOracleDAO implements ventasDAO{
+public class ventasOracleDAO implements ventasDAO {
+
+   
 
     @Override
     public String darBajaEquipo(String codUnidad, String codEquipo) throws Exception {
