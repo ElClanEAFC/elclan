@@ -6,6 +6,7 @@ var tableUsuarios;
 let tablaExperiencias;
 let allUsuarios;
 let tablaCargosUsuario;
+var tablaResultadoEncuesta;
 let validarErrorUser;
     //CREAR USUARIO
     var codUser='';
@@ -36,6 +37,7 @@ let tablaUsuariosAsistencia;
 var tablaVendedores; 
 var tablaCategoria; 
 var tablaConfigCategoria; 
+var tablaVariables;
 
 // =================================================================
 function msjFinal(codMsj, desMsj){

@@ -77,4 +77,10 @@ public interface reHumanosDAO {
     public ArrayList<reHumanos> listarAreas() throws Exception;
     public reHumanos Login(String usuario,String contrasena) throws Exception;
     
+     /* ENCUESTA PERSONAL CESADO*/ 
+    public reHumanos listaMotivosSalida()throws Exception;
+    public String guardarEncuesta(int codUsuario,String cod_respuesta,String observ,String usuario)throws Exception;
+    public reHumanos listaEncuestas(int codUsuario)throws Exception;
+    
+    
 }

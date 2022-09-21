@@ -22,6 +22,7 @@
         z-index: 10;
         background: #fff;
         height: 40px !important;
+       
     }
     .nav-item button:focus{
         border: 0px !important;
@@ -29,6 +30,10 @@
     }
     .card-body {
         margin-top: 30px;
+    }
+    .navbarSupportedContent{
+        visibility:hidden !important;
+        
     }
 
 </style>
@@ -54,7 +59,10 @@
     <jsp:include page="../../../components/ventas/vendedores/modals/categorias.jsp" /> 
 
     <jsp:include page="../../../components/ventas/vendedores/modals/config.categoria.jsp" /> 
-
+    <jsp:include page="../reHumanos/modalActualizarUsu.jsp" />  
+    <jsp:include page="../reHumanos/modalExperienciaUsu.jsp" />  
+    
+     
 </div>
 
 <script>
@@ -65,77 +73,9 @@
         $("#nav-contact").removeClass("active");
         $("#nav-profile").removeClass("active");
     }
-    //Configuario de las 3 tablas (tablaVendedores ,tablaCategoria,tablaConfigCategoria)
-    $(document).ready(async function () {
-        //Configurar Tabla tablaVendedores
-        tablaVendedores = $('#tablaVendedores').DataTable({
-            responsive: true,
-            searching: false,
-            ordering: false,
-            "language": {
-                "sZeroRecords": "No se encontrao resultados",
-                "sEmptyTable": "Ningun dato disponible en esta tabla",
-                "sInfo": "_START_ al _END_ de _TOTAL_ registros",
-                "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
-                "sLengthMenu": "",
-                "oPaginate":{
-                    "sFirst": "Erste",
-                    "sPrevious": "Atras",
-                    "sNext": "Siguiente",
-                    "sLast": "Letzte"
-                    
-                },
-                select:{rows:""}
-            }
-        });
-        //Configurar Tabla tablaCategoria
-        tablaCategoria = $('#tablaCategoria').DataTable({
-            responsive: true,
-            searching: false,
-            ordering: false,
-            "language": {
-                "sZeroRecords": "No se encontrao resultados",
-                "sEmptyTable": "Ningun dato disponible en esta tabla",
-                "sInfo": "_START_ al _END_ de _TOTAL_ registros",
-                "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
-                "sLengthMenu": "",
-                "oPaginate":{
-                    "sFirst": "Erste",
-                    "sPrevious": "Atras",
-                    "sNext": "Siguiente",
-                    "sLast": "Letzte"
-                    
-                },
-                select:{rows:""}
-            }
-        });
-        //Configurar Tabla tablaConfigCategoria
-        tablaConfigCategoria = $('#tablaConfigCategoria').DataTable({
-            responsive: true,
-            searching: false,
-            ordering: false,
-            "language": {
-                "sZeroRecords": "No se encontrao resultados",
-                "sEmptyTable": "Ningun dato disponible en esta tabla",
-                "sInfo": "_START_ al _END_ de _TOTAL_ registros",
-                "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
-                "sLengthMenu": "",
-                "oPaginate":{
-                    "sFirst": "Erste",
-                    "sPrevious": "Atras",
-                    "sNext": "Siguiente",
-                    "sLast": "Letzte"                    
-                },
-                select:{rows:""}
-            }
-        });
-        
-
-
-    });
-
-
-
-
+    
+    function conviertMayucula(e) {
+    e.value = e.value.toUpperCase();
+}   
 
 </script>

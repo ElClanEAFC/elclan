@@ -107,7 +107,7 @@ public class OracleDAOFactory extends DAOFactory {
 
     @Override
     public ventasDAO getVentasDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new ventasOracleDAO();
     }
 
 }

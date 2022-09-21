@@ -519,9 +519,6 @@
         $('#usuDpto').val(data.codigoDepartamento);
         $('#usuProv').val(data.codigoProvincia);
         $('#usuDist').val(data.codigoDistrito);
-//        mostrarDatosEnSelect('#usuDpto', data.descDepartamento);
-//        mostrarDatosEnSelect('#usuProv', data.descProvincia);
-//        mostrarDatosEnSelect('#usuDist', data.descDistrito);
         $('#usuSucursal').val(data.codSucursal);
         mostrarDatosEnSelect('#usuArea', data.descArea);
         mostrarDatosEnSelect('#usuCargo', data.descPerfil);
@@ -671,8 +668,6 @@
                     console.log(resultado);
                     $('#btnGuardarUsuario').removeClass('hide');
                     $('#btnActualizarUsuario').addClass('hide');
-                    //console.log("ACTUALIZADO");                
-    //              $("#formRegistroPreVenta")[0].reset();
                     $('#formRegistroUsuario').trigger("reset");	
                     $("#formRegistroUsuario select.datos").val('');                
                 }else{
@@ -907,21 +902,7 @@
         });
         console.log(usuFNacimiento);
         console.log(usuFinicio);
-        /*
-         $.ajax({
-         type: 'POST',
-         url: '../../../usuarioServlet?Accion=crearUsuario',
-         data: param,
-         beforeSend: function () {
-         }, success: function (resultado) {
-         alert(resultado);
-         }, complete: function () {
-         var msj = "Se guardo correctamente el usuario";
-         var color = "#4FAF4F";
-         var icono = "success";
-         msjAlerta(msj,icono,color);
-         }
-         });*/
+        
 
     }
     // ===== LISTAR AREAS =====
