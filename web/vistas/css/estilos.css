@@ -110,6 +110,11 @@ li ul{background: #1C1C1C !important;}
 }
 .datos div{padding-top: 10px;}
 #tblaDUsu tr td{text-align: center !important;}
+/***************** ORGANIGRAMA *******************/
+#tree ul{
+    background-color: transparent !important;
+}
+
 /*******************VALIDACION DE FORMULARIOS***********************************/
 /*input.error {
     border: 1px solid red;

@@ -548,11 +548,11 @@ TABLA LISTA DE USUARIOS
             <div class="row">        
                 <div class="col-md-12">
                     <div class="d-flex gap-1 justify-content-between flex-wrap">
-                        <div class="col-md-5 d-flex gap-3">
+                        <div class="col-md-5 d-flex gap-3 align-items-center">
                             <form id="formBuscarUser" class="my-lg-0 gap-3 col-md-7">
                                 <input class="form-control mr-sm-2 rounded" id="userbuscar" name="userbuscar" type="search" placeholder="ingrese dni o nombre">
                             </form>
-                            <div class="form-group">
+                            <div class="">
                                 <button class="btn btn-success my-sm-0 text-white" onclick="validarCampoUser();">BUSCAR</button>
                             </div>
                         </div>
@@ -604,7 +604,10 @@ TABLA LISTA DE USUARIOS
 //    let tablaCargosUsuario;
 //    let validarErrorUser;
     $(document).ready(function () {
-        
+        $("input").on("keypress", function () {
+            $input = $(this);
+            UpperCaseInput($input);
+        });
         $('#userbuscar').keydown(function (e){ 
             if(e.keyCode === 13){
                 e.preventDefault();

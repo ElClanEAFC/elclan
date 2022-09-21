@@ -22,7 +22,21 @@
         
     <!-- ====== MATERIAL DESING ICONS ======== -->
     <link type="text/css" href="../dist/css/style.min.css" rel="stylesheet">
+    
+    
+    <!-- ESTILO PARA LA ESTRUCTURA DE ORGANIZACION-->
+<!--    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="../assets/libs/chartOrg/Themes/smoothness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />-->
+    <!--css-->
+<!--    <link rel="stylesheet" type="text/css" href="../assets/libs/chartOrg/css/jHTree.css "/>-->
+    <!--js-->
+    <!--<script src="../assets/libs/chartOrg/js/jquery-1.10.2.js"/></script>-->    
+<!--<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="../assets/libs/chartOrg/js/jquery-ui-1.10.4.custom.min.js"/></script>    
+    <script src="../assets/libs/chartOrg/js/jQuery.jHTree.js"/></script>    -->
         
+
+
     <!-- ====== ESTILOS GENERALES ADICIONALES==== -->
     <link type="text/css" href="../css/estilos.css" rel="stylesheet">   
     
@@ -41,5 +55,7 @@
     <script src="../js/sweetalert2.min.js"></script>
 
     <!-- ==================== FrameWork Jquery versión 3.3.1 ==================== -->
-    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/jquery/dist/jquery.min.js">
+        var $ = jquery.noConflict(true);
+    </script>
 </head>

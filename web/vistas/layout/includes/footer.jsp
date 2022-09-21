@@ -19,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/libs/select2/dist/css/select2.min.css"/>
     <!--js-->
     <script src="../assets/libs/select2/dist/js/select2.min.js"/></script>    
-    
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>

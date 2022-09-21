@@ -208,6 +208,10 @@
     $(document).ready(function () {
         cargaPrincipal();
         cargarTipoDoc();
+        $("input").on("keypress", function () {
+            $input = $(this);
+            UpperCaseInput($input);
+        });
         $('#usuFNacimiento').attr(
                 limitarAnioEdad(18)
         );

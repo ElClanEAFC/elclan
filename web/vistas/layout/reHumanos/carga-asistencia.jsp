@@ -11,7 +11,7 @@
                 <form id="formFiltrarAsistencia" class="col-md-7">
                     <div class="d-flex my-2 my-lg-0 gap-3">
                         <label>Fecha</label>
-                        <input name="fechaAsistencia" id="fechaAsistencia" class="form-control mr-sm-2 rounded" type="date">
+                        <input name="fechaAsistencia" id="fechaAsistencia" class="form-control mr-sm-2 rounded" type="date" autofocus=»autofocus»>
                         <input id="nombreAsistencia" class="form-control mr-sm-2 rounded" type="text" placeholder="INGRESE NOMBRE">
                         <select id="tipAsistencia" class="form-control mr-sm-2 rounded">
                             <option  value="0">-- SELECCIONE --</option>
@@ -47,8 +47,8 @@
 
                 </tbody>
             </table>
-        <!--</div>-->
-        <!-- Modal -->
+            <!--</div>-->
+            <!-- Modal -->
         </div>
     </div>    
 </div>
@@ -126,6 +126,10 @@
 
 <script>
     $(document).ready(function () {
+        $("input").on("keypress", function () {
+            $input = $(this);
+            UpperCaseInput($input);
+        });
         $('#formFiltrarAsistencia input').keydown(function (e) {
             if (e.keyCode === 13) {
                 e.preventDefault();
@@ -154,8 +158,8 @@
                     "sPrevious": "Atrás",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
-                 },
-                select: { rows: "" }
+                },
+                select: {rows: ""}
             }
         });
     });
@@ -177,7 +181,7 @@
         $("#codAsistDet").val(cod_asistdet);
         $("#datosVendedor").html(datos);
     }
-    function validarJustificar(){
+    function validarJustificar() {
         let validator = $('#formJustificar').validate({
             rules: {
                 obsJustificacion: {required: true}
@@ -206,8 +210,8 @@
             }, success: function (resultado) {
                 var valor = resultado.toString().split("_");
                 //Mostrar Icono de Detalle de justificacion
-                $('#asist'+cod_asistdet+'').toggleClass('hide');
-                $('#detAsist'+cod_asistdet+'').toggleClass('hide');
+                $('#asist' + cod_asistdet + '').toggleClass('hide');
+                $('#detAsist' + cod_asistdet + '').toggleClass('hide');
                 msjFinal(valor[0], valor[1]);
             }, complete: function () {
                 $("#modalRegJustificacion").modal('hide');
@@ -284,7 +288,7 @@
 
                 }, complete: function () {
                 }, error: function (e) {
-                    loaderOFF(); 
+                    loaderOFF();
                     console.log("ERROR EN CARGA ASISTENCIA");
                 }
             });
@@ -329,33 +333,42 @@
         }
     }
     ;
-    function llenarTablaAsistencia(data){
+    function llenarTablaAsistencia(data) {
         tablaUsuariosAsistencia.clear().draw();
-        $.each(data,function (){
+        $.each(data, function () {
             let asistencia = this['sitAsistencia'];
             let codJustifi = this['codJustificacion'];
-            let datoPer = this['nombreUsuario']+ ' '+ this['apePaternoUsuario']+' '+this['apeMaternoUsuario'];
+            let datoPer = this['nombreUsuario'] + ' ' + this['apePaternoUsuario'] + ' ' + this['apeMaternoUsuario'];
 //          let colorEstado = estado !== 'ACTIVO' ? "bg-danger text-white p-1 rounded-3" : "bg-success text-white p-1 rounded-3";
             let inpuntual = '';
-            if(asistencia == "TARDANZA" && codJustifi == '0'){
-                inpuntual = '<a class=\'pe-1\' id=\"asist'+this['codigoAsisDet']+'\" href=\'#\' onclick=\"abrirModalJustificacion(' + this['codigoUsuario'] 
-                        +','+ this['codigoAsisDet'] 
-                        + ',\''+datoPer +'\');\" title=\'JUSTIFICAR ASISTENCIA\'>\n\
+            if (asistencia == "TARDANZA" && codJustifi == '0') {
+                inpuntual = '<a class=\'pe-1\' id=\"asist' + this['codigoAsisDet'] + '\" href=\'#\' onclick=\"abrirModalJustificacion(' + this['codigoUsuario']
+                        + ',' + this['codigoAsisDet']
+                        + ',\'' + datoPer + '\');\" title=\'JUSTIFICAR ASISTENCIA\'>\n\
                     <i class=\'far fa-clock otras-opciones\' ></i>\n\
-                </a>'+'<a class=\'pe-1 hide\' id=\"detAsist'+this['codigoAsisDet']+'\" href=\'#\' onclick=\"detalleModalJustificacion('+this['codigoAsisDet']+",'"+datoPer +'\');\" \n\
+                </a>' + '<a class=\'pe-1 hide\' id=\"detAsist' + this['codigoAsisDet'] + '\" href=\'#\' onclick=\"detalleModalJustificacion(' + this['codigoAsisDet'] + ",'" + datoPer + '\');\" \n\
                     title=\'DETALLE DE JUSTIFICACION\'>\n\
                             <i class=\'fas fa-clock otras-opciones\' ></i>\n\
                 </a>';
-            
-            }else if(asistencia == "TARDANZA" && codJustifi == '1'){
-                inpuntual = '<a class=\'pe-1 \' href=\'#\' onclick=\"detalleModalJustificacion('+this['codigoAsisDet']+",'"+datoPer +'\');\" \n\
+
+            } else if (asistencia == "AUSENTE" && codJustifi == '0') {
+                inpuntual = '<a class=\'pe-1\' id=\"asist' + this['codigoAsisDet'] + '\" href=\'#\' onclick=\"abrirModalJustificacion(' + this['codigoUsuario']
+                        + ',' + this['codigoAsisDet']
+                        + ',\'' + datoPer + '\');\" title=\'JUSTIFICAR ASISTENCIA\'>\n\
+                    <i class=\'far fa-clock otras-opciones\' ></i>\n\
+                </a>' + '<a class=\'pe-1 hide\' id=\"detAsist' + this['codigoAsisDet'] + '\" href=\'#\' onclick=\"detalleModalJustificacion(' + this['codigoAsisDet'] + ",'" + datoPer + '\');\" \n\
+                    title=\'DETALLE DE JUSTIFICACION\'>\n\
+                            <i class=\'fas fa-clock otras-opciones\' ></i>\n\
+                </a>';
+            } else if (asistencia == "TARDANZA" && codJustifi == '1') {
+                inpuntual = '<a class=\'pe-1 \' href=\'#\' onclick=\"detalleModalJustificacion(' + this['codigoAsisDet'] + ",'" + datoPer + '\');\" \n\
                     title=\'DETALLE DE JUSTIFICACION\'>\n\
                             <i class=\'fas fa-clock otras-opciones\' ></i>\n\
                 </a>';
             }
-            
+
 //            let estado = asistencia == "TARDANZA" ? inpuntual : '';
-            
+
             tablaUsuariosAsistencia.row.add([
                 this['nombreUsuario'],
                 this['numeroDOI'],
@@ -367,27 +380,27 @@
             ]).draw(false);
         });
     }
-    function detalleModalJustificacion(codAsist, datoPer){
+    function detalleModalJustificacion(codAsist, datoPer) {
         $('#btnJustificar').addClass('hide');
         $('#titleModalJusti').html("DETALLE DE JUSTIFICACION");
-        $("#modalRegJustificacion").modal('show');        
+        $("#modalRegJustificacion").modal('show');
         $("#datosVendedor").html(datoPer);
         listaJustificacion(codAsist);
     }
-    function listaJustificacion(codAsist){
+    function listaJustificacion(codAsist) {
         $.ajax({
-                type: 'POST',
-                url: '../../reHumanosServlet?Accion=listaJustificacion',
-                data: 'codAsistDet='+codAsist,
-                dataType: 'json',
-                beforeSend: function () {
-                }, success: function (resultado) {
-                    llenarDetalleJustificacion(resultado);
-                }, complete: function () {
-                }
-            });
+            type: 'POST',
+            url: '../../reHumanosServlet?Accion=listaJustificacion',
+            data: 'codAsistDet=' + codAsist,
+            dataType: 'json',
+            beforeSend: function () {
+            }, success: function (resultado) {
+                llenarDetalleJustificacion(resultado);
+            }, complete: function () {
+            }
+        });
     }
-    function llenarDetalleJustificacion(data){
+    function llenarDetalleJustificacion(data) {
         $('#obsJustificacion').attr('readonly', true);
         $('#obsJustificacion').val(data.observacion);
     }

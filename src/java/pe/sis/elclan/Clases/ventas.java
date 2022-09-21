@@ -1,18 +1,25 @@
 
 package pe.sis.elclan.Clases;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Victor Rosales Arones
  */
 public class ventas {
 
-   
     
     /* GENERAL*/
     private String v_usuario;   
     private String v_fechaCreacion;  
+    private String v_usuarioCreacion;  
     private String v_estado;
+    
+    /*ORGANIGRAMA DE VENTAS*/
+    private String v_datos;
+    private String v_datosVen;
+    private String v_numero;
     
     /* UNIDADES DE VENTAS */
     private String v_codUnidad;
@@ -30,10 +37,173 @@ public class ventas {
     private String v_numDocumento;
     private String v_est_SMV;
     private String v_cargo;
-    private String v_cod_Vendedor;    
+    private String v_cod_Vendedor;  
+    
+    /* ORGANIGRAMA */
+    private String v_codPerfil;
+    private String v_desPerfil;
+    private String v_codArea;
+    private String v_desArea;
+    private String v_codEstructura;
+    private String v_numOrden;
+    
+    /* LISTAS */
+    private ArrayList<ventas> listUnidades;
+    private ArrayList<ventas> listEquipos;
+    private ArrayList<ventas> listPerfilesComer;
+    private ArrayList<ventas> listEstrucutraEquipos;
+    private ArrayList<ventas> listEstrucutraEquipoDatos;
+    private ArrayList<ventas> listVendedoresSinCargo;
+    private ArrayList<ventas> listDiagramaVentas;
+    private ArrayList<ventas> listEstrucutraUnidades;
+    private ArrayList<ventas> listEstrucutraUnidadDatos;
     
     /* METODOS GET Y SET*/
 
+    public ArrayList<ventas> getListEstrucutraUnidades() {
+        return listEstrucutraUnidades;
+    }
+
+    public void setListEstrucutraUnidades(ArrayList<ventas> listEstrucutraUnidades) {
+        this.listEstrucutraUnidades = listEstrucutraUnidades;
+    }
+
+    public ArrayList<ventas> getListEstrucutraUnidadDatos() {
+        return listEstrucutraUnidadDatos;
+    }
+
+    public void setListEstrucutraUnidadDatos(ArrayList<ventas> listEstrucutraUnidadDatos) {
+        this.listEstrucutraUnidadDatos = listEstrucutraUnidadDatos;
+    }
+        
+    public ArrayList<ventas> getListDiagramaVentas() {
+        return listDiagramaVentas;
+    }
+
+    public void setListDiagramaVentas(ArrayList<ventas> listDiagramaVentas) {
+        this.listDiagramaVentas = listDiagramaVentas;
+    }    
+    
+    public String getV_numero() {
+        return v_numero;
+    }
+
+    public void setV_numero(String v_numero) {
+        this.v_numero = v_numero;
+    }
+        
+    public String getV_datos() {
+        return v_datos;
+    }
+
+    public void setV_datos(String v_datos) {
+        this.v_datos = v_datos;
+    }
+
+    public String getV_datosVen() {
+        return v_datosVen;
+    }
+
+    public void setV_datosVen(String v_datosVen) {
+        this.v_datosVen = v_datosVen;
+    }
+    
+    public String getV_desArea() {
+        return v_desArea;
+    }
+
+    public void setV_desArea(String v_desArea) {
+        this.v_desArea = v_desArea;
+    }
+    
+    public ArrayList<ventas> getListVendedoresSinCargo() {
+        return listVendedoresSinCargo;
+    }
+
+    public void setListVendedoresSinCargo(ArrayList<ventas> listVendedoresSinCargo) {
+        this.listVendedoresSinCargo = listVendedoresSinCargo;
+    }
+    
+    public String getV_codEstructura() {
+        return v_codEstructura;
+    }
+
+    public void setV_codEstructura(String v_codEstructura) {
+        this.v_codEstructura = v_codEstructura;
+    }
+
+    public String getV_numOrden() {
+        return v_numOrden;
+    }
+
+    public void setV_numOrden(String v_numOrden) {
+        this.v_numOrden = v_numOrden;
+    }
+    
+    public String getV_codPerfil() {
+        return v_codPerfil;
+    }
+
+    public void setV_codPerfil(String v_codPerfil) {
+        this.v_codPerfil = v_codPerfil;
+    }
+
+    public String getV_desPerfil() {
+        return v_desPerfil;
+    }
+
+    public void setV_desPerfil(String v_desPerfil) {
+        this.v_desPerfil = v_desPerfil;
+    }
+
+    public String getV_codArea() {
+        return v_codArea;
+    }
+
+    public void setV_codArea(String v_codArea) {
+        this.v_codArea = v_codArea;
+    }
+        
+    public ArrayList<ventas> getListPerfilesComer() {
+        return listPerfilesComer;
+    }
+
+    public void setListPerfilesComer(ArrayList<ventas> listPerfilesComer) {
+        this.listPerfilesComer = listPerfilesComer;
+    }
+
+    public ArrayList<ventas> getListEstrucutraEquipos() {
+        return listEstrucutraEquipos;
+    }
+
+    public void setListEstrucutraEquipos(ArrayList<ventas> listEstrucutraEquipos) {
+        this.listEstrucutraEquipos = listEstrucutraEquipos;
+    }
+
+    public ArrayList<ventas> getListEstrucutraEquipoDatos() {
+        return listEstrucutraEquipoDatos;
+    }
+
+    public void setListEstrucutraEquipoDatos(ArrayList<ventas> listEstrucutraEquipoDatos) {
+        this.listEstrucutraEquipoDatos = listEstrucutraEquipoDatos;
+    }    
+        
+    public ArrayList<ventas> getListUnidades() {
+        return listUnidades;
+    }
+
+    public void setListUnidades(ArrayList<ventas> listUnidades) {
+        this.listUnidades = listUnidades;
+    }
+
+    public ArrayList<ventas> getListEquipos() {
+        return listEquipos;
+    }
+
+    public void setListEquipos(ArrayList<ventas> listEquipos) {
+        this.listEquipos = listEquipos;
+    }
+        
     public String getV_usuario() {
         return v_usuario;
     }
@@ -49,6 +219,15 @@ public class ventas {
     public void setV_fechaCreacion(String v_fechaCreacion) {
         this.v_fechaCreacion = v_fechaCreacion;
     }
+
+    public String getV_usuarioCreacion() {
+        return v_usuarioCreacion;
+    }
+
+    public void setV_usuarioCreacion(String v_usuarioCreacion) {
+        this.v_usuarioCreacion = v_usuarioCreacion;
+    }
+    
 
     public String getV_estado() {
         return v_estado;

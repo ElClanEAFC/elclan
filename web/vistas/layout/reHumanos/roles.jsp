@@ -74,6 +74,10 @@ FIN MODALES
 
 <script>
     $(document).ready(function () {
+        $("input").on("keypress", function () {
+            $input = $(this);
+            UpperCaseInput($input);
+        });
         $.validator.addMethod("inputTrim", function (value, element, param) {
             if (value.replace(/[^0-9]/g, '') || value.replace(/^[^-_#'"\\\/<>=*@&]*$/, '')) {
                 return false;
@@ -89,7 +93,7 @@ FIN MODALES
         $("#nomPerfil").val("");
     }
     function actualizarPerfil() {
-        var codArea = $("#codArea").val();
+        var codArea = codAreaSend;
         var codPerf = $("#codPerfil").val();
         var nomPerf = $("#nomPerfil").val().trim();
         var nomUsu = $("#nomUser").val();
@@ -127,7 +131,7 @@ FIN MODALES
     }
 
     function confirBorrarPerfil(codPerfil) {
-        var codArea = $("#codArea").val();
+        var codArea = codAreaSend;
         Swal.fire({
             title: 'Mensaje',
             text: "Esta seguro de borrar el Cargo o Perfil?",
@@ -199,7 +203,7 @@ FIN MODALES
     function guardarCargo() {
         //var codArea   = $("#codPerfil").val();
         var nomPerfil = $("#nomPerfil").val().trim();
-        var codArea = $("#codArea").val();
+        var codArea = codAreaSend;
         var param = 'nomPerfil=' + nomPerfil + '&codArea=' + codArea;
         $.ajax({
             type: 'POST',
@@ -287,155 +291,5 @@ FIN MODALES
         console.log(codArea + ' ' + codPerfil);
         direcPagina('2', 'REC_HUMANO', '../layout/reHumanos/config-roles.jsp', codArea, codPerfil);
     }
-
-    /*********************VALIDACION DE LOS CAMPOS************************/
-//const expresiones = {
-//    nomPerfil: /^[a-zA-ZÀ-ÿ\s]{1,40}$/
-//}
-//
-//const campos = {
-//    nomPerfil: false
-//}
-//
-//const validarFormulario = (e) => {
-//    switch (e.target.name) {
-//        case "nomPerfil":
-//                validarCampos(expresiones.nomPerfil, e.target, 'nomPerfil');
-//        break;
-//    }
-//}
-
-//const validarCampos = (expresion, input, campo) => {
-//    //alert("ex: "+expresion+" input: "+input+" campo: "+campo);
-//    let button = document.getElementById("btnPerfil");
-//    if(expresion.test(input.value)){
-//        //alert("cumple");
-//        document.getElementById("label-"+campo).classList.add("input-error");
-//        document.getElementById("label-"+campo).classList.remove("input-error-activo");
-//        campos[campo] = true;
-//        button.disabled = false;
-//    }else{
-//        //alert(" no cumple");
-//        document.getElementById("label-"+campo).classList.add("input-error-activo");
-//        document.getElementById("label-"+campo).classList.remove("input-error");
-//        campos[campo] = false;
-//        button.disabled = true;
-//    }
-//}
-//
-//document.getElementById("nomPerfil").addEventListener('keyup', validarFormulario);
-    /*    
-     function segundaCarga(){
-     var codArea = $("#codArea").val();
-     listarPerfiles(codArea);
-     }    
-     function crearUsuario(){
-     window.location("crearUsuario.jsp");
-     }
-     function guardarPerfil(){
-     //var codArea   = $("#codPerfil").val();
-     var nomPerfil = $("#nomPerfil").val();
-     var codArea   = $("#codArea").val();
-     var noArea    = $("#noArea").val();
-     var param = 'nomPerfil='+nomPerfil+'&codArea='+codArea+'&noArea='+noArea;
-     //alert(param);
-     $.ajax({
-     type: 'POST',
-     url: '../../../reHumanosServlet?Accion=guardarCargo',
-     data: 'codArea='+codArea+'&nomPerfil='+nomPerfil,
-     beforeSend: function () {
-     }, success: function (resultado) {
-     //$("#"+mostrar).html(resultado);
-     }, complete: function () {
-     window.location.href = "roles.jsp?codArea="+codArea+"&nomArea="+noArea;
-     //listarPerfiles(codArea);
-     }
-     });
-     }
-     function confirBorrarPerfil(codPerfil){
-     Swal.fire({
-     title: 'Mensaje',
-     text: "Esta seguro de desactivar el Perfil",
-     icon: 'warning',
-     showCancelButton: true,
-     confirmButtonColor: '#48C28D',
-     cancelButtonColor: '#d33',
-     confirmButtonText: 'Continuar',
-     cancelButtonText: 'Cancelar'
-     }).then((result) => {
-     if (result.isConfirmed) {
-     borrarPerfil(codPerfil);
-     }
-     })
-     
-     }
-     
-     function borrarPerfil(codPerfil){
-     var nomUsu  = $("#nomUser").val();
-     
-     var codArea   = $("#codArea").val();
-     var noArea    = $("#noArea").val();
-     $.ajax({
-     type: 'POST',
-     url: '../../../reHumanosServlet?Accion=borrarPerfil',
-     data: 'codPerfil='+codPerfil+'&nomUsu='+nomUsu,
-     beforeSend: function () {
-     }, success: function (resultado) {
-     //$("#"+mostrar).html(resultado);
-     }, complete: function () {
-     window.location.href = "roles.jsp?codArea="+codArea+"&nomArea="+noArea;
-     }
-     });
-     }
-     
-     
-     function editPerfil(codPerfil, nomPerfil){
-     
-     $("#codPerfil").val(codPerfil);
-     $("#nomPerfil").val(nomPerfil);
-     $("#btnPerfil").attr("onclick","actualizarPerfil()");
-     $("#btnPerfil").html('Actualizar');
-     }
-     
-     function actualizarPerfil(){
-     var codArea = $("#codArea").val();
-     var codPerf = $("#codPerfil").val();
-     var nomPerf = $("#nomPerfil").val();
-     var nomUsu  = $("#nomUser").val();
-     var noArea  = $("#noArea").val();
-     //alert(nomUsu);
-     $.ajax({
-     type: 'POST',
-     url: '../../../reHumanosServlet?Accion=actualizarPerfil',
-     data: 'codArea='+codArea+'&codPerf='+codPerf+'&nomPerf='+nomPerf+'&nomUsu='+nomUsu,
-     beforeSend: function () {
-     }, success: function (resultado) {
-     }, complete: function () {
-     window.location.href = "roles.jsp?codArea="+codArea+"&nomArea="+noArea;
-     }
-     });
-     }
-     
-     function listarPerfiles(codArea){
-     $.ajax({
-     type: 'POST',
-     url: '../../../reHumanosServlet?Accion=listarPerfiles',
-     data: 'codArea='+codArea,
-     beforeSend: function () {
-     }, success: function (resultado) {
-     $("#lisPerfil").html(resultado);
-     }, complete: function () {
-     //msjExitoso('El usuario fue dado de baja!');
-     }
-     });
-     }
-     
-     function agregarUsuario(){
-     $('#modalAgregarUsuario').modal('show')
-     
-     }
-     /****************************************
-     *       Basic Table                   *
-     ****************************************/
 
 </script>

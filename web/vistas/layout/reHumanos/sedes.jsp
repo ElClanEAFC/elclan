@@ -12,7 +12,7 @@
             <div class="col-md-5">
                 <form class="d-flex my-2 my-lg-0 gap-3" id="formSucursalBuscar">
                     <input id="sedeBuscar" name="sedeBuscar" class="sedeBuscar form-control mr-sm-2 rounded" type="search" placeholder="INGRESE NOMBRE DE SEDE">
-                    <button class="btn btn-success my-sm-0 text-white" onclick="validarCampoSedeBuscar(e);">BUSCAR</button>
+                    <button class="btn btn-success my-sm-0 text-white" type="button" onclick="validarCampoSedeBuscar();">BUSCAR</button>
                 </form>
             </div>
             <div class="d-flex align-items-center">
@@ -130,7 +130,6 @@
                         </tr>
                     </thead>
                     <tbody >
-
                     </tbody>
                 </table>
             </div>
@@ -184,13 +183,11 @@
 </div>
 
 <script>
-//    var codSede = '';
-//    let updateSede = false;
-//    var allUsuarios;
-//    var allSucursales;
-//    let tablaSucursales;
-//    let tablaUsuariosSucursal;
     $(document).ready(async function () {
+        $("input").on("keypress", function () {
+            $input = $(this);
+            UpperCaseInput($input);
+        });
         tablaSucursales = $('#tablaSucursales').DataTable({
             responsive: true,
             searching: false,
@@ -470,6 +467,7 @@
             }
         });
     }
+    
     function validarSedeUsuario() {
         let validator = $("#formUsuariosSede").validate({
             rules: {
@@ -646,8 +644,7 @@
         llenarTablaSucursales(sucursal);
     }
     //VALIDAR CAMPO DE BUSQUEDA DE EMPLEADO / USUARIO;
-    function validarCampoSedeBuscar(e){
-        e.preventDefault();
+    function validarCampoSedeBuscar(){
         let validator = $("#formSucursalBuscar").validate({
             rules: {
                 sedeBuscar: {required: true}

@@ -63,6 +63,10 @@
 <script>
 
 $(document).ready(function (){
+    $("input").on("keypress", function () {
+            $input = $(this);
+            UpperCaseInput($input);
+        });
     $.validator.addMethod("inputTrim", function(value, element, param){
         if (value.replace(/[^0-9]/g,'') || value.replace(/^[^-_#'"\\\/<>=*@&]*$/,'')) {
             return false;

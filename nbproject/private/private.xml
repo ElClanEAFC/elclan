@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>web/vistas/assets/libs/chartOrg/data/myJsonFile.json</url>
+            <bookmark id="2">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
         <file>
             <url>src/java/pe/sis/elclan/OracleDAO/reHumanosOracleDAO.java</url>
             <bookmark id="1">
@@ -11,6 +19,14 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/vistas/layout/ventas/unidades-equipos.jsp</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/unidades.jsp</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/organigramaUnidad.jsp</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/equipos.jsp</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/estructuraGeneral.jsp</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/estructura.jsp</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/vistas/assets/libs/chartOrg/css/jHTree.css</file>
+        </group>
     </open-files>
 </project-private>
