@@ -13,7 +13,15 @@
             <url>src/java/pe/sis/elclan/OracleDAO/reHumanosOracleDAO.java</url>
             <bookmark id="1">
                 <name/>
-                <line>978</line>
+                <line>984</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/java/pe/sis/elclan/Servlet/ventasServlet.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>92</line>
                 <key/>
             </bookmark>
         </file>

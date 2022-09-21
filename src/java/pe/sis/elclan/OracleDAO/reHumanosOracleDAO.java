@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package pe.sis.elclan.OracleDAO;
+
 import java.sql.*;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -28,18 +29,19 @@ public class reHumanosOracleDAO implements reHumanosDAO {
 
     @Resource(name = "jdbc/SQLServerDriver")
     private DataSource fuente;
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 29-08-2022 
-     * descripcion: SQL: listar justificaciones
+     * autor: yasub huaman ramos fecha: 29-08-2022 descripcion: SQL: listar
+     * justificaciones
+     *
      * @param codAsistDet
-     * @return 
-     * @throws java.sql.SQLException 
-    *****************************************************************************
+     * @return
+     * @throws java.sql.SQLException
+     * ****************************************************************************
      */
     @Override
-    public reHumanos listaJustificacion(String codAsistDet) throws SQLException{
+    public reHumanos listaJustificacion(String codAsistDet) throws SQLException {
         System.out.println("SQLDAO SEGURIDAD(listaJustificacion)");
         reHumanos reHumanos = new reHumanos();
         Connection cn = null;
@@ -70,14 +72,15 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 25-08-2022 
-     * descripcion: SQL: listar areas para sedes
+     * autor: yasub huaman ramos fecha: 25-08-2022 descripcion: SQL: listar
+     * areas para sedes
+     *
      * @param codSede
-     * @return 
-    *****************************************************************************
+     * @return
+     * ****************************************************************************
      */
     @Override
     public mantenimiento listarAreasSede(String codSede) throws SQLException {
@@ -117,21 +120,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         return mantenimiento;
 
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-27
-     * descripcion: SQL: REGISTRAR USUARIO A SEDE.
+     * autor: yasub huaman ramos fecha: 2022-07-27 descripcion: SQL: REGISTRAR
+     * USUARIO A SEDE.
+     *
      * @param codUsuario
      * @param codSede
      * @param usuario
      * @return
-     * @throws java.lang.Exception
-    **
-    */
-    
+     * @throws java.lang.Exception *
+     */
     @Override
-    public String registroSedeUsuario(String codUsuario, String codSede, String usuario) throws Exception{
+    public String registroSedeUsuario(String codUsuario, String codSede, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(registroSedeUsuario)");
         Connection cn = null;
         String base = "elclan";
@@ -159,18 +161,18 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-25
-     * descripcion: SQL: DAR BAJA EXPERIENCIA DE USUARIO.
+     * autor: yasub huaman ramos fecha: 2022-07-25 descripcion: SQL: DAR BAJA
+     * EXPERIENCIA DE USUARIO.
+     *
      * @param codExperiencia
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public String darBajaExperienciaLab(String codExperiencia) throws Exception{
+    public String darBajaExperienciaLab(String codExperiencia) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(darBajaExperienciaLab)");
         Connection cn = null;
         String base = "elclan";
@@ -196,19 +198,19 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-        
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-25
-     * descripcion: SQL: lISTA DE EXPERIENCIAS LABORADAS.
+     * autor: yasub huaman ramos fecha: 2022-07-25 descripcion: SQL: lISTA DE
+     * EXPERIENCIAS LABORADAS.
+     *
      * @param codUsuario
      * @return
-     * @throws java.lang.Exception
-    **
-    */    
+     * @throws java.lang.Exception *
+     */
     @Override
-    public reHumanos listaExperienciasLab(String codUsuario) throws Exception{
-       System.out.println("SQLDAO SEGURIDAD(listaExperienciasLab)");
+    public reHumanos listaExperienciasLab(String codUsuario) throws Exception {
+        System.out.println("SQLDAO SEGURIDAD(listaExperienciasLab)");
         ArrayList<reHumanos> listaExperienciasLab;
         reHumanos reHumanos = new reHumanos();
         Connection cn = null;
@@ -242,21 +244,21 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         } finally {
             cn.close();
         }
-        return reHumanos; 
+        return reHumanos;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-25
-     * descripcion: SQL: REGISTRAR EXPERIENCIAS LABORADAS.
+     * autor: yasub huaman ramos fecha: 2022-07-25 descripcion: SQL: REGISTRAR
+     * EXPERIENCIAS LABORADAS.
+     *
      * @param codUsuario
      * @param usuario
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public String registroExperienciaLab(String codUsuario, String codPuesto, String descripcion, String fecIni, String fecFin, String codPersona, String usuario ) throws Exception{
+    public String registroExperienciaLab(String codUsuario, String codPuesto, String descripcion, String fecIni, String fecFin, String codPersona, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(registroExperienciaLab)");
         Connection cn = null;
         String base = "elclan";
@@ -288,18 +290,18 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-25
-     * descripcion: SQL: lISTA DE EMPRESAS LABORADAS.
+     * autor: yasub huaman ramos fecha: 2022-07-25 descripcion: SQL: lISTA DE
+     * EMPRESAS LABORADAS.
+     *
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public reHumanos listaEmpresaLab() throws Exception{
-       System.out.println("SQLDAO SEGURIDAD(listaEmpresaLab)");
+    public reHumanos listaEmpresaLab() throws Exception {
+        System.out.println("SQLDAO SEGURIDAD(listaEmpresaLab)");
         ArrayList<reHumanos> listaEmpresaLab;
         reHumanos reHumanos = new reHumanos();
         Connection cn = null;
@@ -329,19 +331,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         } finally {
             cn.close();
         }
-        return reHumanos; 
+        return reHumanos;
     }
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-25
-     * descripcion: SQL: lISTA DE PUESTOS LABORADOS.
+     * autor: yasub huaman ramos fecha: 2022-07-25 descripcion: SQL: lISTA DE
+     * PUESTOS LABORADOS.
+     *
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public reHumanos listaPuestoLab() throws Exception{
-       System.out.println("SQLDAO SEGURIDAD(listaPuestoLab)");
+    public reHumanos listaPuestoLab() throws Exception {
+        System.out.println("SQLDAO SEGURIDAD(listaPuestoLab)");
         ArrayList<reHumanos> listaPuestoLab;
         reHumanos reHumanos = new reHumanos();
         Connection cn = null;
@@ -371,29 +374,29 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         } finally {
             cn.close();
         }
-        return reHumanos; 
+        return reHumanos;
     }
-    
+
 //  =================== REPORTES DE ASISTENCISA ===================
-    
-        /****************************************************************************
-     * autor: Bentu Condori Mamani
-     * fecha: 05-08-2022 
-     * descripcion: SQL: justificar asistencia.
+    /**
+     * **************************************************************************
+     * autor: Bentu Condori Mamani fecha: 05-08-2022 descripcion: SQL:
+     * justificar asistencia.
+     *
      * @param fecha
      * @return
-     * @throws java.lang.Exception
-    **
-    ****************************************************************************/
+     * @throws java.lang.Exception *
+     * **************************************************************************
+     */
     @Override
-    public reHumanos justificarAsistencia(String codVende, String codAsistDet, String fecha,  String usuario, String obs) throws Exception{
-        System.out.println("FECHA"+fecha);        
-        String[] datos = fecha.split("-"); 
+    public reHumanos justificarAsistencia(String codVende, String codAsistDet, String fecha, String usuario, String obs) throws Exception {
+        System.out.println("FECHA" + fecha);
+        String[] datos = fecha.split("-");
         String annio = datos[0];
         String mes = datos[1];
         String dia = datos[2];
-        String fec = dia+'/'+mes+'/'+annio;
-        System.out.println("SQLDAO SEGURIDAD(justificarAsistencia)"+fec);
+        String fec = dia + '/' + mes + '/' + annio;
+        System.out.println("SQLDAO SEGURIDAD(justificarAsistencia)" + fec);
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -406,7 +409,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             cs.setInt(1, Integer.valueOf(codVende));
             cs.setInt(2, Integer.valueOf(codAsistDet));
             cs.setString(3, fec);
-            cs.setString(4,obs);
+            cs.setString(4, obs);
             cs.setString(5, usuario);
             cs.registerOutParameter(6, java.sql.Types.VARCHAR);
             cs.registerOutParameter(7, java.sql.Types.VARCHAR);
@@ -423,25 +426,26 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
-     /****************************************************************************
-     * autor: Bentu Condori Mamani
-     * fecha: 2022-07-26 
-     * descripcion: SQL: Confirmar la carga de asistencias.
+
+    /**
+     * **************************************************************************
+     * autor: Bentu Condori Mamani fecha: 2022-07-26 descripcion: SQL: Confirmar
+     * la carga de asistencias.
+     *
      * @param fecha
      * @return
-     * @throws java.lang.Exception
-    **
-    ****************************************************************************/
+     * @throws java.lang.Exception *
+     * **************************************************************************
+     */
     @Override
-    public reHumanos generarReportAsistencia(String fecha,String codBanco,String modDeposito, String codTplanilla, String usuario) throws Exception{
-        System.out.println("FECHA"+fecha);        
-        String[] datos = fecha.split("-"); 
+    public reHumanos generarReportAsistencia(String fecha, String codBanco, String modDeposito, String codTplanilla, String usuario) throws Exception {
+        System.out.println("FECHA" + fecha);
+        String[] datos = fecha.split("-");
         String annio = datos[0];
         String mes = datos[1];
         String dia = datos[2];
-        String fec = dia+'/'+mes+'/'+annio;
-        System.out.println("SQLDAO SEGURIDAD(generarReportAsistencia)"+fec);
+        String fec = dia + '/' + mes + '/' + annio;
+        System.out.println("SQLDAO SEGURIDAD(generarReportAsistencia)" + fec);
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -456,7 +460,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             cs.setString(1, fec);
             cs.setInt(2, Integer.valueOf(codBanco));
             cs.setInt(3, Integer.valueOf(modDeposito));
-            cs.setInt(4, Integer.valueOf(codTplanilla)); 
+            cs.setInt(4, Integer.valueOf(codTplanilla));
             cs.setString(5, usuario);
             cs.registerOutParameter(6, OracleTypes.CURSOR);
             cs.registerOutParameter(7, java.sql.Types.VARCHAR);
@@ -465,7 +469,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             seguridad = (String) cs.getObject(7);
             String mensaje = (String) cs.getObject(8);
             rs = (ResultSet) cs.getObject(6);
-            while(rs.next()){
+            while (rs.next()) {
                 reHumanos rh = new reHumanos();
                 rh.setCampReporte(rs.getString("CAMPO_REPORT"));
                 // System.out.println("----------"+rs.getString("CAMPO_REPORT"));
@@ -483,19 +487,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         return respuesta;
     }
 
-    /****************************************************************************
-     * autor: Bentu Condori Mamani
-     * fecha: 2022-07-26 
-     * descripcion: SQL: Lista de asistencias diarios.
+    /**
+     * **************************************************************************
+     * autor: Bentu Condori Mamani fecha: 2022-07-26 descripcion: SQL: Lista de
+     * asistencias diarios.
+     *
      * @param fecha
      * @param datos
      * @param estado
      * @return
-     * @throws java.lang.Exception
-    **
-    ****************************************************************************/
+     * @throws java.lang.Exception *
+     * **************************************************************************
+     */
     @Override
-    public reHumanos listarAsistenciaDiario(String fecha, String datos, String estado) throws Exception{
+    public reHumanos listarAsistenciaDiario(String fecha, String datos, String estado) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listarAsistenciaDiario)");
         ArrayList<reHumanos> listaUsuarios;
         reHumanos reHumanos = new reHumanos();
@@ -503,11 +508,11 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         String base = "elclan";
         CallableStatement cs;
         ResultSet rs;
-        String[] data = fecha.split("-"); 
+        String[] data = fecha.split("-");
         String annio = data[0];
         String mes = data[1];
         String dia = data[2];
-        String fec = dia+'/'+mes+'/'+annio;
+        String fec = dia + '/' + mes + '/' + annio;
         System.out.println("fec " + fec);
         try {
             String sql = "{call PKG_REHUMANOS.USP_LISTA_ASISTDIARIO(?,?,?,?,?,?)}";
@@ -547,25 +552,26 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
-    
-    /****************************************************************************
-     * autor: Bentu Condori Mamani
-     * fecha: 2022-07-26 
-     * descripcion: SQL: Confirmar la carga de asistencias.
+
+    /**
+     * **************************************************************************
+     * autor: Bentu Condori Mamani fecha: 2022-07-26 descripcion: SQL: Confirmar
+     * la carga de asistencias.
+     *
      * @param fecha
      * @return
-     * @throws java.lang.Exception
-    **
-    ****************************************************************************/
+     * @throws java.lang.Exception *
+     * **************************************************************************
+     */
     @Override
-    public reHumanos confirmarCargaAsistencia(String fecha, String fecFin, String usuario) throws Exception{
-        System.out.println("FECHA"+fecha);        
-        String[] datos = fecha.split("-"); 
+    public reHumanos confirmarCargaAsistencia(String fecha, String fecFin, String usuario) throws Exception {
+        System.out.println("FECHA" + fecha);
+        String[] datos = fecha.split("-");
         String annio = datos[0];
         String mes = datos[1];
         String dia = datos[2];
-        String fec = dia+'/'+mes+'/'+annio;
-        System.out.println("SQLDAO SEGURIDAD(confirmarCargaAsistencia)"+fec);
+        String fec = dia + '/' + mes + '/' + annio;
+        System.out.println("SQLDAO SEGURIDAD(confirmarCargaAsistencia)" + fec);
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -593,20 +599,19 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: Bentu Condori Mamani 
-     * fecha: 2022-07-25 
-     * descripcion: SQL: Dara de baja Usuario.
+     * autor: Bentu Condori Mamani fecha: 2022-07-25 descripcion: SQL: Dara de
+     * baja Usuario.
+     *
      * @param dni
      * @param fecha
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public String guardarAsistenciaTmp(String dni,String fecha) throws Exception{
+    public String guardarAsistenciaTmp(String dni, String fecha) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(guardarAsistencia)");
         Connection cn = null;
         String base = "elclan";
@@ -632,42 +637,41 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: bentu condori m. 
-     * fecha: 2022-07-21 
-     * descripcion: SQL: Dara de baja Usuario.
+     * autor: bentu condori m. fecha: 2022-07-21 descripcion: SQL: Dara de baja
+     * Usuario.
+     *
      * @param fecIni
      * @param fecFin
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
     public reHumanos cargaAsistencia(String fecIni, String fecFin) throws Exception {
-       Connection cn = null;
-       ArrayList<reHumanos> listaAsistencia = new ArrayList<>();
-       reHumanos reHumanos = new reHumanos();
-       System.out.println("oracleDAO: cargaAsistencia");  
+        Connection cn = null;
+        ArrayList<reHumanos> listaAsistencia = new ArrayList<>();
+        reHumanos reHumanos = new reHumanos();
+        System.out.println("oracleDAO: cargaAsistencia");
         String base = "access";
-        PreparedStatement  cs = null;
+        PreparedStatement cs = null;
         String seguridad = null;
         String respuesta = "";
         ResultSet rs;
         try {
-            String sql = "SELECT CHECKINOUT.USERID, USERINFO.Badgenumber, CHECKINOUT.CHECKTIME, DateValue([CheckInOut].[CheckTime]) AS Expr1\n" +
-                         "FROM CHECKINOUT INNER JOIN USERINFO ON CHECKINOUT.USERID = USERINFO.USERID\n" +
-                         "WHERE DateValue([CheckInOut].[CheckTime]) Between '"+fecIni+"' AND '"+fecIni+"' ORDER BY CHECKINOUT.CHECKTIME DESC";
+            String sql = "SELECT CHECKINOUT.USERID, USERINFO.Badgenumber, CHECKINOUT.CHECKTIME, DateValue([CheckInOut].[CheckTime]) AS Expr1\n"
+                    + "FROM CHECKINOUT INNER JOIN USERINFO ON CHECKINOUT.USERID = USERINFO.USERID\n"
+                    + "WHERE DateValue([CheckInOut].[CheckTime]) Between '" + fecIni + "' AND '" + fecIni + "' ORDER BY CHECKINOUT.CHECKTIME DESC";
             cn = OracleDAOFactory.obtenerConexion(base);
-            System.out.println("CN: "+cn);
+            System.out.println("CN: " + cn);
             cs = cn.prepareStatement(sql);
             rs = cs.executeQuery();
             while (rs.next()) {
                 reHumanos re = new reHumanos();
                 re.setNumeroDOI(rs.getString("Badgenumber"));
                 re.setFecHoraMarcacion(rs.getString("CHECKTIME"));
-                listaAsistencia.add(re); 
+                listaAsistencia.add(re);
             }
             reHumanos.setListaAsistencia(listaAsistencia);
         } catch (SQLException e) {
@@ -675,23 +679,22 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         } finally {
             cn.close();
         }
-        return reHumanos;   
-    }   
-    
-//  =================== FINAL DE REPORTES DE ASISTENCIAS  =================== 
+        return reHumanos;
+    }
 
+//  =================== FINAL DE REPORTES DE ASISTENCIAS  =================== 
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-21
-     * descripcion: SQL: Desactivar Usuario.
+     * autor: yasub huaman ramos fecha: 2022-07-21 descripcion: SQL: Desactivar
+     * Usuario.
+     *
      * @param codUsuario
      * @param usuario
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public String desactivarUsuario(String codUsuario, String usuario) throws Exception{
+    public String desactivarUsuario(String codUsuario, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(desactivasUsuario)");
         Connection cn = null;
         String base = "elclan";
@@ -718,17 +721,17 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-19
-     * descripcion: SQL: Lista Motivos de Baja.
+     * autor: yasub huaman ramos fecha: 2022-07-19 descripcion: SQL: Lista
+     * Motivos de Baja.
+     *
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public reHumanos listaMotivoBaja() throws Exception{
+    public reHumanos listaMotivoBaja() throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listaMotivoBaja)");
         ArrayList<reHumanos> listaMotivosBaja;
         reHumanos reHumanos = new reHumanos();
@@ -761,19 +764,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-18 
-     * descripcion: SQL: Dara de baja Usuario.
+     * autor: yasub huaman ramos fecha: 2022-07-18 descripcion: SQL: Dara de
+     * baja Usuario.
+     *
      * @param codUsuario
      * @param codMotCese
      * @param fecCese
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public String darBajaUsuario(String codUsuario,String codMotCese,String fecCese) throws Exception{
+    public String darBajaUsuario(String codUsuario, String codMotCese, String fecCese) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(darBajaUsuario)");
         Connection cn = null;
         String base = "elclan";
@@ -801,17 +805,17 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-15 
-     * descripcion: SQL: Listar Usuarios.
+     * autor: yasub huaman ramos fecha: 2022-07-15 descripcion: SQL: Listar
+     * Usuarios.
+     *
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public reHumanos listaUsuarios() throws Exception{
+    public reHumanos listaUsuarios() throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listaUsuarios)");
         ArrayList<reHumanos> listaUsuarios;
         reHumanos reHumanos = new reHumanos();
@@ -852,9 +856,9 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
-    
+
     @Override
-    public String desactivarCargoUsuario(String codUserPerfil, String codUser, String codPerfil, String observacion, String usuario)throws Exception{
+    public String desactivarCargoUsuario(String codUserPerfil, String codUser, String codPerfil, String observacion, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(desactivarCargoUsuario)");
         Connection cn = null;
         String base = "elclan";
@@ -884,18 +888,18 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-19 
-     * descripcion: SQL: Listar Cargos de Usuario.
+     * autor: yasub huaman ramos fecha: 2022-07-19 descripcion: SQL: Listar
+     * Cargos de Usuario.
+     *
      * @param codUser
      * @return
-     * @throws java.lang.Exception
-    **
-    */
+     * @throws java.lang.Exception *
+     */
     @Override
-    public reHumanos listaCargosUsuario(String codUser) throws Exception{
+    public reHumanos listaCargosUsuario(String codUser) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listaCargosUsuario)");
         ArrayList<reHumanos> listaCargosUsuario;
         reHumanos reHumanos = new reHumanos();
@@ -935,7 +939,9 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             cn.close();
         }
         return reHumanos;
-    };
+    }
+
+    ;
     
     /**
      * **************************************************************************
@@ -949,7 +955,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
     **
     */
     @Override
-    public String asignarCargoUsuario(String codUsuario, String codPerfil, String usuario) throws Exception{
+    public String asignarCargoUsuario(String codUsuario, String codPerfil, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(asignarCargoUsuario)");
         Connection cn = null;
         String base = "elclan";
@@ -977,10 +983,11 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-15 
-     * descripcion: SQL: Actualizar Usuarios.
+     * autor: yasub huaman ramos fecha: 2022-07-15 descripcion: SQL: Actualizar
+     * Usuarios.
      *
      * @param codUsuario
      * @param usuNombre
@@ -1000,12 +1007,12 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public String actualizarUsuarios(String codUsuario, String usuNombre, String usuPaterno,String usuMaterno, String codTDoc,String numDoc, 
-            String codPais,String codDpto, String codProv, String codDist, String usuCelular,String usuCorreo, String usuDirec,String usuSucursal, String usuFNac, String usuario)
-            throws Exception{
+    public String actualizarUsuarios(String codUsuario, String usuNombre, String usuPaterno, String usuMaterno, String codTDoc, String numDoc,
+            String codPais, String codDpto, String codProv, String codDist, String usuCelular, String usuCorreo, String usuDirec, String usuSucursal, String usuFNac, String usuario)
+            throws Exception {
         System.out.println("SQLDAO SEGURIDAD(actualizarUsuarios)");
         Connection cn = null;
         String base = "elclan";
@@ -1040,9 +1047,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             String mensaje = (String) cs.getObject(18);
             respuesta = seguridad + '_' + mensaje;
             System.out.println("MySQL-> CodMensaje : " + (String) cs.getObject(17) + " Mensaje: " + (String) cs.getObject(18));
-            
-            
-            
+
         } catch (SQLException e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
         } finally {
@@ -1050,16 +1055,18 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-15 
-     * descripcion: SQL: Guardar Usuarios.
+     * autor: yasub huaman ramos fecha: 2022-07-15 descripcion: SQL: Guardar
+     * Usuarios.
+     *
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public reHumanos listaPaises() throws Exception{
+    public reHumanos listaPaises() throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listaPaises)");
         ArrayList<reHumanos> listaPaises;
         reHumanos reHumanos = new reHumanos();
@@ -1092,10 +1099,11 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-13 
-     * descripcion: SQL: Guardar Usuarios.
+     * autor: yasub huaman ramos fecha: 2022-07-13 descripcion: SQL: Guardar
+     * Usuarios.
      *
      * @param usuNombre
      * @param usuPaterno
@@ -1116,11 +1124,11 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public String guardarUsuarios(String usuNombre, String usuPaterno, String usuMaterno, String codTDoc, String numDoc, String codPais, 
-            String codDpto, String codProv, String codDist, String usuCelular, String usuCorreo, String usuDirec,String usuSucursal, String codArea, String codPerfil, 
+    public String guardarUsuarios(String usuNombre, String usuPaterno, String usuMaterno, String codTDoc, String numDoc, String codPais,
+            String codDpto, String codProv, String codDist, String usuCelular, String usuCorreo, String usuDirec, String usuSucursal, String codArea, String codPerfil,
             String usuFNac, String usuFIni, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(guardarUsuarios)");
         Connection cn = null;
@@ -1172,24 +1180,24 @@ public class reHumanosOracleDAO implements reHumanosDAO {
                     cn = OracleDAOFactory.obtenerConexion(base2);
                     ps = cn.prepareStatement(sql2);
                     ps.setInt(1, 1); // CODIGO DE PROCEDIMIENTO
-                    ps.setString(2, nombreUsuario ); // NOMBRE DE USUARIO DEL NUEVO REGISTRO
-                    ps.setString(3, usuNombre ); // NOMBRE DE USUARIO 
-                    ps.setString(4, usuPaterno ); //APPELDIDO PATERNO
-                    ps.setString(5, usuMaterno ); // APPELDIDO MATERNO
-                    ps.setInt(6, Integer.valueOf(codTDoc) ); // TIPO DE DOCUMENTO
-                    ps.setString(7, numDoc ); //NUMERO DE DOCUMENTO
-                    ps.setString(8, usuCelular ); // CELULAR
+                    ps.setString(2, nombreUsuario); // NOMBRE DE USUARIO DEL NUEVO REGISTRO
+                    ps.setString(3, usuNombre); // NOMBRE DE USUARIO 
+                    ps.setString(4, usuPaterno); //APPELDIDO PATERNO
+                    ps.setString(5, usuMaterno); // APPELDIDO MATERNO
+                    ps.setInt(6, Integer.valueOf(codTDoc)); // TIPO DE DOCUMENTO
+                    ps.setString(7, numDoc); //NUMERO DE DOCUMENTO
+                    ps.setString(8, usuCelular); // CELULAR
                     ps.setInt(9, Integer.valueOf(codPerfil)); // PERFIL DE USUARIO
-                    ps.setString(10, usuario );// USUARIO REGISTRADOR
-                    ps.setInt(11,0); // codigo de estado
+                    ps.setString(10, usuario);// USUARIO REGISTRADOR
+                    ps.setInt(11, 0); // codigo de estado
                     rs = ps.executeQuery();
                     String mensaje2 = "";
                     while (rs.next()) {
-                         mensaje2= rs.getString(1);
+                        mensaje2 = rs.getString(1);
                     }
-                    validar = mensaje2.split("-");                    
-                    System.out.println("MySQL-> CodMensaje : " + validar[0]+ " Mensaje: " + validar[1]);
-                    if(validar[0].equals("0")){
+                    validar = mensaje2.split("-");
+                    System.out.println("MySQL-> CodMensaje : " + validar[0] + " Mensaje: " + validar[1]);
+                    if (validar[0].equals("0")) {
                         respuesta = validar[0] + '_' + validar[1];
                         cn.close();
                         String sql3 = "{call PKG_REHUMANOS.USP_BORRAR_USU(?,?,?)}";
@@ -1212,7 +1220,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
                     System.out.println("EXCEPTION ADVANTAGE GUARDAR REGISTRO =>>>>>>>>>> " + e);
                 } finally {
                     cn.close();
-                }                
+                }
             }
         } catch (SQLException e) {
             System.out.println("EXCEPTION ORACLE GUARDAR REGISTRO=>>>>>>>> " + e);
@@ -1221,20 +1229,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-12 
-     * descripcion: SQL: Validar Numero de Documento.
+     * autor: yasub huaman ramos fecha: 2022-07-12 descripcion: SQL: Validar
+     * Numero de Documento.
      *
      * @param codTDoc
      * @param numDoc
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public reHumanos validarNumDoc(String codTDoc, String numDoc) throws Exception{
+    public reHumanos validarNumDoc(String codTDoc, String numDoc) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(validarNumDoc)");
         reHumanos re = null;
         Connection cn = null;
@@ -1279,9 +1287,9 @@ public class reHumanosOracleDAO implements reHumanosDAO {
                 re.setCodSucursal(rs.getString("COD_SUCURSAL"));
                 re.setDesSucursal(rs.getString("DES_SUCURSAL"));
             }
-            re.setCodMensaje((String)cs.getObject(4));
-            re.setMensaje((String)cs.getObject(5));
-            
+            re.setCodMensaje((String) cs.getObject(4));
+            re.setMensaje((String) cs.getObject(5));
+
             System.out.println("MySQL-> CodMensaje : " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (SQLException e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
@@ -1290,19 +1298,19 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return re;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-11 
-     * descripcion: SQL: Listar Tipos de documentos.
+     * autor: yasub huaman ramos fecha: 2022-07-11 descripcion: SQL: Listar
+     * Tipos de documentos.
      *
      * @param codTipoDoc
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public reHumanos listaTipoDocumento(String codTipoDoc) throws Exception{
+    public reHumanos listaTipoDocumento(String codTipoDoc) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listaTipoDocumento)");
         ArrayList<reHumanos> listaTipoDocumento;
         reHumanos reHumanos = new reHumanos();
@@ -1336,20 +1344,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-08-09
-     * descripcion: SQL: DAR BAJA USUARIO DE Sucursal.
+     * autor: yasub huaman ramos fecha: 2022-08-09 descripcion: SQL: DAR BAJA
+     * USUARIO DE Sucursal.
      *
      * @param codSucursal
      * @param codUsuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public String bajaUsuarioSucursal(String codSucursal, String codUsuario) throws Exception{
+    public String bajaUsuarioSucursal(String codSucursal, String codUsuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(bajaUsuarioSucursal)");
         Connection cn = null;
         String base = "elclan";
@@ -1376,18 +1384,19 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-08-09 
-     * descripcion: SQL: Listar Usuarios de Sucursal.
+     * autor: yasub huaman ramos fecha: 2022-08-09 descripcion: SQL: Listar
+     * Usuarios de Sucursal.
+     *
      * @param codSucursal
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public reHumanos listaUsuariosSucursal(String codSucursal) throws Exception{
+    public reHumanos listaUsuariosSucursal(String codSucursal) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(listaUsuariosSucursal)");
         ArrayList<reHumanos> listaUsuariosSucursal;
         reHumanos reHumanos = new reHumanos();
@@ -1424,21 +1433,21 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-08 
-     * descripcion: SQL: Desactivar Area en Sucursal.
+     * autor: yasub huaman ramos fecha: 2022-07-08 descripcion: SQL: Desactivar
+     * Area en Sucursal.
      *
      * @param codSucursal
      * @param codArea
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public String desactivarAreaSucursal(String codSucursal, String codArea, String usuario) throws Exception{
+    public String desactivarAreaSucursal(String codSucursal, String codArea, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(desactivarAreaSucursal)");
         Connection cn = null;
         String base = "elclan";
@@ -1466,21 +1475,21 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-08 
-     * descripcion: SQL: Agregar Area a Sucursal.
+     * autor: yasub huaman ramos fecha: 2022-07-08 descripcion: SQL: Agregar
+     * Area a Sucursal.
      *
      * @param codSucursal
      * @param codArea
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
-    @Override 
-    public String agregarAreasSucursal(String codSucursal, String codArea, String usuario) throws Exception{
+    @Override
+    public String agregarAreasSucursal(String codSucursal, String codArea, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(agregarAreasSucursal)");
         Connection cn = null;
         String base = "elclan";
@@ -1508,20 +1517,20 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-08 
-     * descripcion: SQL: Listar Areas Sucursal.
+     * autor: yasub huaman ramos fecha: 2022-07-08 descripcion: SQL: Listar
+     * Areas Sucursal.
      *
      * @param codSucursal
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
-    public reHumanos listaAreasSucursal(String codSucursal)throws Exception{
-      System.out.println("SQLDAO SEGURIDAD(listaAreasSucursal)");
+    public reHumanos listaAreasSucursal(String codSucursal) throws Exception {
+        System.out.println("SQLDAO SEGURIDAD(listaAreasSucursal)");
         ArrayList<reHumanos> listaAreasSucursal;
         reHumanos reHumanos = new reHumanos();
         Connection cn = null;
@@ -1557,9 +1566,11 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         }
         return reHumanos;
     }
+
     /**
      * **************************************************************************
-     * autor: yasub huaman ramos fecha: 2022-07-07 descripcion: SQL: Actualizar sucursal.
+     * autor: yasub huaman ramos fecha: 2022-07-07 descripcion: SQL: Actualizar
+     * sucursal.
      *
      * @param codSede
      * @param nomSede
@@ -1572,7 +1583,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param dist
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String actualizarSucursal(String codSede, String nomSede, String telefono, String email, String dpto, String prov, String dist, String direc, String usuario) throws Exception {
@@ -1619,7 +1630,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String deleteSucursal(String codSucursal, String usuario) throws Exception {
@@ -1659,7 +1670,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param codProv
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public reHumanos listaDistritos(String codDpto, String codProv) throws Exception {
@@ -1706,7 +1717,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param codDpto
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public reHumanos listaProvincias(String codDpto) throws Exception {
@@ -1751,7 +1762,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      *
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public reHumanos listaDepartamentos() throws Exception {
@@ -1803,7 +1814,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String guardarSucursal(String nombre, String telefono, String email, String dpto, String prov, String dist, String direccion, String usuario) throws Exception {
@@ -1849,7 +1860,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      *
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public reHumanos listaSucursales() throws Exception {
@@ -1896,7 +1907,9 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             cn.close();
         }
         return reHumanos;
-    };
+    }
+
+    ;
     
         /****************************************************************************
     autor:  yasub huaman ramos
@@ -1955,7 +1968,9 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             cn.close();
         }
         return respuesta;
-    };    
+    }
+
+    ;    
     
     /****************************************************************************
     autor:  yasub huaman ramos
@@ -2011,8 +2026,8 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      *
      * @param codArea
      * @return
-     * @throws java.sql.SQLException 
-    *****************************************************************************
+     * @throws java.sql.SQLException
+     * ****************************************************************************
      */
     @Override
     public reHumanos listarPerfiles(String codArea) throws SQLException {
@@ -2055,8 +2070,8 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * autor: yasub huaman ramos fecha: 27-06-2022 descripcion: SQL: lista lor
      * roles o cargos segun el area
      *
-     * @return 
-    *****************************************************************************
+     * @return
+     * ****************************************************************************
      */
     @Override
     public mantenimiento listarAllAreas() throws SQLException {
@@ -2144,7 +2159,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param codPerfil
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public mantenimiento listarModulos(String codPerfil) throws Exception {
@@ -2212,7 +2227,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * @param usuario
      * @return
      * @throws java.lang.Exception
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String actualizarPerfil(String codArea, String nomPerfil, String codPerfil, String usuario) throws Exception {
@@ -2300,7 +2315,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * **************************************************************************
      * autor: bentu condori fecha: 2021-10-25 descripcion: SQL: registra
      * perfiles o cargo segun area
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String guardarCargo(String codArea, String nomPerfil, String usuario) throws Exception {
@@ -2343,7 +2358,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * **************************************************************************
      * autor: bentu condori fecha: 16-06-2022 descripcion: SQL: retorna el
      * nombre del area segun el codigo
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String returnNomArea(String codArea) throws Exception {
@@ -2378,7 +2393,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * **************************************************************************
      * autor: bentu condori fecha: 16-06-2022 descripcion: SQL: lista lor roles
      * o cargos segun el area
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public ArrayList<reHumanos> listarPerfilesArea(String codArea) throws Exception {
@@ -2424,7 +2439,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
     /**
      * **************************************************************************
      * autor: bentu condori fecha: 2021-10-25 descripcion: SQL: desactivar area
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String borrarArea(String codArea, String usuario) throws Exception {
@@ -2450,7 +2465,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
             cs.execute();
             seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
-            respuesta = seguridad + "_"+ mensaje;
+            respuesta = seguridad + "_" + mensaje;
             System.out.println("MySQL-> CodMensaje : " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (SQLException e) {
             System.out.println("ERROR : " + e.getMessage());
@@ -2464,7 +2479,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * **************************************************************************
      * autor: bentu condori fecha: 13-06-2022 descripcion: SQL: actualiza datos
      * del area
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String actualizarArea(String codArea, String nomArea, String usuario) throws Exception {
@@ -2503,7 +2518,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * **************************************************************************
      * autor: bentu condori fecha: 2021-10-23 descripcion: SQL: registra el
      * area(registra las nuevas areas)
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public String guardarArea(String nomArea, String usuario) throws Exception {
@@ -2515,7 +2530,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         String seguridad = "";
         String respuesta = "";
         System.out.println("nomArea: " + nomArea + " USUARIO: " + usuario);
-        
+
         try {
             String sql = "{call pkg_rehumanos.USP_GUARDAR_AREAS(?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -2578,7 +2593,7 @@ public class reHumanosOracleDAO implements reHumanosDAO {
      * **************************************************************************
      * autor: bentu condori fecha: 17-03-2022 descripcion: SQL: funcionn para
      * listar menu interno segun usuario
-    *****************************************************************************
+     * ****************************************************************************
      */
     @Override
     public reHumanos Login(String codUsuario, String pass) throws Exception {
@@ -2634,5 +2649,155 @@ public class reHumanosOracleDAO implements reHumanosDAO {
         return usuarios1;
     }
 
-    
+    /* ENCUESTA PERSONAL CESADO*/
+    /**
+     * autor: Victor Rosales Arones fecha: 19/09/2022 description: ORACLE
+     * listaMotivosSalida
+     *
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public reHumanos listaMotivosSalida() throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(listaMotivosSalida)");
+
+        Connection cn = null;
+        String base = "elclan";
+        CallableStatement cs;
+        ResultSet rs;
+        reHumanos listarMotivo = new reHumanos();
+        ArrayList<reHumanos> listarMotivos = new ArrayList<reHumanos>();
+
+        try {
+            String sql = "{call PKG_COMERCIAL.USP_LISTAR_CUESTRESP(?,?,?)}";
+            cn = OracleDAOFactory.obtenerConexion(base);
+            cs = cn.prepareCall(sql);
+            cs.registerOutParameter(1, OracleTypes.CURSOR);
+            cs.registerOutParameter(2, OracleTypes.VARCHAR);
+            cs.registerOutParameter(3, OracleTypes.VARCHAR);
+            cs.execute();
+            rs = (ResultSet) cs.getObject(1);
+
+            while (rs.next()) {
+                reHumanos reHumanos = new reHumanos();
+                reHumanos.setCodEncuesta(rs.getString("COD_CUESTRESP"));
+                reHumanos.setCodCuesPreg(rs.getString("COD_CUESTPREG"));
+                reHumanos.setDesCuesPreg(rs.getString("DES_CUESTRESP"));
+
+                listarMotivos.add(reHumanos);
+
+            }
+            listarMotivo.setListarMotivos(listarMotivos);
+            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
+        } catch (Exception e) {
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
+        } finally {
+            cn.close();
+        }
+        return listarMotivo;
+    }
+
+    /**
+     * autor: Victor Rosales Arones fecha: 19/09/2022 description: ORACLE
+     * guardarEncuesta
+     *
+     * @param codUsuario
+     * @param cod_respuesta
+     * @param observ
+     * @param usuario
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public String guardarEncuesta(int codUsuario, String cod_respuesta, String observ, String usuario) throws Exception {
+        System.out.println("SQLDAO SEGURIDAD(guardarEncuesta)");
+        Connection cn = null;
+        String base = "elclan";
+        CallableStatement cs;
+        String seguridad = "";
+        String respuesta = "";
+        try {
+            String consulta = "call PKG_COMERCIAL.USP_GUARDAR_ENCUSTVEN(?,?,?,?,?,?)";
+            cn = OracleDAOFactory.obtenerConexion(base);
+            cs = cn.prepareCall(consulta);
+            cs.setInt(1, codUsuario);
+            cs.setString(2, cod_respuesta);
+            cs.setString(3, observ);
+            cs.setString(4, usuario);
+            cs.registerOutParameter(5, java.sql.Types.VARCHAR);
+            cs.registerOutParameter(6, java.sql.Types.VARCHAR);
+            cs.execute();
+
+            //Respuesta al realizar la operación
+            seguridad = (String) cs.getObject(5);
+            String mensaje = (String) cs.getObject(6);
+            respuesta = seguridad + '_' + mensaje;
+
+            System.out.println("MySQL-> CodMensaje : " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
+
+        } catch (Exception e) {
+            System.out.println("EXCEPTION =>>>>>>>> " + e);
+        } finally {
+            cn.close();
+        }
+        return respuesta;
+    }
+
+    /**
+     * autor: Victor Rosales Arones fecha: 19/09/2022 description: ORACLE
+     * listaEncuestas
+     *
+     * @param codUsuario
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public reHumanos listaEncuestas(int codUsuario) throws Exception {
+       System.out.println("ORACLEDAO SEGURIDAD(listaEncuestas)");
+        System.out.println("***********************************************************"+codUsuario);
+        Connection cn = null;
+        String base = "elclan";
+        CallableStatement cs;
+        ResultSet rs;
+        reHumanos listaEncuesta = new reHumanos();
+        ArrayList<reHumanos> listaEncuestas = new ArrayList<reHumanos>();
+
+        try {
+            String sql = "{call PKG_COMERCIAL.USP_LISTAR_ENCUESTA(?,?,?,?)}";
+            cn = OracleDAOFactory.obtenerConexion(base);
+            cs = cn.prepareCall(sql);
+            cs.setInt(1, codUsuario);
+            cs.registerOutParameter(2, OracleTypes.CURSOR);
+            cs.registerOutParameter(3, OracleTypes.VARCHAR);
+            cs.registerOutParameter(4, OracleTypes.VARCHAR);
+            cs.execute();
+            rs = (ResultSet) cs.getObject(2);
+//            System.out.println("**************************************************************1");
+            while (rs.next()) {
+                reHumanos reHumanos = new reHumanos();
+//            System.out.println("**************************************************************2");
+               reHumanos.setCodEncuesta(rs.getString("COD_ENCUESTA"));
+                reHumanos.setCodCuesPreg(rs.getString("COD_CUESTPREG"));
+                reHumanos.setDesCuesPreg(rs.getString("DES_CUESTPREG"));
+                reHumanos.setObservacion(rs.getString("OBSERVACION"));
+                reHumanos.setCodigoUsuario(rs.getString("COD_USUARIO"));
+                reHumanos.setNombreUsuario(rs.getString("USU_NOMBRE"));
+                reHumanos.setApePaternoUsuario(rs.getString("USU_APATERNO"));
+                reHumanos.setApeMaternoUsuario(rs.getString("USU_AMATERNO"));
+                reHumanos.setNumeroDOI(rs.getString("USU_NUMDOC"));
+                reHumanos.setDesCuesRes(rs.getString("RESPUESTAS"));
+
+                listaEncuestas.add(reHumanos);
+
+            }
+            listaEncuesta.setListaEncuestas(listaEncuestas);
+            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+        } catch (Exception e) {
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
+        } finally {
+            cn.close();
+        }
+        return listaEncuesta;
+    }
+
 }

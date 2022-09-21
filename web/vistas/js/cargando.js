@@ -3,14 +3,15 @@
 // SUBMÓDULO USUARIOS
 var listaPuestos;
 var tableUsuarios;
-var tablaExperiencias;
-var allUsuarios;
-var tablaCargosUsuario;
-var validarErrorUser;
-//CREAR USUARIO
-var codUser = '';
-var validarDB = false;
-var validarReniec = false;
+let tablaExperiencias;
+let allUsuarios;
+let tablaCargosUsuario;
+var tablaResultadoEncuesta;
+let validarErrorUser;
+    //CREAR USUARIO
+    var codUser='';
+    var validarDB = false;
+    var validarReniec = false;
 //    let tablaCargosUsuario;
 var validarErrorForm;
 // SUBMÓDULO SEDES
@@ -36,6 +37,7 @@ var tablaUsuariosAsistencia;
 var tablaVendedores;
 var tablaCategoria;
 var tablaConfigCategoria;
+var tablaVariables;
 
 // UNIDADES
 var tablaUnidades;

@@ -58,93 +58,100 @@ public class reHumanosServlet extends HttpServlet {
             confirBorrarPerfil(request, response);
         } else if (("actualizarPerfil").equals(param)) {
             actualizarPerfil(request, response);
-        } else if(("listarModulos").equals(param)){
+        } else if (("listarModulos").equals(param)) {
             listarModulos(request, response);
-        } else if(("listarAllAreas").equals(param)){
+        } else if (("listarAllAreas").equals(param)) {
             listarAllAreas(request, response);
-        }else if(("listarPerfiles").equals(param)){
+        } else if (("listarPerfiles").equals(param)) {
             listarPerfiles(request, response);
-        }else if(("guardarRoles").equals(param)){
+        } else if (("guardarRoles").equals(param)) {
             guardarRoles(request, response);
-        }else if(("listaSucursales").equals(param)){
+        } else if (("listaSucursales").equals(param)) {
             listaSucursales(request, response);
-        }else if(("guardarSucursal").equals(param)){
+        } else if (("guardarSucursal").equals(param)) {
             guardarSucursal(request, response);
-        }else if(("listaDepartamentos").equals(param)){
+        } else if (("listaDepartamentos").equals(param)) {
             listaDepartamentos(request, response);
-        }else if(("listaProvincias").equals(param)){
+        } else if (("listaProvincias").equals(param)) {
             listaProvincias(request, response);
-        }else if(("listaDistritos").equals(param)){
+        } else if (("listaDistritos").equals(param)) {
             listaDistritos(request, response);
-        }else if(("deleteSucursal").equals(param)){
+        } else if (("deleteSucursal").equals(param)) {
             deleteSucursal(request, response);
-        }else if(("actualizarSucursal").equals(param)){
+        } else if (("actualizarSucursal").equals(param)) {
             actualizarSucursal(request, response);
-        }else if(("listaAreasSucursal").equals(param)){
+        } else if (("listaAreasSucursal").equals(param)) {
             listaAreasSucursal(request, response);
-        }else if(("agregarAreasSucursal").equals(param)){
+        } else if (("agregarAreasSucursal").equals(param)) {
             agregarAreasSucursal(request, response);
-        }else if(("desactivarAreaSucursal").equals(param)){
+        } else if (("desactivarAreaSucursal").equals(param)) {
             desactivarAreaSucursal(request, response);
-        }else if(("listaTipoDocumento").equals(param)){
+        } else if (("listaTipoDocumento").equals(param)) {
             listaTipoDocumento(request, response);
-        }else if(("validarNumDoc").equals(param)){
+        } else if (("validarNumDoc").equals(param)) {
             validarNumDoc(request, response);
-        }else if(("guardarUsuarios").equals(param)){
+        } else if (("guardarUsuarios").equals(param)) {
             guardarUsuarios(request, response);
-        }else if(("listaPaises").equals(param)){
+        } else if (("listaPaises").equals(param)) {
             listaPaises(request, response);
-        }else if(("actualizarUsuarios").equals(param)){
+        } else if (("actualizarUsuarios").equals(param)) {
             actualizarUsuarios(request, response);
-        }else if(("asignarCargoUsuario").equals(param)){
+        } else if (("asignarCargoUsuario").equals(param)) {
             asignarCargoUsuario(request, response);
-        }else if(("listaUsuarios").equals(param)){
+        } else if (("listaUsuarios").equals(param)) {
             listaUsuarios(request, response);
-        }else if(("darBajaUsuario").equals(param)){
+        } else if (("darBajaUsuario").equals(param)) {
             darBajaUsuario(request, response);
-        }else if(("cargaAsistencia").equals(param)){
+        } else if (("cargaAsistencia").equals(param)) {
             cargaAsistencia(request, response);
-        } else if(("listarAsistenciaDiario").equals(param)){
+        } else if (("listarAsistenciaDiario").equals(param)) {
             listarAsistenciaDiario(request, response);
-        }else if(("generarReportAsistencia").equals(param)){
+        } else if (("generarReportAsistencia").equals(param)) {
             generarReportAsistencia(request, response);
-        }else if(("crearReportAsistenciaTXT").equals(param)){
+        } else if (("crearReportAsistenciaTXT").equals(param)) {
             crearReportAsistenciaTXT(request, response);
-        }else if(("justificarAsistencia").equals(param)){
+        } else if (("justificarAsistencia").equals(param)) {
             justificarAsistencia(request, response);
-        }else if(("listaMotivoBaja").equals(param)){
+        } else if (("listaMotivoBaja").equals(param)) {
             listaMotivoBaja(request, response);
-        }else if(("listaCargosUsuario").equals(param)){
+        } else if (("listaCargosUsuario").equals(param)) {
             listaCargosUsuario(request, response);
-        }else if(("desactivarUsuario").equals(param)){
+        } else if (("desactivarUsuario").equals(param)) {
             desactivarUsuario(request, response);
-        }else if(("listaCargosUsuarioDetalle").equals(param)){
+        } else if (("listaCargosUsuarioDetalle").equals(param)) {
             listaCargosUsuarioDetalle(request, response);
-        }else if(("listaPuestoLab").equals(param)){
+        } else if (("listaPuestoLab").equals(param)) {
             listaPuestoLab(request, response);
-        }else if(("listaEmpresaLab").equals(param)){
+        } else if (("listaEmpresaLab").equals(param)) {
             listaEmpresaLab(request, response);
-        }else if(("registroExperienciaLab").equals(param)){
+        } else if (("registroExperienciaLab").equals(param)) {
             registroExperienciaLab(request, response);
-        }else if(("listaExperienciasLab").equals(param)){
+        } else if (("listaExperienciasLab").equals(param)) {
             listaExperienciasLab(request, response);
-        }else if(("darBajaExperienciaLab").equals(param)){
+        } else if (("darBajaExperienciaLab").equals(param)) {
             darBajaExperienciaLab(request, response);
-        }else if(("registroSedeUsuario").equals(param)){
+        } else if (("registroSedeUsuario").equals(param)) {
             registroSedeUsuario(request, response);
-        }else if(("desactivarCargoUsuario").equals(param)){
+        } else if (("desactivarCargoUsuario").equals(param)) {
             desactivarCargoUsuario(request, response);
-        }else if(("listaUsuariosSucursal").equals(param)){
+        } else if (("listaUsuariosSucursal").equals(param)) {
             listaUsuariosSucursal(request, response);
-        }else if(("bajaUsuarioSucursal").equals(param)){
+        } else if (("bajaUsuarioSucursal").equals(param)) {
             bajaUsuarioSucursal(request, response);
-        }else if(("listarAreasSede").equals(param)){
+        } else if (("listarAreasSede").equals(param)) {
             listarAreasSede(request, response);
-        }else if(("listaJustificacion").equals(param)){
+        } else if (("listaJustificacion").equals(param)) {
             listaJustificacion(request, response);
+        } else if (("listaMotivosSalida").equals(param)) {
+            listaMotivosSalida(request, response);
+        } else if ("guardarEncuesta".equals(param)) {
+            guardarEncuesta(request, response);
+        } else if ("listaEncuestas".equals(param)) {
+            listaEncuestas(request, response);
         }
-        
+
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -154,21 +161,22 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 29-07-2022
      * @Descripcion : listar justificaciones
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaJustificacion(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("application/json");
         System.out.println("SERVLET reHumanos(listaJustificacion): ");
         String codAsistDet = request.getParameter("codAsistDet");
-        
+
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaJustificacion(codAsistDet);   
+        reHumanos lista = reHumanosService.listaJustificacion(codAsistDet);
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista);
         response.getWriter().write(json);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -178,11 +186,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-08-2022
      * @Descripcion : listar areas para sedes
-    **************************************************************************
+     * *************************************************************************
      */
-    
     public void listarAreasSede(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codSede = request.getParameter("codSede");
         PrintWriter wp = response.getWriter();
@@ -191,12 +198,12 @@ public class reHumanosServlet extends HttpServlet {
         reHumanosServices reHumanosService = new reHumanosServices();
         mantenimiento lista = reHumanosService.listarAreasSede(codSede);
         wp.print("<option></option>");
-        for (mantenimiento ma : lista.getListaAreas()) {            
-            wp.print("<option value=\""+ ma.getmCodigoArea()+ "\"> " +ma.getmDescArea() +  "</option>");
+        for (mantenimiento ma : lista.getListaAreas()) {
+            wp.print("<option value=\"" + ma.getmCodigoArea() + "\"> " + ma.getmDescArea() + "</option>");
         }
     }
-    
-        /**
+
+    /**
      * *************************************************************************
      * @param request
      * @param response
@@ -205,22 +212,24 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : REGISTRAR EXPERIENCIAS LABORADAS
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void registroSedeUsuario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
         String codUsuario = request.getParameter("codUser");
         String codSede = request.getParameter("codSede");
         PrintWriter pw = response.getWriter();
-        
+
         System.out.println("SERVLET reHumanos(registroExperienciaLab): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.registroSedeUsuario(codUsuario, codSede, usuario);
-        pw.print(seguridad);    
+        pw.print(seguridad);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -230,19 +239,20 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : DAR BAJA EXPERIENCIA DE USUARIO.
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void darBajaExperienciaLab(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codExperiencia = request.getParameter("codExperiencia");
         PrintWriter pw = response.getWriter();
-        
+
         System.out.println("SERVLET reHumanos(darBajaExperienciaLab): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.darBajaExperienciaLab(codExperiencia);
-        pw.print(seguridad);    
+        pw.print(seguridad);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -252,21 +262,22 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : lISTA DE EXPERIENCIAS LABORALES DEL USUARIO
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaExperienciasLab(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("application/json");
         System.out.println("SERVLET reHumanos(listaExperienciasLab): ");
         String codUsuario = request.getParameter("codUser");
-        
+
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaExperienciasLab(codUsuario);   
+        reHumanos lista = reHumanosService.listaExperienciasLab(codUsuario);
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaExperienciaLab());
         response.getWriter().write(json);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -276,9 +287,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : REGISTRAR EXPERIENCIAS LABORADAS
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void registroExperienciaLab(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -289,13 +301,13 @@ public class reHumanosServlet extends HttpServlet {
         String fecFin = request.getParameter("fecFin");
         String codPersona = request.getParameter("empresa");
         PrintWriter pw = response.getWriter();
-        
+
         System.out.println("SERVLET reHumanos(registroExperienciaLab): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.registroExperienciaLab(codUsuario, codPuesto, descripcion, fecIni, fecFin, codPersona, usuario);
-        pw.print(seguridad);    
+        pw.print(seguridad);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -305,20 +317,21 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : lISTA DE EMPRESAS LABORADAS
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaEmpresaLab(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("application/json");
         System.out.println("SERVLET reHumanos(listaPuestoLab): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaEmpresaLab();   
+        reHumanos lista = reHumanosService.listaEmpresaLab();
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaEmpresaLab());
         response.getWriter().write(json);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -328,23 +341,24 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : lISTA DE PUESTOS LABORADOS
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaPuestoLab(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("application/json");
         System.out.println("SERVLET reHumanos(listaPuestoLab): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaPuestoLab();   
+        reHumanos lista = reHumanosService.listaPuestoLab();
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaPuestoLab());
         response.getWriter().write(json);
     }
-    
+
 //  ====================== REPORTES DE ASISTENCIAS ============================
-    
-    /*************************************************************************
+    /**
+     * ***********************************************************************
      * @param request
      * @param response
      * @throws javax.servlet.ServletException
@@ -352,9 +366,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 25-07-2022
      * @Descripcion : REGISTRAR EXPERIENCIAS LABORADAS
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void justificarAsistencia(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -364,14 +379,14 @@ public class reHumanosServlet extends HttpServlet {
         String fecha = request.getParameter("fechas");
         String obs = request.getParameter("obs");
         PrintWriter pw = response.getWriter();
-        
+
         System.out.println("SERVLET reHumanos(justificarAsistencia): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         reHumanos seguridad = reHumanosService.justificarAsistencia(codVende, codAsistDet, fecha, usuario, obs);
-        pw.print(seguridad.getCodMensaje() + "_" + seguridad.getMensaje());    
+        pw.print(seguridad.getCodMensaje() + "_" + seguridad.getMensaje());
     }
-    
-    /** 
+
+    /**
      *************************************************************************
      * @param request
      * @param response
@@ -380,28 +395,29 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu condori mamani
      * @fecha creacion: 01-08-2022
      * @Descripcion : Genera el reporte de asistencia en formato TXT
-    ***************************************************************************/    
+     * *************************************************************************
+     */
     public void crearReportAsistenciaTXT(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         System.out.println("llega crearReportAsistenciaTXT");
         FileWriter archivo = null;
         PrintWriter esc = null;
 
-            try {
-                archivo = new FileWriter("C:\\Systems\\TMP\\archivo.txt");
-                esc = new PrintWriter(archivo);
-                esc.println("C0NTENIDO DEL ARCHIVO");
-                
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally{
-                archivo.close();
-            }
+        try {
+            archivo = new FileWriter("C:\\Systems\\TMP\\archivo.txt");
+            esc = new PrintWriter(archivo);
+            esc.println("C0NTENIDO DEL ARCHIVO");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            archivo.close();
+        }
     }
-    
+
     private static final int BYTES_DOWNLOAD = 1024;
-    
-    /** 
+
+    /**
      *************************************************************************
      * @param request
      * @param response
@@ -410,11 +426,12 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu condori mamani
      * @fecha creacion: 01-08-2022
      * @Descripcion : Genera el reporte de asistencia en formato TXT
-    ***************************************************************************/    
+     * *************************************************************************
+     */
     public void generarReportAsistencia(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-         response.setContentType("text/html;charset=UTF-8");
-        
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
         String fecha = request.getParameter("fecIni");
@@ -424,31 +441,33 @@ public class reHumanosServlet extends HttpServlet {
         String fecFin = "";
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(modalCargaAsistencia): ");
-        reHumanosServices reHumanosService = new reHumanosServices(); 
-        reHumanos guardar = reHumanosService.generarReportAsistencia(fecha,codBanco,modDeposito,codTplanilla, usuario);
-        /**********GENERAR ARCHIVO TXT *********************/
-            FileWriter archivo = null;
-            PrintWriter esc = null;
-           try {
-                archivo = new FileWriter("C:\\apache-tomcat-8.5.81\\webapps\\elclan\\vistas\\Reportes\\banbif-"+fecha+".txt");
-                esc = new PrintWriter(archivo);
-                
-                for (reHumanos re : guardar.getListReporte()) {
-                    esc.println(re.getCampReporte());
-                }   
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally{
-                archivo.close();
+        reHumanosServices reHumanosService = new reHumanosServices();
+        reHumanos guardar = reHumanosService.generarReportAsistencia(fecha, codBanco, modDeposito, codTplanilla, usuario);
+        /**
+         * ********GENERAR ARCHIVO TXT ********************
+         */
+        FileWriter archivo = null;
+        PrintWriter esc = null;
+        try {
+            archivo = new FileWriter("C:\\apache-tomcat-8.5.81\\webapps\\elclan\\vistas\\Reportes\\banbif-" + fecha + ".txt");
+            esc = new PrintWriter(archivo);
+
+            for (reHumanos re : guardar.getListReporte()) {
+                esc.println(re.getCampReporte());
             }
-       
-       String url = "http://localhost:8080/elclan/vistas/Reportes/banbif-"+fecha+".txt";
-        
-         pw.print(guardar.getCodMensaje()+'_'+guardar.getMensaje()+'_'+url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            archivo.close();
+        }
+
+        String url = "http://localhost:8080/elclan/vistas/Reportes/banbif-" + fecha + ".txt";
+
+        pw.print(guardar.getCodMensaje() + '_' + guardar.getMensaje() + '_' + url);
     }
-    
-    /** 
-    *************************************************************************
+
+    /**
+     *************************************************************************
      * @param request
      * @param response
      * @throws javax.servlet.ServletException
@@ -456,22 +475,23 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu condori mamani
      * @fecha creacion: 26-07-2022
      * @Descripcion : Lista de asistencias diarios
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listarAsistenciaDiario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listarAsistenciaDiario): ");
-        String  fecha = request.getParameter("fechaAsis");
-        String  datos = request.getParameter("nombreAsis");
-        String  estado= request.getParameter("estados");
-        System.out.println("SERVLET reHumanos(fecha): "+fecha+" datos: "+datos);
+        String fecha = request.getParameter("fechaAsis");
+        String datos = request.getParameter("nombreAsis");
+        String estado = request.getParameter("estados");
+        System.out.println("SERVLET reHumanos(fecha): " + fecha + " datos: " + datos);
         String datoPer = "";
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listarAsistenciaDiario(fecha, datos, estado);        
-        if(lista.getListaUsuarios().isEmpty()){
+        reHumanos lista = reHumanosService.listarAsistenciaDiario(fecha, datos, estado);
+        if (lista.getListaUsuarios().isEmpty()) {
             wp.print("<td class=\"bg-light px-1 text-center\" colspan=\"7\">No se encontraron datos, realice la carga de asistencia diaria</td>");
-        }else{
+        } else {
             //RESPUESTA TYPE-JSON
             ObjectMapper mapper = new ObjectMapper();
             String json = mapper.writeValueAsString(lista.getListaUsuarios());
@@ -498,7 +518,7 @@ public class reHumanosServlet extends HttpServlet {
     }
 
     public void cargaAsistencia(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -507,23 +527,21 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(modalCargaAsistencia): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.cargaAsistencia( fecha, fecFin);
+        reHumanos lista = reHumanosService.cargaAsistencia(fecha, fecFin);
         Integer cant = lista.getListaAsistencia().size();
-        System.out.println("cantidad de registros: "+ cant);
+        System.out.println("cantidad de registros: " + cant);
         if (cant >= 1) {
             for (reHumanos a : lista.getListaAsistencia()) {
                 String guar = reHumanosService.guardarAsistenciaTmp(a.getNumeroDOI(), a.getFecHoraMarcacion());
             }
             reHumanos guardar = reHumanosService.confirmarCargaAsistencia(fecha, fecFin, usuario);
-            pw.print(guardar.getCodMensaje()+'_'+guardar.getMensaje());
-        }else{
+            pw.print(guardar.getCodMensaje() + '_' + guardar.getMensaje());
+        } else {
             pw.print("0_MENSAJE: PRIMERO DEBE DESCARGAR DATOS DEL HUELLERO");
         }
-    }       
+    }
 //     FINAL DE REPORTES DE ASISTENCIAS
-    
-    
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -533,34 +551,39 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 18-07-2022
      * @Descripcion : Listar Cargos de Usuario Detalle
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaCargosUsuarioDetalle(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaUsuarios): ");
         String codUsuario = request.getParameter("codUser");
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaCargosUsuario(codUsuario);        
+        reHumanos lista = reHumanosService.listaCargosUsuario(codUsuario);
         int contar = 1;
-        String colorEstado = "bg-success text-white p-1 rounded-3";
+        
+        
+        
         for (reHumanos user : lista.getListaCargosUsuario()) {
+            String colorEstado = "bg-success text-white p-1 rounded-3";
             wp.print("<tr>"
                     + "  <td>" + contar + "</td>"
-                    + "  <td>" + user.getDescArea()+ "</td>"
-                    + "  <td>" + user.getDescPerfil()+ "</td>"
-                    + "  <td>" + user.getFinicio()+ "</td>"
-                    + "  <td>" + user.getFcese()+ "</td>"
-                    + "  <td>" + user.getMotivoCese()+ "</td>");
+                    + "  <td>" + user.getDescArea() + "</td>"
+                    + "  <td>" + user.getDescPerfil() + "</td>"
+                    + "  <td>" + user.getFinicio() + "</td>"
+                    + "  <td>" + user.getFcese() + "</td>"
+                    + "  <td>" + user.getMotivoCese() + "</td>");
+            
             if (!user.getEstado().equalsIgnoreCase("activo")) {
                 colorEstado = "bg-danger text-white p-1 rounded-3";
             }
-            wp.print("  <td><span class=\" "+colorEstado+ "\">" + user.getEstado()+ "</span></td>"
+            wp.print("  <td><span class=\" " + colorEstado + "\">" + user.getEstado() + "</span></td>"
                     + "</tr>");
             contar = contar + 1;
         }
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -570,21 +593,22 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 21-07-2022
      * @Descripcion : Desactivar Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void desactivarUsuario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
         String codUsuario = request.getParameter("codUser");
         PrintWriter pw = response.getWriter();
-        
+
         System.out.println("SERVLET reHumanos(desactivarUsuario): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.desactivarUsuario(codUsuario, usuario);
-        pw.print(seguridad);    
+        pw.print(seguridad);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -594,22 +618,23 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 19-07-2022
      * @Descripcion : Lista Motivos de Baja
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaMotivoBaja(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaPaises): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaMotivoBaja();        
+        reHumanos lista = reHumanosService.listaMotivoBaja();
         wp.print("<option></option>");
-        
-        for (reHumanos motivo : lista.getListaMotivosBaja()) {            
-            wp.print("<option value=\""+ motivo.getCodMotCese()+ "\"> " +motivo.getDesMotCese()+  "</option>");
+
+        for (reHumanos motivo : lista.getListaMotivosBaja()) {
+            wp.print("<option value=\"" + motivo.getCodMotCese() + "\"> " + motivo.getDesMotCese() + "</option>");
         }
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -619,9 +644,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 19-07-2022
      * @Descripcion : Cesar Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void darBajaUsuario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -631,9 +657,10 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(darBajaUsuario): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.darBajaUsuario(codUsuario,codMotCese,fecCese);
-        pw.print(seguridad);    
+        String seguridad = reHumanosService.darBajaUsuario(codUsuario, codMotCese, fecCese);
+        pw.print(seguridad);
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -643,45 +670,39 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 15-07-2022
      * @Descripcion : Lista Paises
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaUsuarios(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("application/json");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaUsuarios): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaUsuarios();   
+        reHumanos lista = reHumanosService.listaUsuarios();
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaUsuarios());
         response.getWriter().write(json);
-    
-    /**
-        for (reHumanos user : lista.getListaUsuarios()) {
-            wp.print("<tr>"
-                   // + "  <td>" + contar + "</td>"
-                    + "  <td>" + user.getNombreUsuario()+ "</td>"
-                    + "  <td>" + user.getApePaternoUsuario()+ "</td>"
-                    + "  <td>" + user.getApeMaternoUsuario()+ "</td>"
-                    + "  <td>" + user.getUsuario()+ "</td>"
-                    + "  <td>" + user.getDescTipoDOI()+ "</td>"
-                    + "  <td>" + user.getNumeroDOI()+ "</td>"
-                    + "  <td>" + user.getDescPerfil()+ "</td>"
-                    + "  <td>" + user.getEstado()+ "</td>"
-                    + "  <td>"
-                    + "       <a href='#' onclick=\"editarUsuario('"+user.getCodigoTipoDOI()+"','"
-                    +user.getNumeroDOI()+"');\" title='Editar Usuario'><i class='fas fa-edit editar' ></i></a>"
-                    + "       <a href='#' onclick=\"detalleUsuario('"+user.getCodigoUsuario()
-                    +"','"+user.getCodigoTipoDOI()+"','"+user.getNumeroDOI()+"');\" title='Detalle Usuario'><i class=\"fas fa-eye\"></i></a>"
-                    + "       <a href='#' onclick='asignarAreas("+user.getCodigoUsuario()+");' title='Asginar Cargo'><i class='far fa-address-card otras-opciones' ></i></a>"
-                    + "       <a href='#' onclick='"
-                            + "confirmarBajaUser("+user.getCodigoUsuario()+");'><i class='far fa-trash-alt borrar'  title='Cesar Usuario'></i></a>"
-                    + "  </td>"
-                    + "</tr>");
-            //contar = contar + 1;
-        }   ***/
+
+        /**
+         * for (reHumanos user : lista.getListaUsuarios()) { wp.print("<tr>" //
+         * + "  <td>" + contar + "</td>" + "  <td>" + user.getNombreUsuario()+
+         * "</td>" + "  <td>" + user.getApePaternoUsuario()+ "</td>" + "  <td>" +
+         * user.getApeMaternoUsuario()+ "</td>" + "  <td>" + user.getUsuario()+
+         * "</td>" + "  <td>" + user.getDescTipoDOI()+ "</td>" + "  <td>" +
+         * user.getNumeroDOI()+ "</td>" + "  <td>" + user.getDescPerfil()+
+         * "</td>" + "  <td>" + user.getEstado()+ "</td>" + "  <td>" + "       <a href='#' onclick=\"editarUsuario('"+user.getCodigoTipoDOI()+"','"
+         * +user.getNumeroDOI()+"');\" title='Editar Usuario'><i class='fas fa-edit editar'
+         * ></i></a>" + "       <a href='#' onclick=\"detalleUsuario('"+user.getCodigoUsuario()
+         * +"','"+user.getCodigoTipoDOI()+"','"+user.getNumeroDOI()+"');\" title='Detalle Usuario'><i class=\"fas fa-eye\"></i></a>"
+         * + "       <a href='#' onclick='asignarAreas("+user.getCodigoUsuario()+");' title='Asginar Cargo'><i class='far fa-address-card otras-opciones'
+         * ></i></a>" + "       <a href='#' onclick='"
+         * + "confirmarBajaUser("+user.getCodigoUsuario()+");'><i class='far fa-trash-alt borrar'  title='Cesar Usuario'></i></a>"
+         * + "  </td>" + "</tr>"); //contar = contar + 1; } **
+         */
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -691,9 +712,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 19-07-2022
      * @Descripcion : Cesar Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void desactivarCargoUsuario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -704,10 +726,10 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(darBajaUsuario): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.desactivarCargoUsuario(codUserPerfil,codUser,codPerfil,observacion,usuario);
-        pw.print(seguridad);    
+        String seguridad = reHumanosService.desactivarCargoUsuario(codUserPerfil, codUser, codPerfil, observacion, usuario);
+        pw.print(seguridad);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -717,20 +739,21 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 18-07-2022
      * @Descripcion : Listar Cargos de Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaCargosUsuario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaUsuarios): ");
         String codUsuario = request.getParameter("codUser");
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaCargosUsuario(codUsuario);  
+        reHumanos lista = reHumanosService.listaCargosUsuario(codUsuario);
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaCargosUsuario());
-        response.getWriter().write(json); 
-        
+        response.getWriter().write(json);
+
 //        int contar = 1;
 //        String colorEstado = "bg-success text-white p-1 rounded-3";
 //        for (reHumanos user : lista.getListaCargosUsuario()) {
@@ -752,7 +775,7 @@ public class reHumanosServlet extends HttpServlet {
 //            contar = contar + 1;
 //        }
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -762,9 +785,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 18-07-2022
      * @Descripcion : Asignar Cargo Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void asignarCargoUsuario(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -773,9 +797,10 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(asignarCargoUsuario): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.asignarCargoUsuario(codUsuario,codCargo,usuario);
+        String seguridad = reHumanosService.asignarCargoUsuario(codUsuario, codCargo, usuario);
         pw.print(seguridad);
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -785,9 +810,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 15-07-2022
      * @Descripcion : Actualizar Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void actualizarUsuarios(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -809,10 +835,11 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(actualizarUsuarios): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.actualizarUsuarios(usuCod,usuNombre, usuPaterno, usuMaterno, codTDoc, numDoc, codPais, 
-            codDpto, codProv, codDist, usuCelular, usuCorreo, usuDirec, usuSucursal,usuFNac, usuario);
+        String seguridad = reHumanosService.actualizarUsuarios(usuCod, usuNombre, usuPaterno, usuMaterno, codTDoc, numDoc, codPais,
+                codDpto, codProv, codDist, usuCelular, usuCorreo, usuDirec, usuSucursal, usuFNac, usuario);
         pw.print(seguridad);
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -822,21 +849,23 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 15-07-2022
      * @Descripcion : Lista Paises
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaPaises(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaPaises): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaPaises();        
+        reHumanos lista = reHumanosService.listaPaises();
         wp.print("<option></option>");
-        
-        for (reHumanos pais : lista.getListaPaises()) {            
-            wp.print("<option value=\""+ pais.getCodigoPais()+ "\"> " +pais.getDescPais()+  "</option>");
+
+        for (reHumanos pais : lista.getListaPaises()) {
+            wp.print("<option value=\"" + pais.getCodigoPais() + "\"> " + pais.getDescPais() + "</option>");
         }
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -846,9 +875,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 11-07-2022
      * @Descripcion : Guardar Usuario
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void guardarUsuarios(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -872,11 +902,12 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(guardarUsuarios): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.guardarUsuarios(usuNombre, usuPaterno, usuMaterno, codTDoc, numDoc, codPais, 
-            codDpto, codProv, codDist, usuCelular, usuCorreo, usuDirec, usuSucursal, codArea, codPerfil, 
-            usuFNac, usuFIni, usuario);
+        String seguridad = reHumanosService.guardarUsuarios(usuNombre, usuPaterno, usuMaterno, codTDoc, numDoc, codPais,
+                codDpto, codProv, codDist, usuCelular, usuCorreo, usuDirec, usuSucursal, codArea, codPerfil,
+                usuFNac, usuFIni, usuario);
         pw.print(seguridad);
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -886,46 +917,51 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 11-07-2022
      * @Descripcion : eliminar sucursal
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void validarNumDoc(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("application/json");
         String codTDoc = request.getParameter("codTDoc");
         String numDoc = request.getParameter("numDoc");
         System.out.println("SERVLET reHumanos(validarNumDoc): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         reHumanos datosUsuario = reHumanosService.validarNumDoc(codTDoc, numDoc);
+
         //RESPUESTA TYPE-JSON
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(datosUsuario);
         response.getWriter().write(json);
-        
+
     }
+
     /**
      * *************************************************************************
      * @param request
-     * @param response 
+     * @param response
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      * @Autor : yasub huaman ramos
      * @fecha creacion: 11-07-2022
      * @Descripcion : eliminar sucursal
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaTipoDocumento(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codTipoDoc = request.getParameter("codTipoDoc");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaTipoDocumento): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaTipoDocumento(codTipoDoc);        
+        reHumanos lista = reHumanosService.listaTipoDocumento(codTipoDoc);
 //        wp.print("<option>--seleccionar --</option>");
-        
+
         for (reHumanos tdoc : lista.getListaTipoDocumento()) {
-                wp.print("<option value=\""+ tdoc.getCodMensaje()+ "\"> " +tdoc.getMensaje()+ "</option>");
+            wp.print("<option value=\"" + tdoc.getCodMensaje() + "\"> " + tdoc.getMensaje() + "</option>");
         }
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -935,11 +971,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 09-08-2022
      * @Descripcion : DAR BAJA USUARIO DE Sucursal
-    **************************************************************************
+     * *************************************************************************
      */
-    
     public void bajaUsuarioSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -949,33 +984,34 @@ public class reHumanosServlet extends HttpServlet {
         System.out.println("SERVLET reHumanos(bajaUsuarioSucursal): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.bajaUsuarioSucursal(codSucursal, codUsuario);
-        pw.print(seguridad);        
+        pw.print(seguridad);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
-     * @param response 
+     * @param response
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      * @Autor : yasub huaman ramos
      * @fecha creacion: 09-08-2022
      * @Descripcion : Listar Usuarios de Sucursal
-    ***************************************************************************/
+     * *************************************************************************
+     */
     public void listaUsuariosSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codSucursal = request.getParameter("codSucursal");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaUsuariosSucursal): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaUsuariosSucursal(codSucursal);        
+        reHumanos lista = reHumanosService.listaUsuariosSucursal(codSucursal);
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaUsuariosSucursal());
         response.getWriter().write(json);
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -985,10 +1021,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 07-07-2022
      * @Descripcion : eliminar sucursal
-    **************************************************************************
+     * *************************************************************************
      */
     public void desactivarAreaSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -998,8 +1034,9 @@ public class reHumanosServlet extends HttpServlet {
         System.out.println("SERVLET reHumanos(desactivarAreaSucursal): ");
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.desactivarAreaSucursal(codSucursal, codArea, usuario);
-        pw.print(seguridad);        
+        pw.print(seguridad);
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -1009,10 +1046,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 07-07-2022
      * @Descripcion : eliminar sucursal
-    **************************************************************************
+     * *************************************************************************
      */
     public void agregarAreasSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -1020,14 +1057,14 @@ public class reHumanosServlet extends HttpServlet {
         String codArea = request.getParameter("codArea");
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(agregarAreasSucursal): ");
-        
+
         reHumanosServices reHumanosService = new reHumanosServices();
-        
-        String seguridad = reHumanosService.agregarAreasSucursal(codSucursal,codArea,usuario);
+
+        String seguridad = reHumanosService.agregarAreasSucursal(codSucursal, codArea, usuario);
         pw.print(seguridad);
-        
-    }    
-    
+
+    }
+
     /**
      * *************************************************************************
      * @param request
@@ -1037,10 +1074,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : listar de modulos y sub modulos
-    ****************************************************************************
+     * ***************************************************************************
      */
     public void listaAreasSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         int contar = 1;
@@ -1053,7 +1090,7 @@ public class reHumanosServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaAreasSucursal());
         response.getWriter().write(json);
-        
+
 //        for (reHumanos area : lista.getListaAreasSucursal()) {
 //            wp.print("<tr>"
 //                   // + "  <td>" + contar + "</td>"
@@ -1069,7 +1106,8 @@ public class reHumanosServlet extends HttpServlet {
 //                    + "</tr>");
 //            //contar = contar + 1;
 //        }
-    }    
+    }
+
     /**
      * *************************************************************************
      * @param request
@@ -1079,10 +1117,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 07-07-2022
      * @Descripcion : eliminar sucursal
-    **************************************************************************
+     * *************************************************************************
      */
     public void actualizarSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -1096,13 +1134,14 @@ public class reHumanosServlet extends HttpServlet {
         String direc = request.getParameter("direc");
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(actualizarSucursal): ");
-        
+
         reHumanosServices reHumanosService = new reHumanosServices();
-        
-        String seguridad = reHumanosService.actualizarSucursal(codSede,nomSede,telefono,email,dpto,prov,dist,direc, usuario);
+
+        String seguridad = reHumanosService.actualizarSucursal(codSede, nomSede, telefono, email, dpto, prov, dist, direc, usuario);
         pw.print(seguridad);
-        
+
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -1112,10 +1151,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 07-07-2022
      * @Descripcion : eliminar sucursal
-    **************************************************************************
+     * *************************************************************************
      */
     public void deleteSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
         String usuario = (String) session.getAttribute("usuario");
@@ -1123,10 +1162,11 @@ public class reHumanosServlet extends HttpServlet {
         PrintWriter pw = response.getWriter();
         System.out.println("SERVLET reHumanos(deleteSucursal): ");
         reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.deleteSucursal(codSucursal,usuario);
+        String seguridad = reHumanosService.deleteSucursal(codSucursal, usuario);
         pw.print(seguridad);
-        
-    } 
+
+    }
+
     /**
      * *************************************************************************
      * @param request
@@ -1136,10 +1176,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : lista de provincias
-    **************************************************************************
+     * *************************************************************************
      */
-    public void listaDistritos (HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+    public void listaDistritos(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codDpto = request.getParameter("codDpto");
         String codProv = request.getParameter("codProv");
@@ -1147,13 +1187,14 @@ public class reHumanosServlet extends HttpServlet {
         System.out.println("SERVLET reHumanos(listaDistritos): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaDistritos(codDpto, codProv);        
+        reHumanos lista = reHumanosService.listaDistritos(codDpto, codProv);
         wp.print("<option></option>");
-        
-        for (reHumanos dis : lista.getListaDistritos()) {            
-            wp.print("<option value=\""+ dis.getCodigoDistrito()+ "\"> " +dis.getDescDistrito().toUpperCase()+  "</option>");
+
+        for (reHumanos dis : lista.getListaDistritos()) {
+            wp.print("<option value=\"" + dis.getCodigoDistrito() + "\"> " + dis.getDescDistrito().toUpperCase() + "</option>");
         }
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -1163,23 +1204,24 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : lista de provincias
-    **************************************************************************
+     * *************************************************************************
      */
-    public void listaProvincias (HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+    public void listaProvincias(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codDpto = request.getParameter("codDpto");
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listaProvincias): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
-        reHumanos lista = reHumanosService.listaProvincias(codDpto);        
+        reHumanos lista = reHumanosService.listaProvincias(codDpto);
         wp.print("<option></option>");
-        
-        for (reHumanos pro : lista.getListaProvincias()) {            
-            wp.print("<option value=\""+ pro.getCodigoProvincia()+ "\"> " +pro.getDescProvincia().toUpperCase()+  "</option>");
+
+        for (reHumanos pro : lista.getListaProvincias()) {
+            wp.print("<option value=\"" + pro.getCodigoProvincia() + "\"> " + pro.getDescProvincia().toUpperCase() + "</option>");
         }
     }
+
     /**
      * *************************************************************************
      * @param request
@@ -1189,10 +1231,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : lista de departamentos
-    **************************************************************************
+     * *************************************************************************
      */
-    public void listaDepartamentos (HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+    public void listaDepartamentos(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codArea = request.getParameter("codArea");
         PrintWriter wp = response.getWriter();
@@ -1201,11 +1243,12 @@ public class reHumanosServlet extends HttpServlet {
         reHumanosServices reHumanosService = new reHumanosServices();
         reHumanos lista = reHumanosService.listaDepartamentos();
         wp.print("<option></option>");
-        for (reHumanos de : lista.getListaDepartamentos()) {            
-            wp.print("<option value=\""+ de.getCodigoDepartamento()+ "\"> " +de.getDescDepartamento()+  "</option>");
+        for (reHumanos de : lista.getListaDepartamentos()) {
+            wp.print("<option value=\"" + de.getCodigoDepartamento() + "\"> " + de.getDescDepartamento() + "</option>");
         }
     }
-     /**
+
+    /**
      * *************************************************************************
      * @param request
      * @param response
@@ -1214,14 +1257,14 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : listar de modulos y sub modulos
-    ****************************************************************************
+     * ***************************************************************************
      */
     public void guardarSucursal(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session_actual = request.getSession(true);
         String usuario = (String) session_actual.getAttribute("usuario");
-        
+
         String nombre = request.getParameter("nombre");
         String telefono = request.getParameter("telefono");
         String email = request.getParameter("email");
@@ -1229,16 +1272,17 @@ public class reHumanosServlet extends HttpServlet {
         String prov = request.getParameter("prov");
         String dist = request.getParameter("dist");
         String direccion = request.getParameter("direccion");
-        
+
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(guardarSucursal): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
         String seguridad = reHumanosService.guardarSucursal(nombre, telefono, email, dpto, prov, dist, direccion, usuario);
-        
+
         wp.print(seguridad);
     }
-     /**
+
+    /**
      * *************************************************************************
      * @param request
      * @param response
@@ -1247,10 +1291,10 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : listar de modulos y sub modulos
-    ****************************************************************************
+     * ***************************************************************************
      */
     public void listaSucursales(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter wp = response.getWriter();
         int contar = 1;
@@ -1263,7 +1307,7 @@ public class reHumanosServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(lista.getListaSucursales());
         response.getWriter().write(json);
-        
+
 //        String colorEstado = "bg-success text-white p-1 rounded-3";
 //        for (reHumanos sucu : lista.getListaSucursales()) {
 //            wp.print("<tr>"
@@ -1289,39 +1333,7 @@ public class reHumanosServlet extends HttpServlet {
 //            //contar = contar + 1;
 //        }
     }
-    
-     /**
-     * *************************************************************************
-     * @param request
-     * @param response
-     * @throws javax.servlet.ServletException
-     * @throws java.io.IOException
-     * @Autor : yasub huaman ramos
-     * @fecha creacion: 30-06-2022
-     * @Descripcion : listar de modulos y sub modulos
-    ****************************************************************************
-     */
-    public void guardarRoles(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        response.setContentType("text/html;charset=UTF-8");
-        HttpSession session_actual = request.getSession(true);
-        String usuario = (String) session_actual.getAttribute("usuario");
-        
-        String codPerfil = request.getParameter("codPerfil");
-        String codArea = request.getParameter("codArea");
-        String codModulos = request.getParameter("codMod");
-        String codSub = request.getParameter("codSub");
-        String codPer = request.getParameter("codPer");
-        
-        PrintWriter wp = response.getWriter();
-        System.out.println("SERVLET reHumanos(guardarRoles): ");
 
-        reHumanosServices reHumanosService = new reHumanosServices();
-        String seguridad = reHumanosService.guardarRoles(codPerfil, codArea, codModulos, codSub, codPer,usuario);
-        
-        wp.print(seguridad);
-    }
-    
     /**
      * *************************************************************************
      * @param request
@@ -1331,10 +1343,42 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 30-06-2022
      * @Descripcion : listar de modulos y sub modulos
-    **************************************************************************
+     * ***************************************************************************
+     */
+    public void guardarRoles(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session_actual = request.getSession(true);
+        String usuario = (String) session_actual.getAttribute("usuario");
+
+        String codPerfil = request.getParameter("codPerfil");
+        String codArea = request.getParameter("codArea");
+        String codModulos = request.getParameter("codMod");
+        String codSub = request.getParameter("codSub");
+        String codPer = request.getParameter("codPer");
+
+        PrintWriter wp = response.getWriter();
+        System.out.println("SERVLET reHumanos(guardarRoles): ");
+
+        reHumanosServices reHumanosService = new reHumanosServices();
+        String seguridad = reHumanosService.guardarRoles(codPerfil, codArea, codModulos, codSub, codPer, usuario);
+
+        wp.print(seguridad);
+    }
+
+    /**
+     * *************************************************************************
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
+     * @Autor : yasub huaman ramos
+     * @fecha creacion: 30-06-2022
+     * @Descripcion : listar de modulos y sub modulos
+     * *************************************************************************
      */
     public void listarPerfiles(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String codArea = request.getParameter("codArea");
         PrintWriter wp = response.getWriter();
@@ -1343,11 +1387,11 @@ public class reHumanosServlet extends HttpServlet {
         reHumanosServices reHumanosService = new reHumanosServices();
         reHumanos lista = reHumanosService.listarPerfiles(codArea);
         wp.print("<option></option>");
-        for (reHumanos ma : lista.getListaPerfiles()) {            
-            wp.print("<option value=\""+ ma.getCodigoPerfil()+ "\"> " +ma.getDescPerfil()+  "</option>");
+        for (reHumanos ma : lista.getListaPerfiles()) {
+            wp.print("<option value=\"" + ma.getCodigoPerfil() + "\"> " + ma.getDescPerfil() + "</option>");
         }
     }
-    
+
     /**
      * *************************************************************************
      * @param request
@@ -1357,127 +1401,126 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 24-06-2022
      * @Descripcion : listar de modulos y sub modulos
-    **************************************************************************
+     * *************************************************************************
      */
-    
     public void listarAllAreas(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         PrintWriter wp = response.getWriter();
         System.out.println("SERVLET reHumanos(listarAllAreas): ");
 
         reHumanosServices reHumanosService = new reHumanosServices();
         mantenimiento lista = reHumanosService.listarAllAreas();
         wp.print("<option></option>");
-        for (mantenimiento ma : lista.getListaAreas()) {            
-            wp.print("<option value=\""+ ma.getmCodigoArea()+ "\"> " +ma.getmDescArea() +  "</option>");
+        for (mantenimiento ma : lista.getListaAreas()) {
+            wp.print("<option value=\"" + ma.getmCodigoArea() + "\"> " + ma.getmDescArea() + "</option>");
         }
     }
-    
+
     protected void listarModulos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         System.out.println("SERVLET mantenimiento(listarMenu): ");
-        
+
         String codPerfil = request.getParameter("codPerfil");
-        
+
         reHumanosServices reHumanosService = new reHumanosServices();
         mantenimiento lista = reHumanosService.listarModulos(codPerfil);
         String activo = "";
         String inactivo = "";
-        if(lista.getListaModulos().isEmpty()){
+        if (lista.getListaModulos().isEmpty()) {
             out.print("<p>No Tiene modulos asignados</p>");
-        }else{
+        } else {
             for (mantenimiento ma : lista.getListaModulos()) {
-                
+
                 System.out.println("-------Modulo: " + ma.getDesModulo() + " - " + ma.getCanSubModulo() + "------");
                 out.print("<div class=\"card-body bg-white pt-0 pb-2 px-0\">");
                 out.print("<div class=\"d-flex gap-2 mb-0 bg-white\">"
                         + " <div class=\"col-md-4\">"
                         + "     <label for=\"exampleInputPassword1\">Denominación*</label>"
-                        + "             <input disabled type=\"text\" value=\""+ ma.getDesModulo() + "\" class=\"form-control\" id=\"exampleText\">"
-                                + "     </div>");
+                        + "             <input disabled type=\"text\" value=\"" + ma.getDesModulo() + "\" class=\"form-control\" id=\"exampleText\">"
+                        + "     </div>");
                 out.print("<div class=\"col-md-3\">"
-                + "<form id=\"exampleform\">"
-                + "<label for=\"exampleInputPassword1\">Estado*</label>"
-                + "<div>");
+                        + "<form id=\"exampleform\">"
+                        + "<label for=\"exampleInputPassword1\">Estado*</label>"
+                        + "<div>");
                 if (ma.getSituCheck().equals("1")) {
                     activo = "checked";
                 } else {
                     inactivo = "checked";
                 }
-                
+
                 out.print("         <div class=\"form-check col-sm-5 form-check-inline\">"
                         + "             <input class=\"form-check-input\" type=\"radio\" "
-                        + "                 id=\"check"+ma.getCodModulo()+"\"  "
-                                + "                     onclick=\"addPermiso("+ma.getCodModulo()+")\""
-                                        + "                     value=\""+ma.getCodModulo()+"\" name=\"checkModulos\" "
-                                                + "             "+ activo +"> "
-                                                        +               "<label class=\"form-check-label\" for=\"gridRadios1\">"
-                                                        + "                 Activo"
-                                                        + "             </label>"
-                                                        + "         </div>");
+                        + "                 id=\"check" + ma.getCodModulo() + "\"  "
+                        + "                     onclick=\"addPermiso(" + ma.getCodModulo() + ")\""
+                        + "                     value=\"" + ma.getCodModulo() + "\" name=\"checkModulos\" "
+                        + "             " + activo + "> "
+                        + "<label class=\"form-check-label\" for=\"gridRadios1\">"
+                        + "                 Activo"
+                        + "             </label>"
+                        + "         </div>");
                 out.print("         <div class=\"form-check col-sm-5 form-check-inline\">"
                         + "             <input class=\"form-check-input\" type=\"radio\" name=\"checkModulos\" "
-                        + "                 id=\"inCheck"+ma.getCodModulo()+"\" "
-                                + "             value=\"\" onclick=\"removePermiso("+ma.getCodModulo()+")\""
-                                        + "             "+ inactivo +">"
-                                                + "             <label class=\"form-check-label\" for=\"gridRadios1\">"
-                                                + "                 Inactivo"
-                                                + "             </label>"
-                                                + "         </div>"
-                                                + "         </div>"
-                                                + "      </form>"
-                                                + "</div>            ");
+                        + "                 id=\"inCheck" + ma.getCodModulo() + "\" "
+                        + "             value=\"\" onclick=\"removePermiso(" + ma.getCodModulo() + ")\""
+                        + "             " + inactivo + ">"
+                        + "             <label class=\"form-check-label\" for=\"gridRadios1\">"
+                        + "                 Inactivo"
+                        + "             </label>"
+                        + "         </div>"
+                        + "         </div>"
+                        + "      </form>"
+                        + "</div>            ");
                 out.print("<div class=\"col-md-4 flex-grow-1\">"
                         + "<label for=\"exampleInputPassword1\">Permisos Asignados*</label> "
                         + "<div class=\" p-1 rounded\" style=\"background: #d9d9d9;\" onclick=\"desplegarSubModulos('submodulo" + ma.getCodModulo() + "');\">\n"
-                                                  + "          <div class=\"bg-light text-secondary \">\n"
-                                                  + "             <p class=\"m-0\" role=\"button\">Privilegios</p>\n"
-                                                  + "          </div>\n"
-                                                  + "     </div>\n"
-                                                  + " </div>\n"
-                                                  +"</div>       ");
+                        + "          <div class=\"bg-light text-secondary \">\n"
+                        + "             <p class=\"m-0\" role=\"button\">Privilegios</p>\n"
+                        + "          </div>\n"
+                        + "     </div>\n"
+                        + " </div>\n"
+                        + "</div>       ");
                 if (ma.getCanSubModulo().equals("0")) {
-                    System.out.println("MODULO: " + ma.getDesModulo()+ " ; " + "CANTIDA SUBMODULOS: " + ma.getCanSubModulo());
+                    System.out.println("MODULO: " + ma.getDesModulo() + " ; " + "CANTIDA SUBMODULOS: " + ma.getCanSubModulo());
                     out.print(
-                            "   <div class=\"text-white p-2 hide gap-1 rounded\" style=\"background: #d9d9d9;\" id=\"submodulo"+ma.getCodModulo()+"\">"
-                                    +           "no se encontraron submodulos"
-                                    + " </div>\n"
-                                    +"</div>");
+                            "   <div class=\"text-white p-2 hide gap-1 rounded\" style=\"background: #d9d9d9;\" id=\"submodulo" + ma.getCodModulo() + "\">"
+                            + "no se encontraron submodulos"
+                            + " </div>\n"
+                            + "</div>");
                 } else {
-                    System.out.println("MODULO: " + ma.getDesModulo()+ " ; " + "CANTIDA SUBMODULOS: " + ma.getCanSubModulo());
+                    System.out.println("MODULO: " + ma.getDesModulo() + " ; " + "CANTIDA SUBMODULOS: " + ma.getCanSubModulo());
                     ArrayList<mantenimiento> lisSub = reHumanosService.listarSubModulos(ma.getCodModulo(), codPerfil);
-                    out.print("  <div class=\"hide p-2 rounded\" style=\"background: #d9d9d9;\" id=\"submodulo"+ ma.getCodModulo()+"\">");
+                    out.print("  <div class=\"hide p-2 rounded\" style=\"background: #d9d9d9;\" id=\"submodulo" + ma.getCodModulo() + "\">");
                     for (mantenimiento su : lisSub) {
                         out.print("<div class=\"bg-white rounded text-white gap-1 form-check-inline\">"
                                 + "     <div class=\"rounded d-flex flex-column w-auto bg-white p-1\">"
                                 + "         <div class=\"d-flex gap-1\">");
-                                String activoSub = "";
-                                if (su.getSituCheck().equals("1")) {
-                                    activoSub = "checked";
-                                }
-                                out.print("   <input class=\"form-check-input checkSubModul\" type=\"checkbox\" value=\"" + su.getCodSubModulo()+"\" "
-                                        + "        name=\"checkSubModul["+ma.getCodModulo()+"]\" "+activoSub+" >"
-                                        + "             <p class=\"fw-bold text-success m-0\">" + su.getDesSubModulo() + " </p>\n "
-                                                + "         </div>"
-                                                + "              <div class=\"d-flex gap-3 w-auto\">\n");
+                        String activoSub = "";
+                        if (su.getSituCheck().equals("1")) {
+                            activoSub = "checked";
+                        }
+                        out.print("   <input class=\"form-check-input checkSubModul\" type=\"checkbox\" value=\"" + su.getCodSubModulo() + "\" "
+                                + "        name=\"checkSubModul[" + ma.getCodModulo() + "]\" " + activoSub + " >"
+                                + "             <p class=\"fw-bold text-success m-0\">" + su.getDesSubModulo() + " </p>\n "
+                                + "         </div>"
+                                + "              <div class=\"d-flex gap-3 w-auto\">\n");
                         mantenimiento lisSubOpci = reHumanosService.ListarPermisos(codPerfil, su.getCodSubModulo());
                         for (mantenimiento opc : lisSubOpci.getListaSubModulosOpc()) {
                             String activoPerm = "";
-                                if (opc.getSituCheck().equals("1")) {
-                                    activoPerm = "checked";
-                                }
+                            if (opc.getSituCheck().equals("1")) {
+                                activoPerm = "checked";
+                            }
                             out.print("           <div class=\"form-check d-flex gap-2\">"
-                                    + "                    <input class=\"form-check-input checkPermiso\" type=\"checkbox\" value=\""+opc.getCodSubModuloOpc()+"\" "
-                                    + "                         id=\"flexCheckDefault\" name=\"checkPermiso["+ma.getCodModulo()+"]\" "+activoPerm+">"
+                                    + "                    <input class=\"form-check-input checkPermiso\" type=\"checkbox\" value=\"" + opc.getCodSubModuloOpc() + "\" "
+                                    + "                         id=\"flexCheckDefault\" name=\"checkPermiso[" + ma.getCodModulo() + "]\" " + activoPerm + ">"
                                     + "                         <p class=\"text-info m-0\" >"
-                                    + "                                "+opc.getDesSubModuloOpc()
+                                    + "                                " + opc.getDesSubModuloOpc()
                                     + "                         </p>"
                                     + "           </div>");
-                            
+
                         }
                         out.print("              </div>"
                                 + "     </div>");
@@ -1486,7 +1529,7 @@ public class reHumanosServlet extends HttpServlet {
                     out.print("  </div>");
                     out.print("</div>");
                 }
-                
+
             }
         }
     }
@@ -1500,7 +1543,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 23-06-2022
      * @Descripcion : actulizar los cargos segun el area
-    **************************************************************************
+     * *************************************************************************
      */
     protected void actualizarPerfil(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1518,7 +1561,7 @@ public class reHumanosServlet extends HttpServlet {
 
         reHumanosServices reHumanosService = new reHumanosServices();
         String resultado = reHumanosService.actualizarPerfil(codArea, nomPerf, codPerf, Usuario);
-        
+
         wp.print(resultado);
     }
 
@@ -1531,7 +1574,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : yasub huaman ramos
      * @fecha creacion: 22-06-2022
      * @Descripcion : Dar de baje el rol o cargo
-    **************************************************************************
+     * *************************************************************************
      */
     protected void confirBorrarPerfil(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1556,7 +1599,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 16-06-2022
      * @Descripcion : guarda los cargos segun el area
-    **************************************************************************
+     * *************************************************************************
      */
     protected void guardarCargo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1585,7 +1628,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 16-06-2022
      * @Descripcion : retorna el nombre del area segun el codigo
-    **************************************************************************
+     * *************************************************************************
      */
     protected void returnNomArea(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1595,7 +1638,7 @@ public class reHumanosServlet extends HttpServlet {
         int contar = 1;
 
         System.out.println("SERVLET reHumanos(returnNomArea): " + codArea);
-        
+
         reHumanosServices reHumanosService = new reHumanosServices();
         String lista = reHumanosService.returnNomArea(codArea);
         wp.print("LISTA DE CARGOS - " + lista);
@@ -1610,7 +1653,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 16-06-2022
      * @Descripcion : lista perfiles segun el area
-    **************************************************************************
+     * *************************************************************************
      */
     protected void listarPerfilesArea(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1632,7 +1675,7 @@ public class reHumanosServlet extends HttpServlet {
             if (!r.getDesEstado().equalsIgnoreCase("activo")) {
                 colorEstado = "bg-danger text-white p-1 rounded-3";
             }
-            wp.print( "  <td><span class=\" " + r.getDesEstado() +" "+ colorEstado + "\">" + r.getDesEstado() + "</span></td>"
+            wp.print("  <td><span class=\" " + r.getDesEstado() + " " + colorEstado + "\">" + r.getDesEstado() + "</span></td>"
                     + "  <td>" + r.getCodigoUsuario() + "</td>"
                     + "  <td>" + r.getFeCreacion() + "</td>"
                     + "  <td>"
@@ -1653,7 +1696,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 13-06-2022
      * @Descripcion : desactivar area
-    **************************************************************************
+     * *************************************************************************
      */
     protected void borrarArea(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1679,7 +1722,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 13-06-2022
      * @Descripcion : actualizar datos del area
-    **************************************************************************
+     * *************************************************************************
      */
     protected void actualizarArea(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1703,7 +1746,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 09-06-2022
      * @Descripcion : guarda las areas
-    **************************************************************************
+     * *************************************************************************
      */
     protected void guardarArea(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1724,7 +1767,7 @@ public class reHumanosServlet extends HttpServlet {
      * @Autor : Bentu Condori Mamani
      * @fecha creacion: 2021-10-23
      * @Descripcion : lista las Áreas
-    **************************************************************************
+     * *************************************************************************
      */
     protected void listarAreas(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -1758,7 +1801,7 @@ public class reHumanosServlet extends HttpServlet {
      * ******************************************************************************
      * autor: bentu condori fecha: 26-05-2022 descripcion: funcion par el logins
      * del sistema
-    ******************************************************************************
+     * *****************************************************************************
      */
     private void Login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("SERVLET USUARIO(Login)");
@@ -1797,4 +1840,56 @@ public class reHumanosServlet extends HttpServlet {
         pw.print("<input type='hidden' name='inicio' id='inicio' value='" + seguridad.getCodMensaje() + "'>");
     }
 
+    private void listaMotivosSalida(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
+        System.out.println("SERVLET reHumanos(listaMotivosSalida): ");
+
+        reHumanosServices reHumanosServices = new reHumanosServices();
+        reHumanos lista = reHumanosServices.listaMotivosSalida();
+
+        PrintWriter wp = response.getWriter();
+        // wp.print("<optgroup label=\"MOTIVOS BASICOS\">");
+        for (reHumanos de : lista.getListarMotivos()) {
+            wp.print("<option  value=\"" + de.getCodEncuesta() + "\"> " + de.getDesCuesPreg() + "</option>");
+        }
+        //wp.print(" </optgroup>");
+    }
+
+    private void guardarEncuesta(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
+        System.out.println("SERVLET reHumanos(guardarEncuesta): ");
+
+        PrintWriter wp = response.getWriter();
+        HttpSession session_actual = request.getSession(true);
+        String Usuario = (String) session_actual.getAttribute("usuario");
+
+        int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+        String codrespt = request.getParameter("codrespt");
+        String encObservaci = request.getParameter("encObservaci");
+
+        reHumanosServices reHumanosService = new reHumanosServices();
+        String lista = reHumanosService.guardarEncuesta(codUsuario, codrespt + ",", encObservaci, Usuario);
+        wp.print(lista);
+
+    }
+
+    public void listaEncuestas(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+//        response.setContentType("application/json");
+        response.setContentType("text/html;charset=UTF-8");
+        
+        System.out.println("SERVLET reHumanos(listaEncuestas): ");
+
+        int codUsuario = Integer.parseInt(request.getParameter("codUsuario"));
+
+        reHumanosServices reHumanosService = new reHumanosServices();
+        reHumanos lista = reHumanosService.listaEncuestas(codUsuario);
+        
+       //RESPUESTA TYPE-JSON
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(lista.getListaEncuestas());
+        response.getWriter().write(json);
+    }
 }

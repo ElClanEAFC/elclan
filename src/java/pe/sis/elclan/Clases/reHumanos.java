@@ -5,7 +5,7 @@
  */
 package pe.sis.elclan.Clases;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 
 /**
  *
@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @ 20/08/2021
  */
 public class reHumanos {
+
     private String codigoUsuario;
     private String Usuario;
     private String nombreUsuario;
@@ -40,33 +41,32 @@ public class reHumanos {
     private String finicio;
     private String fcese;
     private String motivoCese;
-    
+
     private String contador;
     private String contadorUsuario;
     private String icono;
     private String codMensaje;
     private String mensaje;
-    
 
     private int cantUsu;
     private String usuDireccion;
     private String fechaNacimiento;
     private String desEstado;
-    
+
     private String codMotCese;
     private String desMotCese;
     private String feCreacion;
     private String codUsuPerfil;
     private String codProfesion;
     private String desProfesion;
-    
+
     private String codExperiencia;
     private String codPuesto;
     private String desPuesto;
     private String codEmpresa;
     private String desEmpresa;
     private String tiempoLab;
-    
+
     private String codSucursal;
     private String desSucursal;
     private String telefono;
@@ -76,7 +76,7 @@ public class reHumanos {
     private String estado;
     private String tipoSucursal;
     private String opciones;
-    
+
     private String fecHoraMarcacion;
     private String fechaMarcacion;
     private String horaMarcacion;
@@ -85,7 +85,7 @@ public class reHumanos {
     private String codigoAsisDet;
     private String observacion;
     private String codJustificacion;
-    
+
     private ArrayList<reHumanos> listaUsuarios;
     private ArrayList<reHumanos> listaModulos;
     private ArrayList<reHumanos> listaPerfiles;
@@ -97,16 +97,81 @@ public class reHumanos {
     private ArrayList<reHumanos> listaUsuariosSucursal;
     private ArrayList<reHumanos> listaTipoDocumento;
     private ArrayList<reHumanos> listaPaises;
-    
+
     private ArrayList<reHumanos> listaAsistencia;
     private ArrayList<reHumanos> listReporte;
-    
+
     private ArrayList<reHumanos> listaMotivosBaja;
     private ArrayList<reHumanos> listaCargosUsuario;
     private ArrayList<reHumanos> listaPuestoLab;
     private ArrayList<reHumanos> listaEmpresaLab;
     private ArrayList<reHumanos> listaExperienciaLab;
     private ArrayList<reHumanos> listaJustificacion;
+
+    /* ENCUESTA PERSONAL CESADO*/
+    private String codEncuesta = "";
+    private String desEncuesta = "";
+    private String codCuesPreg = "";
+    private String desCuesPreg = "";
+    private String desCuesRes = "";
+    private ArrayList<reHumanos> listarMotivos;
+    private ArrayList<reHumanos> listaEncuestas;
+
+    public String getDesCuesRes() {
+        return desCuesRes;
+    }
+
+    public void setDesCuesRes(String desCuesRes) {
+        this.desCuesRes = desCuesRes;
+    }
+
+    public ArrayList<reHumanos> getListaEncuestas() {
+        return listaEncuestas;
+    }
+
+    public void setListaEncuestas(ArrayList<reHumanos> listaEncuestas) {
+        this.listaEncuestas = listaEncuestas;
+    }
+
+    public String getCodEncuesta() {
+        return codEncuesta;
+    }
+
+    public void setCodEncuesta(String codEncuesta) {
+        this.codEncuesta = codEncuesta;
+    }
+
+    public String getDesEncuesta() {
+        return desEncuesta;
+    }
+
+    public void setDesEncuesta(String desEncuesta) {
+        this.desEncuesta = desEncuesta;
+    }
+
+    public String getCodCuesPreg() {
+        return codCuesPreg;
+    }
+
+    public void setCodCuesPreg(String codCuesPreg) {
+        this.codCuesPreg = codCuesPreg;
+    }
+
+    public String getDesCuesPreg() {
+        return desCuesPreg;
+    }
+
+    public void setDesCuesPreg(String desCuesPreg) {
+        this.desCuesPreg = desCuesPreg;
+    }
+
+    public ArrayList<reHumanos> getListarMotivos() {
+        return listarMotivos;
+    }
+
+    public void setListarMotivos(ArrayList<reHumanos> listarMotivos) {
+        this.listarMotivos = listarMotivos;
+    }
 
     public String getCodJustificacion() {
         return codJustificacion;
@@ -115,15 +180,15 @@ public class reHumanos {
     public void setCodJustificacion(String codJustificacion) {
         this.codJustificacion = codJustificacion;
     }
-        
+
     public String getObservacion() {
         return observacion;
     }
 
     public void setObservacion(String observacion) {
         this.observacion = observacion;
-    }   
-    
+    }
+
     public ArrayList<reHumanos> getListaJustificacion() {
         return listaJustificacion;
     }
@@ -139,8 +204,8 @@ public class reHumanos {
 
     public void setCodigoAsisDet(String codigoAsisDet) {
         this.codigoAsisDet = codigoAsisDet;
-    }    
-        
+    }
+
     public String getCampReporte() {
         return campReporte;
     }
@@ -155,8 +220,8 @@ public class reHumanos {
 
     public void setListaAsistencia(ArrayList<reHumanos> listaAsistencia) {
         this.listaAsistencia = listaAsistencia;
-    }    
-   
+    }
+
     public ArrayList<reHumanos> getListReporte() {
         return listReporte;
     }
@@ -172,7 +237,7 @@ public class reHumanos {
     public void setListaUsuariosSucursal(ArrayList<reHumanos> listaUsuariosSucursal) {
         this.listaUsuariosSucursal = listaUsuariosSucursal;
     }
-    
+
     public ArrayList<reHumanos> getListaPuestoLab() {
         return listaPuestoLab;
     }
@@ -216,11 +281,11 @@ public class reHumanos {
     public void setTipoSucursal(String tipoSucursal) {
         this.tipoSucursal = tipoSucursal;
     }
-        
+
     public void setListaPuestoLab(ArrayList<reHumanos> listaPuestoLab) {
         this.listaPuestoLab = listaPuestoLab;
     }
-    
+
     public ArrayList<reHumanos> getListaEmpresaLab() {
         return listaEmpresaLab;
     }
@@ -244,8 +309,7 @@ public class reHumanos {
     public void setListaCargosUsuario(ArrayList<reHumanos> listaCargosUsuario) {
         this.listaCargosUsuario = listaCargosUsuario;
     }
-    
-    
+
     public ArrayList<reHumanos> getListaMotivosBaja() {
         return listaMotivosBaja;
     }
@@ -253,8 +317,7 @@ public class reHumanos {
     public void setListaMotivosBaja(ArrayList<reHumanos> listaMotivosBaja) {
         this.listaMotivosBaja = listaMotivosBaja;
     }
-    
-    
+
     public ArrayList<reHumanos> getListaPaises() {
         return listaPaises;
     }
@@ -262,8 +325,7 @@ public class reHumanos {
     public void setListaPaises(ArrayList<reHumanos> listaPaises) {
         this.listaPaises = listaPaises;
     }
-    
-    
+
     public ArrayList<reHumanos> getListaTipoDocumento() {
         return listaTipoDocumento;
     }
@@ -304,7 +366,6 @@ public class reHumanos {
         this.listaDistritos = listaDistritos;
     }
 
-    
     public String getCodSucursal() {
         return codSucursal;
     }
@@ -376,7 +437,7 @@ public class reHumanos {
     public void setListaSucursales(ArrayList<reHumanos> listaSucursales) {
         this.listaSucursales = listaSucursales;
     }
-    
+
     public ArrayList<reHumanos> getListaPerfiles() {
         return listaPerfiles;
     }
@@ -400,7 +461,7 @@ public class reHumanos {
     public void setListaUsuarios(ArrayList<reHumanos> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
-      
+
     public String getTiempoLab() {
         return tiempoLab;
     }
@@ -432,7 +493,7 @@ public class reHumanos {
     public void setDesEmpresa(String desEmpresa) {
         this.desEmpresa = desEmpresa;
     }
-    
+
     public String getCodExperiencia() {
         return codExperiencia;
     }
@@ -464,7 +525,6 @@ public class reHumanos {
     public void setDesProfesion(String desProfesion) {
         this.desProfesion = desProfesion;
     }
-    
 
     public String getCodUsuPerfil() {
         return codUsuPerfil;
@@ -497,9 +557,7 @@ public class reHumanos {
     public void setDesMotCese(String desMotCese) {
         this.desMotCese = desMotCese;
     }
-    
-    
-    
+
     public String getDesEstado() {
         return desEstado;
     }
@@ -523,7 +581,7 @@ public class reHumanos {
     public void setUsuDireccion(String usuDireccion) {
         this.usuDireccion = usuDireccion;
     }
-    
+
     public int getCantUsu() {
         return cantUsu;
     }
@@ -549,7 +607,6 @@ public class reHumanos {
     }
     private String icoModulo;
     private String icoSubmodulo;
-   
 
     public String getCodigoUsuario() {
         return codigoUsuario;
@@ -566,7 +623,7 @@ public class reHumanos {
     public void setUsuario(String Usuario) {
         this.Usuario = Usuario;
     }
-    
+
     public String getNombreUsuario() {
         return nombreUsuario;
     }
@@ -598,7 +655,7 @@ public class reHumanos {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
+
     public String getCorreo() {
         return correo;
     }
@@ -806,6 +863,5 @@ public class reHumanos {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    
+
 }

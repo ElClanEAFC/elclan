@@ -3,7 +3,8 @@
     Created on : 05/08/2021, 09:33:20 AM
     Author     : bcondori
 --%>
-
+<jsp:include page="modalActualizarUsu.jsp" />  
+<jsp:include page="modalExperienciaUsu.jsp" />  
 <!--============================================================================
 MODALES
 =============================================================================-->
@@ -30,7 +31,7 @@ MODALES
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="row">
                             <div class="col-6">
-                                <p class="fw-bold">NOMBRE/RAZÓN SOCIAL:</p>
+                                <p class="fw-bold">NOMBRE/RAZï¿½N SOCIAL:</p>
                             </div>
                             <div class="col-6">
                                 <p id="detNombre">BENTU</p>
@@ -80,7 +81,7 @@ MODALES
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <p class="fw-bold">DIRECCIÓN</p>
+                                <p class="fw-bold">DIRECCIï¿½N</p>
                             </div>
                             <div class="col-6">
                                 <p id="detDireccion">AV. RICARDO FLORES</p>
@@ -120,7 +121,7 @@ MODALES
                         <table id="tablaCargosUsuarioDetalle" class="table  table-bordered">
                             <thead>
                                 <tr>
-                                    <th>N°</th>
+                                    <th>Nï¿½</th>
                                     <th>AREA</th>
                                     <th>PERMISOS</th>
                                     <th>F. INICIO</th>
@@ -134,6 +135,25 @@ MODALES
                         </table>
                     </div>
                 </div>
+
+                <div class="col-12 container-fluid">
+                    <hr>
+                    <h4 class="card-title">RESULTADO DE ENCUESTA</h4>
+                    <div class="table-responsive">
+                        <table id="tablaResultadoEncuesta" class="table  table-bordered" width="100%" autocomplete="off">
+                            <thead>
+                                <tr>
+                                    <th>MOTIVOS DE SALIDA</th>
+                                    <th>RESPUESTAS</th>
+                                    <th>OBSERVACION</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
@@ -186,7 +206,7 @@ MODALES
                     <table id="tablaCargosUsuario" class="table table-bordered" width="100%" autocomplete="off">
                         <thead>
                             <tr>
-<!--                                <th>N°</th>-->
+                                <!--                                <th>Nï¿½</th>-->
                                 <th>AREA</th>
                                 <th>PERMISOS</th>
                                 <th>F. INICIO</th>
@@ -209,172 +229,7 @@ MODALES
 </div>
 <!--======================== MODAL DE EDITAR USUARIO =========================-->
 <!-- Modal -->
-<div class="modal fade" id="modalEditarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-danger">
-                <h4 class="modal-title text-white" id="exampleModalLabel">EDITAR USUARIO</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!--ENCABEZADO SEARCH-->
-                <!------formulario--->
-                <div>
-                    <h4>DATOS DEL USUARIO</h4>
-                    <p><br></p>
-                    <form id="formRegistroUsuario" class="">
-                        <div class="row">
-                            <div class="col-3">
-                                <label for="usuTDoc">Tipo de Documento *</label>
-                                <select id="usuTDoc" name="usuTDoc" class=" form-control" >
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuNumDoc">N° Documento *</label>
-                                <input id="usuNumDoc" name="usuNumDoc" type="text" maxlength="8"
-                                       class="form-control" onkeypress="soloNumeros(event);" onkeyup="buscarDOI(this.value);" onchange="" > 
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <label for="usuNombre">NOMBRES *</label>
-                                <input id="usuNombre" name="usuNombre" type="text" class=" form-control datos"   > 
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <label for="usuApaterno">APELLIDO PATERNO *</label>
-                                <input id="usuApaterno" name="usuApaterno" type="text" class=" form-control datos"   >  
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <label for="usuAmaterno">APELLIDO MATERNO *</label>
-                                <input id="usuAmaterno" name="usuAmaterno" type="text" class=" form-control datos"   >   
-                                <!--                                    <div class="valid-feedback">
-                                                                        Looks good!
-                                                                    </div>-->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <label for="usuCelular">CELULAR *</label>
-                                <input id="usuCelular" name="usuCelular" type="text" class=" form-control datos datoEdita" maxlength="9" >  
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <label for="usuCorreo">CORREO *</label>
-                                <input id="usuCorreo" name="usuCorreo" type="email" class=" form-control datos datoEdita" required="" > 
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <label for="usuDireccion">DIRECCIÓN *</label>
-                                <input id="usuDireccion" name="usuDireccion" type="text" class=" form-control datos datoEdita" >  
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <label for="usuPais">PAIS *</label>
-                                <select name="usuPais" id="usuPais" class="form-control datos datoEdita"  >
-                                    <!--<option value="51">Perï¿½</option>-->
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuDpto">DEPARTAMENTO *</label>
-                                <select name="usuDpto" id="usuDpto" class=" form-control datos datoEdita" onchange="listarProv();"  >
 
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuProv">PROVINCIA *</label>
-                                <select name="usuProv" id="usuProv" class=" form-control datos datoEdita" onchange="listarDist();"  >
-
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuDist">DISTRITO *</label>
-                                <select name="usuDist" id="usuDist" class=" form-control datos datoEdita"  >
-
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3">
-                                <label for="usuArea">AREA *</label>
-                                <select name="usuArea" id="usuArea" class=" form-control datos"  onchange="listarPerfil();"  >
-
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuCargo">CARGO / PUESTO *</label>
-                                <select name="usuCargo" id="usuCargo" class="form-control datos"  >
-
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuFNacimiento">FECHA NACIMIENTO *</label>
-                                <input id="usuFNacimiento" name="usuFNacimiento" type="date" class="form-control datos datoEdita" > 
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <label for="usuFinicio">FECHA INGRESO *</label>
-                                <input id="usuFinicio" max="9999-12-31" name="usuFinicio" type="date" class=" form-control datos" > 
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </div>
-                    </form>  
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger text-white" data-bs-dismiss="modal">CERRAR</button>
-                <button class="btn btn-success text-white" onclick="validarCamposUsu();" id="btnActualizarUsuario">ACTUALIZAR</button>
-                <button class="btn btn-success text-white hide" onclick="validarCamposUsu();" id="btnGuardarUsuario">GUARDAR</button>
-            </div>
-            <!-- ===== LOADER ======= -->
-            <div class="content-loader visually-hidden" id="ico-loader">
-                <div class="loader">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--========================MODAL DE CESE DEL USUARIO=========================-->
 <div class='modal fade' id='ceseUsuario' tabindex='-1' role='dialog'>
     <div class='modal-dialog'  role='document'>
@@ -437,7 +292,7 @@ MODALES
                             </div>
                             <div class="col-md-10 centrar">
                                 <p>
-                                    <label>CONTRASEÑA:</label>
+                                    <label>CONTRASEï¿½A:</label>
                                     <input type="password" name="claConfir" id="claConfir" class="form-control" placeholder='Ingrese Contraseï¿½a'>
                                 </p>
                             </div>   
@@ -454,85 +309,7 @@ MODALES
     </div>
 </div>
 
-<!--========================AGREGAR INFORMACION  ADICIONAL DEL USUARIO=========================-->
-<div class='modal fade' id='addExperiencia' tabindex='-1' aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class='modal-dialog modal-xl'  role='document'>
-        <div class='modal-content' >
-            <div class='modal-header bg-danger'>
-                <h4 class='modal-title text-white'><i class="fas fa-tags"></i>AGREGAR EXPERIENCIAS</h4>
-                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'>
-                </button>
-            </div>
-            <div class='modal-body'>
-                <div class="container">
-                    <!--CEBECERA-->
-                    <input type="hidden" name="codUsuExp" id="codUsuExp">
-                    <form class="row" id="formExperiencia">
-                        <div class="col-md-4">
-                            <label>PUESTO: *</label>
-                            <input type="text" id="puesto" name="puesto" class="form-control">
-                            <ol id="suggestions" class="autocomplete">
-                            </ol>
-                        </div>  
-                        <div class="col-md-2">
-                            <p>
-                                <label>F. INICIO *</label>
-                                <input type="date" name="fecIni" id="fecIni" class="form-control">
-                            </p>
-                        </div>
-                        <div class="col-md-2">
-                            <p>
-                                <label>F. Fin *</label>
-                                <input type="date" name="fecFin" id="fecFin" class="form-control">
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <label>EMPRESA: *</label>
-                            <input type="text" name="empresa" id="empresa" class="form-control">
-                            <ol id="resEmpresa" class="autocomplete"></ol>
-                        </div>
-                        <div class="col-12">
-                            <label for="exampleFormControlTextarea1" class="form-label">OBSERVACIONES(opcional):</label>
-                            <textarea class="form-control" id="observaciones" name="observaciones" rows="2"></textarea>
-                        </div>
-                    </form>
-                        <div class="col-12 text-center d-flex justify-content-end">
-                            <p class="my-1">
-                                <button type="button" class="btn btn-primary btn-success" onclick="validarCamposExp();"><i class="fas fa-check">AÑADIR</i></button>
-                            </p>
-                        </div>
-                    <div class="row">
-                        <div class="col-md-12"><hr></div>
-                        <div class="col-md-12">
-                            <div class="table-responsive">
-                                <table id="tablaExpreriencias"  class="table datatable-basic ui celled table responsive nowrap unstackable " width="100%" autocomplete="off">
-                                    <thead>
-                                        <tr>
-                                            <th>N°</th>
-                                            <th>PUESTO LABORAL</th>
-                                            <th>TIEMPO LABORAL </th>
-                                            <th>EMPRESA</th>
-                                            <th>OPCIONES</th>                  
-                                        </tr>
-                                    </thead>
-                                    <!--<tbody id="listaUser">-->
-                                    <tbody>
 
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <div class='modal-footer'>
-                <!--<button type='button' onclick='darBajaUsuario();' class='btn btn-primary btn-success'>Confirmar</button>-->
-                <button type='button' onclick='cerrarModal("addExperiencia");' class='btn btn-secondary btn-danger text-white' data-dismiss='modal'>CERRAR</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--============================================================================
 FIN MODALES
@@ -542,7 +319,7 @@ FIN MODALES
 TABLA LISTA DE USUARIOS
 =====-->
 <div class="container-fluid">
-            <!-- contenido -->
+    <!-- contenido -->
     <div class="card">
         <div class="card-body">
             <div class="row">        
@@ -557,7 +334,7 @@ TABLA LISTA DE USUARIOS
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
-                            <button class="btn btn-success text-white " onclick="ROUTER.load('registrar');">AÑADIR USUARIO</button>            
+                            <button class="btn btn-success text-white " onclick="ROUTER.load('registrar');">Aï¿½ADIR USUARIO</button>            
                         </div>        
                     </div>
                     <hr/>
@@ -565,12 +342,12 @@ TABLA LISTA DE USUARIOS
                     <table id="listaUsuarios"  class="table table-striped" width="100%" autocomplete="off">
                         <thead>
                             <tr>
-                                <th>Nombres</th>
+                                <th>NOMBRES</th>
                                 <th>APELLIDO PATERNO</th>
                                 <th>APELLIDO MATERNO</th>
                                 <th>USUARIO</th>
                                 <th>TIPO DOC.</th>
-                                <th>N° DOCUMENTO</th>
+                                <th>Nï¿½ DOCUMENTO</th>
                                 <th>CARGO</th>
                                 <th>ESTADO</th>
                                 <!-- <th>Fecha Inicio</th>-->
@@ -621,17 +398,17 @@ TABLA LISTA DE USUARIOS
             ordering: false,
             "language": {
                 "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sEmptyTable": "Ningï¿½n dato disponible en esta tabla",
                 "sInfo": "_START_ al _END_ de _TOTAL_ registros",
                 "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
                 "sLengthMenu": "",
                 "oPaginate": {
                     "sFirst": "Erste",
-                    "sPrevious": "Atrás",
+                    "sPrevious": "Atrï¿½s",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
-                 },
-                select: { rows: "" }
+                },
+                select: {rows: ""}
             }
         });
         // 26-07-2022
@@ -641,17 +418,17 @@ TABLA LISTA DE USUARIOS
             ordering: false,
             "language": {
                 "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sEmptyTable": "Ningï¿½n dato disponible en esta tabla",
                 "sInfo": "_START_ al _END_ de _TOTAL_ registros",
                 "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
                 "sLengthMenu": "",
                 "oPaginate": {
                     "sFirst": "Erste",
-                    "sPrevious": "Atrás",
+                    "sPrevious": "Atrï¿½s",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
-                 },
-                select: { rows: "" }
+                },
+                select: {rows: ""}
             }
         });
         tablaCargosUsuario = $('#tablaCargosUsuario').DataTable({
@@ -660,18 +437,42 @@ TABLA LISTA DE USUARIOS
             ordering: false,
             "language": {
                 "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sEmptyTable": "Ningï¿½n dato disponible en esta tabla",
                 "sInfo": "_START_ al _END_ de _TOTAL_ registros",
                 "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
                 "sLengthMenu": "",
                 "oPaginate": {
                     "sFirst": "Erste",
-                    "sPrevious": "Atrás",
+                    "sPrevious": "Atrï¿½s",
                     "sNext": "Siguiente",
                     "sLast": "Letzte"
-                 },
-                select: { rows: "" }
+                },
+                select: {rows: ""}
             }
+        });
+        
+        $(document).ready(async function () {
+            //Configurar Tabla tablaResultadoEncuesta
+            tablaResultadoEncuesta = $('#tablaResultadoEncuesta').DataTable({
+                responsive: true,
+                searching: false,
+                ordering: false,
+                "language": {
+                    "sZeroRecords": "No se encontrao resultados",
+                    "sEmptyTable": "Ningun dato disponible en esta tabla",
+                    "sInfo": "_START_ al _END_ de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando del 0 al 0 de 0 registros",
+                    "sLengthMenu": "",
+                    "oPaginate": {
+                        "sFirst": "Erste",
+                        "sPrevious": "Atras",
+                        "sNext": "Siguiente",
+                        "sLast": "Letzte"
+                                
+                    },
+                    select: {rows: ""}
+                }
+            });
         });
         // 19-07-2022
         listarUsuarios();
@@ -683,30 +484,30 @@ TABLA LISTA DE USUARIOS
             $("#addExperiencia").modal("show");
             listaExperienciasLab();
         });
-        $('#fecCese').attr(limitarFechaAyerManana(3,3));
-        $('#usuFinicio').attr(limitarFechaAyerManana(3,3));
+        $('#fecCese').attr(limitarFechaAyerManana(3, 3));
+        $('#usuFinicio').attr(limitarFechaAyerManana(3, 3));
         
-        $.validator.addMethod("puestoTrim", function(value, element, param){
-            if (value.replace(/[^0-9]/g,'') || value.replace(/^[^-_#'"\\\/<>=*@&]*$/,'')) {
+        $.validator.addMethod("puestoTrim", function (value, element, param) {
+            if (value.replace(/[^0-9]/g, '') || value.replace(/^[^-_#'"\\\/<>=*@&]*$/, '')) {
                 return false;
             }
             return this.optional(element) || value.trim().length > 0;
-        },"Ingrese un puesto valido");
+        }, "Ingrese un puesto valido");
         
-        $.validator.addMethod("inputTrim", function(value, element, param){
+        $.validator.addMethod("inputTrim", function (value, element, param) {
             return this.optional(element) || value.trim().length > 0;
         });
 //        INGRESA SOLO NUMEROS EN CAMPO DNI
-        $('#usuNumDoc').on('input', function (){
-            this.value = this.value.replace(/[^0-9]/g,'');
+        $('#usuNumDoc').on('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
         });
         // INGRESA SOLO NUMEROS EN CAMPO CELULAR
-        $('#usuCelular').on('input', function (){
-            this.value = this.value.replace(/[^0-9]/g,'');
+        $('#usuCelular').on('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
         });
         // LISTAR REGISTROS DE USUARIOS
-        $('#userbuscar').on('input', function (){
-            if (this.value == ""){
+        $('#userbuscar').on('input', function () {
+            if (this.value == "") {
                 listarUsuarios();
             }
         });
@@ -714,7 +515,7 @@ TABLA LISTA DE USUARIOS
     function llenarDatosDetalles(data) {
         let nombre = data.nombreUsuario;
         let user = data.usuario;
-        $('#titleUsuario').text(nombre+"-"+user);
+        $('#titleUsuario').text(nombre + "-" + user);
         $('#detNombre').text(data.nombreUsuario);
         $('#detAPaterno').text(data.apePaternoUsuario);
         $('#detAMaterno').text(data.apeMaternoUsuario);
@@ -729,6 +530,7 @@ TABLA LISTA DE USUARIOS
     async function detalleUsuario(codUsuario, codTDoc, numDoc) {
         $('#modalDetalleUsuario').modal('show');
         await listaCargosUsuarioDetalle(codUsuario, '#listaCargosUsuarioDetalle');
+        listaEncuesta(codUsuario);
         userDetalle = true;
         editarUsuario(codTDoc, numDoc);
     }
@@ -874,19 +676,19 @@ TABLA LISTA DE USUARIOS
                 console.log(resultado);
                 let res = resultado.toString().split("_");
                 if (res[0] == 1) {
-                    msjFinal(res[0],res[1]);
+                    msjFinal(res[0], res[1]);
                     console.log("ACTUALIZADO");
                     $('#modalEditarUsuario').modal('hide');
                     loaderOFF();
                 } else {
-                    msjFinal(res[0],res[1]);
+                    msjFinal(res[0], res[1]);
                     console.log("FALLO LA ACTUALIZACION DEL USUARIO");
                     loaderOFF();
                 }
             }, complete: function () {
             }
         });
-
+        
     }
     // ===== VALIDAR CAMPOS VACIOS FORM USUARIO=====
     function validarCamposUsu() {
@@ -898,12 +700,12 @@ TABLA LISTA DE USUARIOS
                 usuAmaterno: {required: true},
                 usuCelular: {
                     required: true,
-                    inputTrim : true
+                    inputTrim: true
                 },
                 usuCorreo: {required: true},
                 usuDireccion: {
                     required: true,
-                    inputTrim : true
+                    inputTrim: true
                 },
                 usuPais: {required: true},
                 usuDpto: {required: true},
@@ -921,12 +723,12 @@ TABLA LISTA DE USUARIOS
                 usuAmaterno: "Ingrese apellido materno",
                 usuCelular: {
                     required: "Ingrese numero celular",
-                    inputTrim: "Ingrese un número valido"
+                    inputTrim: "Ingrese un nï¿½mero valido"
                 },
                 usuCorreo: "Ingrese Correo",
                 usuDireccion: {
                     required: "Ingrese Direccion",
-                    inputTrim: "Ingrese una dirección valida"
+                    inputTrim: "Ingrese una direcciï¿½n valida"
                 },
                 usuPais: "Seleccione Pais",
                 usuDpto: "Seleccione Departamento",
@@ -1028,7 +830,8 @@ TABLA LISTA DE USUARIOS
             }, complete: function () {
             }
         });
-    };
+    }
+    ;
     // ===== LISTAR PROVINCIAS =====
     var listaProvincias = async (codDpto) => {
         await $.ajax({
@@ -1040,7 +843,7 @@ TABLA LISTA DE USUARIOS
                 $('#usuProv').html(resultado);
                 console.log("LISTA DE Provincias---");
             }, complete: function () {
-
+                
             }
         });
     };
@@ -1094,7 +897,8 @@ TABLA LISTA DE USUARIOS
         $('#usuFinicio').val(data.finicio);
         mostrarDatosEnSelect('#usuArea', data.descArea);
         mostrarDatosEnSelect('#usuCargo', data.descPerfil);
-    };
+    }
+    ;
     // === LIMPIAR CAMPOS CUANDO EL CAMPO DNI ES MENOR A 8 (DIGITOS)
     function limpiarCampo() {
         $('input.datos').val('');
@@ -1102,72 +906,12 @@ TABLA LISTA DE USUARIOS
         //$("#usuTDoc option[value='1']").attr("selected", true);
     }
     // ===== LIMPIAR CAMPOS ====
-    function limpiarCampoReniec(){
+    function limpiarCampoReniec() {
         $('input.datos').val('');
         $("select.datos").val('');
     }
     // OBTENER DATOS DEL USUARIO DESDE LA "BASE DE  DATOS"
-    async function editarUsuario(codTDoc, numDoc) {
-
-        if (!userDetalle) {
-            $('#modalEditarUsuario').modal('show');
-        }
-        loaderON();
-        await $.ajax({
-            type: 'POST',
-            url: '../../reHumanosServlet?Accion=validarNumDoc',
-            data: 'codTDoc=' + codTDoc + '&numDoc=' + numDoc,
-            dataType: 'json',
-            beforeSend: function () {
-            }, success: async function (res) {
-                console.log(res);
-                //let res = res.toString().split("_");
-                if (res.codMensaje == '1') {
-                    if (userDetalle) {
-                        llenarDatosDetalles(res);
-                        loaderOFF();
-                        userDetalle = false;
-                        let validarErrorForm = $("#formRegistroUsuario").validate();
-                        validarErrorForm.destroy();
-                    } else {
-                        if (codUser1 != null) {
-                            codUser2 = res.codigoUsuario;
-                            validarDB = true;
-                            valiDarReniec = false;
-                        } else {
-                            codUser1 = res.codigoUsuario;
-                        }
-                        // LIMPIAR ALERTAS DE CAMPOS ERRONEOS
-                        let validarErrorForm = $("#formRegistroUsuario").validate();
-                        validarErrorForm.destroy();
-                        
-                        await listaDepartamentos();
-                        await listaProvincias(res.codigoDepartamento);
-                        await listaDistritos(res.codigoDepartamento, res.codigoProvincia);
-                        await listaPaises();
-                        // FUNCION CARGAR TIPOS DE DOCUMENTOS
-                        cargarTipoDoc();
-                        // FUNCION LLENAR CAMPOS EN FORMULARIO!
-                        llenarCamposUsuario(res);
-                        $('.datos').attr("disabled", true);
-                        $('input.datoEdita').attr('disabled', false);
-                        $('select.datoEdita').attr('disabled', false);
-                        $('#modalEditarUsuario').modal('show');
-                        $('#btnActualizarUsuario').removeClass('hide');
-                        $('#btnGuardarUsuario').addClass('hide');
-                        loaderOFF();
-                    }
-
-                } else {
-                    let userreniec = {"dni": numDoc};
-                    //FUNCION BUSCAR EN API-RENIEC
-                    buscarReniec(userreniec);
-                }
-            }, complete: function () {
-
-            }
-        });
-    }
+    
     // VALIDADOR PARA INGRESAR SOLO NUMEROS EN EL CAMPO DNI
     function soloNumeros(e) {
         var charCode = (e.which) ? e.which : e.keyCode;
@@ -1183,7 +927,7 @@ TABLA LISTA DE USUARIOS
         if (numDoc.toString().length === 8 && codTDoc === '1') {
             // BUSCAR EL DNI EN "BASE DE DATOS O RENIEC"
             editarUsuario(codTDoc, numDoc);
-        }else{
+        } else {
             $('#usuNombre').val('');
             $('#usuApaterno').val('');
             $('#usuAmaterno').val('');
@@ -1287,17 +1031,24 @@ TABLA LISTA DE USUARIOS
                 llenarTablaUusarios(resultado);
                 //$("#listaUsuarios").html(resultado);
             }, complete: function () {
-
+                
             }
         });
     }
     // LLENAR TABLA DE LISTA DE USUARIOS;
-    function llenarTablaUusarios(data) {             
+    function llenarTablaUusarios(data) {
         tableUsuarios.clear().draw();
-                    $.each(data, function () {
+        $.each(data, function () {
             let cargo = this['descPerfil'].toString().split("-");
             let estado = this['estado'].toString();
             let colorEstado = estado == "activo" ? "bg-danger text-white p-1 rounded-3" : "bg-success text-white p-1 rounded-3";
+            let encuesta='';
+            if (!(estado == "ACTIVO")) {
+                  encuesta = '<a class=\'pe-1\' href=\'#\' onclick=\"abrirPaginaEncuesta(\'' + this['numeroDOI'] + '\',\'' + this['nombreUsuario'] + '\',\'' + this['apePaternoUsuario'] + '\',\'' + this['apeMaternoUsuario'] + '\',\'' + this['codigoUsuario'] + '\');\"><i class=\'  fas fa-clipboard-list\'  title=\'Encuesta sobre Despido\'></i></a>';
+            
+            }
+            
+           
             tableUsuarios.row.add([
                 this['nombreUsuario'],
                 this['apePaternoUsuario'],
@@ -1306,18 +1057,34 @@ TABLA LISTA DE USUARIOS
                 this['descTipoDOI'],
                 this['numeroDOI'],
                 cargo[0],
-                "<span class=\" "+colorEstado+ "\">" + this['estado'] + "</span>",
+                "<span class=\" " + colorEstado + "\">" + this['estado'] + "</span>",
                 '<a href=\'#\' onclick=\"editarUsuario(' + this['codigoTipoDOI'] + ',\'' + this['numeroDOI'] + '\');\" title=\'Editar Usuario\'><i class=\'fas fa-edit editar\' ></i></a>'
                         + '<a class=\'pe-1\' href=\'#\' onclick=\"detalleUsuario(' + this['codigoUsuario'] + ',\'' + this['codigoTipoDOI'] + '\',' + this['numeroDOI'] + ');\" title=\'Detalle Usuario\'><i class=\'fas fa-eye\'></i></a>'
                         + '<a class=\'pe-1\' href=\'#\' onclick=\"asignarAreas(' + this['codigoUsuario'] + ');\" title=\'Asginar Cargo\'><i class=\'far fa-address-card otras-opciones\' ></i></a>'
                         + '<a class=\'pe-1\' href=\'#\' onclick=\"agregarExperiencia(' + this['codigoUsuario'] + ');\"><i class=\"fas fa-briefcase\" title=\'agregar Experiencia\'></i></a>'
                         + '<a class=\'pe-1\' href=\'#\' onclick=\"confirmarBajaUser(' + this['codigoUsuario'] + ');\"><i class=\'fas fa-trash-alt borrar\'  title=\'Cesar Usuario\'></i></a>'
-//                '<button type="button" class="btn btn-warning btn-delete" data-bs-toggle="modal" data-bs-target="#delete"><i class="fas fa-trash"></i></button>'
+                        + encuesta
             ]).draw(false);
         });
     }
+    
+    function abrirPaginaEncuesta(numDoc, nomUsu, apePat, apeMat, codUsuario) {
+        window.open('encuesta.jsp?numDoc=' + numDoc +
+                '&nomUsu=' + nomUsu +
+                '&apePat=' + apePat +
+                '&apeMat=' + apeMat +
+                '&codUsuario=' + codUsuario, '_blank');
+        
+    }
+    
+    //Funcion Redireccionar a la pagina de encuesta!
+    function alerta(numDoc, nomUsu, apePat, apeMat) {
+        alert(numDoc + "  " + nomUsu + "  " + apePat + "  " + apeMat);//abrirPagina
+    }
+    
+    
     //VALIDAR CAMPO DE BUSQUEDA DE EMPLEADO / USUARIO;
-    function validarCampoUser(){
+    function validarCampoUser() {
         let validator = $("#formBuscarUser").validate({
             rules: {
                 userbuscar: {required: true}
@@ -1332,12 +1099,12 @@ TABLA LISTA DE USUARIOS
         }
     }
     // BUSCA USUARIO;
-    function buscarEmpleado(){
-        let buscar = $('#userbuscar').val(); 
+    function buscarEmpleado() {
+        let buscar = $('#userbuscar').val();
         console.log(allUsuarios);
-        let empleado = allUsuarios.filter( e => 
-                    e?.numeroDOI.toLowerCase().includes(buscar) || e?.nombreUsuario.includes(buscar)
-                );
+        let empleado = allUsuarios.filter(e =>
+            e?.numeroDOI.toLowerCase().includes(buscar) || e?.nombreUsuario.includes(buscar)
+        );
         console.log(empleado);
         llenarTablaUusarios(empleado);
     }
@@ -1348,20 +1115,7 @@ TABLA LISTA DE USUARIOS
         listarUsuario('1');// lista de usuarios activos
     }
     // 
-    function agregarExperiencia(codUsuario) {    
-        $("#suggestions").empty();
-        $('#suggestions').css('display', 'none'); 
-        $("#resEmpresa").empty();
-        $('#resEmpresa').css('display', 'none'); 
-        $("#addExperiencia").modal('show');
-        $("#codUsuExp").val(codUsuario);
-        codUser = codUsuario;
-        $("#formExperiencia input").val(''); 
-        $("#formExperiencia textarea").val(''); 
-        let valores = $('#formExperiencia').validate();
-        valores.destroy();
-        listaExperienciasLab(codUsuario);
-    }
+    
     // NO USADO
     function copiarDato(dato) {
         $("#puesto").val(dato);
@@ -1373,37 +1127,37 @@ TABLA LISTA DE USUARIOS
         $("#resEmpresa").css('display', 'none');
     }
     // VALIDAR CAMPOS DE AGREGAR EXPERIENCIA 
-    function validarCamposExp(){
+    function validarCamposExp() {
         //valores.resetForm();
         let validator = $('#formExperiencia').validate({
-           rules:{
-               puesto: {
-                   required: true,
-                   puestoTrim: true
+            rules: {
+                puesto: {
+                    required: true,
+                    puestoTrim: true
                 },
-               fecIni: {required: true},
-               fecFin: {required: true},
-               empresa: {
-                   required: true,
-                   puestoTrim: true
-               }                
-           } ,
-           messages: {
-               puesto: {
-                   required: "Seleccione su puesto",
-                   puestoTrim: "Ingrese un puesto valido"
-               },
-               fecIni: "Seleccione una fecha",
-               fecFin: "Seleccione una fecha",
-               empresa: {
-                   required: "Seleccione una empresa",
-                   puestoTrim: "Ingrese una empresa valida"
-               }
-           }
+                fecIni: {required: true},
+                fecFin: {required: true},
+                empresa: {
+                    required: true,
+                    puestoTrim: true
+                }
+            },
+            messages: {
+                puesto: {
+                    required: "Seleccione su puesto",
+                    puestoTrim: "Ingrese un puesto valido"
+                },
+                fecIni: "Seleccione una fecha",
+                fecFin: "Seleccione una fecha",
+                empresa: {
+                    required: "Seleccione una empresa",
+                    puestoTrim: "Ingrese una empresa valida"
+                }
+            }
         });
         let estado = validator.form();
         if (estado) {
-           registroExperienciaLab();
+            registroExperienciaLab();
         }
     }
     // REGISTRAR EXPERIENCIA DE EMPLEADO
@@ -1414,7 +1168,7 @@ TABLA LISTA DE USUARIOS
         var fecIni = $("#fecIni").val();
         var fecFin = $("#fecFin").val();
         var empresa = $("#empresa").val().trim();
-
+        
         var param = 'codUser=' + codUser + '&codPuesto=' + codPuesto + '&descripcion=' + descripcion +
                 '&fecIni=' + fecIni + '&fecFin=' + fecFin + '&empresa=' + empresa;
         //alert(param);
@@ -1426,17 +1180,17 @@ TABLA LISTA DE USUARIOS
             }, success: function (resultado) {
                 console.log(resultado);
                 let res = resultado.toString().split("_");
-                if(res[0] == 1){
-                    msjFinal(res[0],res[1]);  
+                if (res[0] == 1) {
+                    msjFinal(res[0], res[1]);
                     console.log(resultado);
                     //$("#codUsuExp").val('');
                     $("#puesto").val('');
                     $("#observaciones").val('');
                     $("#fecIni").val('');
                     $("#fecFin").val('');
-                    $("#empresa").val('');           
-                }else{
-                    msjFinal(res[0],res[1]);
+                    $("#empresa").val('');
+                } else {
+                    msjFinal(res[0], res[1]);
                 }
             }, complete: function () {
                 //msjExitoso('La operacion se realizo correctamente');
@@ -1467,7 +1221,7 @@ TABLA LISTA DE USUARIOS
             }, success: function (resultado) {
                 $("#selectProfesion").html(resultado);
             }, complete: function () {
-
+                
             }
         });
     }
@@ -1535,10 +1289,10 @@ TABLA LISTA DE USUARIOS
             }, success: function (resultado) {
                 console.log(resultado);
                 let res = resultado.toString().split("_");
-                if(res[0] == 1){
-                    msjFinal(res[0],res[1]);             
-                }else{
-                    msjFinal(res[0],res[1]);
+                if (res[0] == 1) {
+                    msjFinal(res[0], res[1]);
+                } else {
+                    msjFinal(res[0], res[1]);
                 }
 //                if(resultado != null){
 //                    msjExitoso('El usuario fue dado de baja!');
@@ -1663,10 +1417,10 @@ TABLA LISTA DE USUARIOS
                 console.log(resultado);
                 let res = resultado.toString().split("_");
                 if (res[0] == "1") {
-                    msjFinal(res[0],res[1]);
+                    msjFinal(res[0], res[1]);
                     listaCargosUsuario(codUser);
-                }else{
-                    msjFinal(res[0],res[1]);                    
+                } else {
+                    msjFinal(res[0], res[1]);
                 }
             }, complete: function () {
             }
@@ -1683,7 +1437,7 @@ TABLA LISTA DE USUARIOS
             }, success: function (data) {
                 console.log(data);
                 tablaCargosUsuario.clear().draw();
-                $.each(data,function (){        
+                $.each(data, function () {
                     let estado = this['estado'].toString();
                     let colorEstado = estado !== 'ACTIVO' ? "bg-danger text-white p-1 rounded-3" : "bg-success text-white p-1 rounded-3";
                     tablaCargosUsuario.row.add([
@@ -1692,16 +1446,17 @@ TABLA LISTA DE USUARIOS
                         this['finicio'],
                         this['fcese'],
                         this['motivoCese'],
-                        "<span class=\" "+colorEstado+ "\">" + this['estado'] + "</span>",
-                        '<a class=\'pe-1\' href=\'#\' onclick=\"desactivarCargoUsuario('+ this['codUsuPerfil']+','+this['codigoUsuario']+','+this['codigoPerfil']+');\" title=\'Desactivar Cargo\'><i class=\'fas fa-trash-alt borrar\' ></i></a>'
-                    ]).draw(false);;
+                        "<span class=\" " + colorEstado + "\">" + this['estado'] + "</span>",
+                        '<a class=\'pe-1\' href=\'#\' onclick=\"desactivarCargoUsuario(' + this['codUsuPerfil'] + ',' + this['codigoUsuario'] + ',' + this['codigoPerfil'] + ');\" title=\'Desactivar Cargo\'><i class=\'fas fa-trash-alt borrar\' ></i></a>'
+                    ]).draw(false);
+                    ;
                 });
             }, complete: function () {
             }
         });
     }
     // DAR DE BAJA EL CARGO DEL USUARIO - 08/08/2022
-    function desactivarCargoUsuario(codUserPerfil,codUser,codPerfil){
+    function desactivarCargoUsuario(codUserPerfil, codUser, codPerfil) {
         let observacion = "nada";
         Swal.fire({
             title: 'Mensaje',
@@ -1717,21 +1472,21 @@ TABLA LISTA DE USUARIOS
                 $.ajax({
                     type: 'POST',
                     url: '../../reHumanosServlet?Accion=desactivarCargoUsuario',
-                    data: 'codUserPerfil=' + codUserPerfil + '&codUser=' + codUser + '&codPerfil=' + codPerfil+ '&observacion=' + observacion,
+                    data: 'codUserPerfil=' + codUserPerfil + '&codUser=' + codUser + '&codPerfil=' + codPerfil + '&observacion=' + observacion,
                     beforeSend: function () {
                     }, success: function (resultado) {
                         console.log(resultado);
                         let res = resultado.toString().split("_");
-                        if(res[0] == 1){
-                            msjFinal(res[0],res[1]); 
+                        if (res[0] == 1) {
+                            msjFinal(res[0], res[1]);
                             listaCargosUsuario(codUser);
-                        }else{
-                            msjFinal(res[0],res[1]);
+                        } else {
+                            msjFinal(res[0], res[1]);
                         }
                     }, complete: function () {
                     }
                 });
-            }    
+            }
         });
     }
     // LISTAR CARGOS ASIGNADOS AL USUARIO  => MODAL DETALLES
@@ -1747,7 +1502,7 @@ TABLA LISTA DE USUARIOS
             }
         });
     }
-    function darBajaExperienciaLab(codExperiencia){
+    function darBajaExperienciaLab(codExperiencia) {
         Swal.fire({
             title: 'Mensaje',
             text: "Desea dar de baja la experiencia?",
@@ -1767,11 +1522,11 @@ TABLA LISTA DE USUARIOS
                     }, success: function (resultado) {
                         console.log(resultado);
                         let res = resultado.toString().split("_");
-                        if(res[0] == 1){
-                            msjFinal(res[0],res[1]);   
+                        if (res[0] == 1) {
+                            msjFinal(res[0], res[1]);
                             listaExperienciasLab(codUser);
-                        }else{
-                            msjFinal(res[0],res[1]);
+                        } else {
+                            msjFinal(res[0], res[1]);
                         }
                     }, complete: function () {
                     }
@@ -1791,16 +1546,16 @@ TABLA LISTA DE USUARIOS
                 let count = 0;
                 tablaExperiencias.clear().draw();
                 $.each(data, function () {
-                    let fIni = this['finicio'].toString().split(" ");                
+                    let fIni = this['finicio'].toString().split(" ");
                     let fFin = this['fcese'].toString().split(" ");
                     count++;
                     tablaExperiencias.row.add([
                         count,
                         this['desPuesto'],
-                        fIni[0] + " - " + fFin[0] ,
+                        fIni[0] + " - " + fFin[0],
                         this['desEmpresa'],
                         '<a href=\'#\' onclick="darBajaExperienciaLab(\'' + this['codExperiencia'] + '\');\"><i class="fas fa-trash-alt borrar"></i></a>'
-                        //'<button type="button" class="btn btn-success btn-edit" data-bs-toggle="modal" data-bs-target="#edit"><i class="fas fa-edit"></i></button>',
+                                //'<button type="button" class="btn btn-success btn-edit" data-bs-toggle="modal" data-bs-target="#edit"><i class="fas fa-edit"></i></button>',
                     ]).draw(false);
                 });
             }
@@ -1830,7 +1585,7 @@ TABLA LISTA DE USUARIOS
                             console.log("no hay resultados!");
                         }
                     });
-                }else {
+                } else {
                     $('#resEmpresa').css('display', 'none');
                     console.log("ingresa un caracter!");
                 }
@@ -1861,7 +1616,7 @@ TABLA LISTA DE USUARIOS
                             console.log("no hay resultados!");
                         }
                     });
-                }else {
+                } else {
                     $('#suggestions').css('display', 'none');
                     console.log("ingresa un caracter!");
                 }
@@ -1906,14 +1661,61 @@ TABLA LISTA DE USUARIOS
         });
     });
     /********* LIMITAODR DE FECHA EN REGISTRO DE EXPERIENCIAS*/
-    $(document).ready(function (){
-       $('#fecFin').attr({
-           "max": limitarFechaAyer(1)
-       });
-       $('#fecIni').attr({
-           "max": limitarFechaAyer(15)
-       });
+    $(document).ready(function () {
+        $('#fecFin').attr({
+            "max": limitarFechaAyer(1)
+        });
+        $('#fecIni').attr({
+            "max": limitarFechaAyer(15)
+        });
     });
+    //CARGAR TABLA ENCUESTA 
+    
+    function listaEncuesta(codUsuario) {
+        
+        $.ajax({
+            type: 'POST',
+            url: '../../reHumanosServlet?Accion=listaEncuestas',
+            data: 'codUsuario=' + codUsuario,
+            dataType: 'json',
+            beforeSend: function () {
+            }, success: function (resultado) {
+                
+                llenarTablalistaEncuesta(resultado);
+            }, complete: function () {
+            }
+            
+        });
+        
+    }
+    //LLENAR TABLA ENCUESTA
+    function llenarTablalistaEncuesta(data) {
+        console.log(data);
+        tablaResultadoEncuesta.clear().draw;
+        $.each(data, function () {
+            
+            tablaResultadoEncuesta.row.add([
+                this['desCuesPreg'],
+                this['desCuesRes'],
+                this['observacion']
+                        
+                        
+            ]).draw(false);
+            
+        });
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </script>
 
 </html>
