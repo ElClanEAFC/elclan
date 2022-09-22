@@ -78,7 +78,7 @@ public class ventasServlet extends HttpServlet {
             actualizarEstructuraUnidad(request, response);
         }else if( "darbajaEstructuraUnidad".equals(param) ){
             darbajaEstructuraUnidad(request, response);
-        }else if ("listarUnidades".equals(param)) {
+        }else if ("listarUnidad".equals(param)) {
             listarUnidad(request, response);
         } else if ("listaVendedores".equals(param)) {
             listaVendedores(request, response);

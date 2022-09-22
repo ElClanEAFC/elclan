@@ -233,19 +233,24 @@
 
     listarUnidades(0);
     async function listarUnidades(codUnidad) {
-        var param = "codUnidad=" + codUnidad;
+//        var param = "codUnidad=" + codUnidad;listarUnidad
         await $.ajax({
             type: 'POST',
-            url: '../../ventasServlet?Accion=listarUnidades',
-            data: param,
+            url: '../../ventasServlet?Accion=listarUnidad',
+            data: "",
             beforeSend: function () {
             }, success: function (resultado) {
                 $("#selectUnidad").html(resultado);
             }, complete: function () {
-               listaEquipos(null, codUnidad);
+//               listaEquipos(null, codUnidad);
             }
         });
     }
+    $(document).ready(async function () {
+        $("#selectUnidad").change(function() {
+            listaEquipos(0, this.value);
+        });
+    });
      
     async function listaEquipos(codEquipo=0, codUnidad=0) {
         var param1 = "codEquipo=" + codEquipo;
