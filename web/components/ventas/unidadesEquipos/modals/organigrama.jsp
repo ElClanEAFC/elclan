@@ -484,7 +484,8 @@
             data: "codEstructura=" + codEstructura,
             dataType: 'json',
             success: async function (data, textStatus, jqXHR) {
-                data = data.listEstrucutraEquipoDatos[0]; // LISTA DE DATOS DE UN CARGO DE ESTRUCTURA
+                console.log(data);
+                data = data.listEstrucutraEquipoDatos; // LISTA DE DATOS DE UN CARGO DE ESTRUCTURA
                 await llenarFormCargoEstructura(data, desEquipo);
             },
             complete: function (jqXHR, textStatus) {
@@ -499,8 +500,8 @@
         console.log(data);
         $('#titleModalNuevoCargoEstructura').text("EDITAR CARGO DE " + desEquipo);
         await listarPerfilesComer();
-        $('#selectCargo').val(data.v_codPerfil);
-        $('#numOrden').val(data.v_numOrden);
+        $('#selectCargo').val(data?.v_codPerfil);
+        $('#numOrden').val(data?.v_numOrden);
         $('#btnGuardarCargo').addClass('hide');
         $('#btnActualizarCargo').removeClass('hide');
         // LIMPIAR ALERTAS DE CAMPOS ERRONEOS

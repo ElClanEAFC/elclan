@@ -220,7 +220,7 @@ public class ventasServices {
         return registro;
     }
      
-                /****************************
+        /****************************
      * autor: yasub huaman ramos
      * fecha: 14/09/2022
      * description: listar datos de una estructura de Equipo

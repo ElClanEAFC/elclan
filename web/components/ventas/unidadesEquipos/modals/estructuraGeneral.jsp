@@ -41,8 +41,14 @@
     function llenarOrganizadorGeneral(data) {
         let estruc = {};
 //        
-//        // RECORRER LISTA DE VENDEDORES
+//        // RECORRER LISTA DE VENDEDORES (GERENTE - JEFE - SUPERVISOR - COORDINADOR - EJECUTIVO)
+
+        var ejecutivos = data.filter(  (eje) => 
+            eje?.v_desPerfil.includes("EJECUTIVO")
+        );
+        console.log(ejecutivos);
         data.forEach((ven) => {
+            
             if (ven?.v_numero === '0') {
                 estruc = {//GERENCIA
                     'head': ven?.v_desPerfil,
@@ -67,9 +73,38 @@
                         'contents': ven?.v_datosVen,
                         "children": []
                     });
+                    
+                    /********************* EQUIPOS******************/
+                    sup?.children?.forEach((supe) => {
+                        let lista;
+                        ejecutivos.forEach((eje) => {
+                            if(supe?.id === eje?.v_codEquipo){
+                                lista += '<p>' +  eje.v_datosVen + '</p>';
+                            }
+                        });
+                        supe?.children?.push({
+                            'head': "EJECUTIVOS ",
+                            'id': ven?.v_codEquipo,
+                            'contents': lista,
+                            "children": []
+                        });
+                    });
                 }
-            });
-
+            }); 
+            
+            /*************************************************************************/
+//            if(ven?.v_datos?.includes("EQUIPO") && ven?.v_desPerfil?.includes("EJECUTIVO")){
+//                estruc?.children?.forEach((sup) => {
+//                    sup?.children?.forEach((equi) => {
+//                        if(ven?.v_codEquipo === equi?.id){
+//                            equi?.chidlren?.push({
+//                                
+//                            });
+//                        }
+//                    });
+//                });
+//            }
+                
         });
         console.log(estruc);
 //        
