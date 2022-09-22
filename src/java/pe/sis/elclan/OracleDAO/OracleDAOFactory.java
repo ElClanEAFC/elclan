@@ -107,11 +107,8 @@ public class OracleDAOFactory extends DAOFactory {
 
     @Override
     public ventasDAO getVentasDAO() {
-<<<<<<< HEAD
-         return new ventasOracleDAO() {};
-=======
-        return new ventasOracleDAO();
->>>>>>> victor
+         return new ventasOracleDAO();
+
     }
 
 }

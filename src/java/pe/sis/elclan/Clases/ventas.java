@@ -229,8 +229,6 @@ public class ventas {
     public void setListEquipos(ArrayList<ventas> listEquipos) {
         this.listEquipos = listEquipos;
     }
-        
-    private String v_cod_Vendedor;
 
     /*PERSONAL DE VENTAS*/
     private ArrayList<ventas> listaVendedores;

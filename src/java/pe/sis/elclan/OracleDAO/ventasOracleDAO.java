@@ -14,10 +14,10 @@ import pe.sis.elclan.DAO.ventasDAO;
  * @author sistemas03 Yasub Huaman
  */
 public class ventasOracleDAO implements ventasDAO {
-    
+
     @Override
-    public String darbajaEstructuraUnidad(String codEstructura, String usuario ) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(darbajaEstructuraUnidad)");  
+    public String darbajaEstructuraUnidad(String codEstructura, String usuario) throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(darbajaEstructuraUnidad)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -27,22 +27,25 @@ public class ventasOracleDAO implements ventasDAO {
             cn = OracleDAOFactory.obtenerConexion(base);
             cs = cn.prepareCall(sql);
             cs.setInt(1, Integer.valueOf(codEstructura));
-            cs.setString(2, usuario);            
+            cs.setString(2, usuario);
             cs.registerOutParameter(3, java.sql.Types.VARCHAR);
             cs.registerOutParameter(4, java.sql.Types.VARCHAR);
             cs.execute();
             String seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
-            respuesta = seguridad + "_"+mensaje;
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            respuesta = seguridad + "_" + mensaje;
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
         } finally {
         }
         return respuesta;
     }
-        @Override
-    public String actualizarEstructuraUnidad(String codEstructura, String codPerfil, String numOrden, String usuario) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(actualizarEstructuraUnidad)");  
+
+    @Override
+    public String actualizarEstructuraUnidad(String codEstructura, String codPerfil, String numOrden, String usuario)
+            throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(actualizarEstructuraUnidad)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -54,29 +57,30 @@ public class ventasOracleDAO implements ventasDAO {
             cs.setInt(1, Integer.valueOf(codEstructura));
             cs.setInt(2, Integer.valueOf(codPerfil));
             cs.setInt(3, Integer.valueOf(numOrden));
-            cs.setString(4, usuario);            
+            cs.setString(4, usuario);
             cs.registerOutParameter(5, java.sql.Types.VARCHAR);
             cs.registerOutParameter(6, java.sql.Types.VARCHAR);
             cs.execute();
             String seguridad = (String) cs.getObject(5);
             String mensaje = (String) cs.getObject(6);
-            respuesta = seguridad + "_"+mensaje;
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(5) + " Mensaje: " +(String)cs.getObject(6));
+            respuesta = seguridad + "_" + mensaje;
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
         } catch (Exception e) {
         } finally {
         }
         return respuesta;
     }
-    
+
     @Override
     public ventas listarEstructuraUnidadDatos(String codEstructura) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(listarEstructuraUnidadDatos)");  
+        System.out.println("ORACLEDAO SEGURIDAD(listarEstructuraUnidadDatos)");
         ArrayList<ventas> listarEstructuraUnidadDatos;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs; 
+        ResultSet rs;
         try {
             String sql = "{call PKG_COMERCIAL.USP_LIS_ESTRUCUNIDAD(?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -88,7 +92,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(2);
             listarEstructuraUnidadDatos = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codEstructura(rs.getString("COD_ESTRUCTURA"));
                 ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
@@ -101,24 +105,25 @@ public class ventasOracleDAO implements ventasDAO {
                 listarEstructuraUnidadDatos.add(ven);
             }
             ventas.setListEstrucutraUnidadDatos(listarEstructuraUnidadDatos);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return ventas;
     }
-    
+
     @Override
     public ventas listarEstructuraUnidades(String codUnidad) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(listarEstructuraUnidades)");  
+        System.out.println("ORACLEDAO SEGURIDAD(listarEstructuraUnidades)");
         ArrayList<ventas> listarEstructuraUnidades;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs; 
+        ResultSet rs;
         try {
             String sql = "{call PKG_COMERCIAL.USP_LIS_ESTRUCUNIDADES(?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -130,7 +135,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(2);
             listarEstructuraUnidades = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codEstructura(rs.getString("COD_ESTRUCTURA"));
                 ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
@@ -143,18 +148,20 @@ public class ventasOracleDAO implements ventasDAO {
                 listarEstructuraUnidades.add(ven);
             }
             ventas.setListEstrucutraUnidades(listarEstructuraUnidades);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return ventas;
-    }    
-    
+    }
+
     @Override
-    public String registrarEstructuraUnidad(String codUnidad, String codPerfil, String numOrden, String usuario) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(registrarEstructuraUnidad)");  
+    public String registrarEstructuraUnidad(String codUnidad, String codPerfil, String numOrden, String usuario)
+            throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(registrarEstructuraUnidad)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -172,23 +179,25 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             String seguridad = (String) cs.getObject(5);
             String mensaje = (String) cs.getObject(6);
-            respuesta = seguridad + "_"+mensaje;
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(5) + " Mensaje: " +(String)cs.getObject(6));
+            respuesta = seguridad + "_" + mensaje;
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
         } catch (Exception e) {
         } finally {
         }
         return respuesta;
     }
-    /****************************FIN DIAGRAMA UNIDADES*********/
+
+    /**************************** FIN DIAGRAMA UNIDADES *********/
     @Override
-    public ventas listarDiagramaVentas() throws Exception{
-        System.out.println("ORACLEDAO SEGURIDAD(listarDiagramaVentas)");  
+    public ventas listarDiagramaVentas() throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(listarDiagramaVentas)");
         ArrayList<ventas> listarDiagramaVentas;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs; 
+        ResultSet rs;
         try {
             String sql = "{call PKG_COMERCIAL.USP_LIST_DIAGRAMAVENTAS(?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -199,7 +208,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(1);
             listarDiagramaVentas = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
                 ven.setV_codEquipo(rs.getString("COD_EQUIPO"));
@@ -213,18 +222,20 @@ public class ventasOracleDAO implements ventasDAO {
                 listarDiagramaVentas.add(ven);
             }
             ventas.setListDiagramaVentas(listarDiagramaVentas);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(2) + " Mensaje: " +(String)cs.getObject(3));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return ventas;
     }
-    
+
     @Override
-    public String guardarVendEstruc(String codVendedor, String codEstructura, String fecInicio, String usuario) throws Exception{
-      System.out.println("ORACLEDAO SEGURIDAD(guardarVendEstruc)");  
+    public String guardarVendEstruc(String codVendedor, String codEstructura, String fecInicio, String usuario)
+            throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(guardarVendEstruc)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -236,30 +247,31 @@ public class ventasOracleDAO implements ventasDAO {
             cs.setInt(1, Integer.valueOf(codVendedor));
             cs.setInt(2, Integer.valueOf(codEstructura));
             cs.setDate(3, Date.valueOf(fecInicio));
-            cs.setString(4, usuario);            
+            cs.setString(4, usuario);
             cs.registerOutParameter(5, java.sql.Types.VARCHAR);
             cs.registerOutParameter(6, java.sql.Types.VARCHAR);
             cs.execute();
             String seguridad = (String) cs.getObject(5);
             String mensaje = (String) cs.getObject(6);
-            respuesta = seguridad + "_"+mensaje;
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(5) + " Mensaje: " +(String)cs.getObject(6));
+            respuesta = seguridad + "_" + mensaje;
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
         } catch (Exception e) {
         } finally {
         }
-        return respuesta;  
+        return respuesta;
     }
-    
+
     @Override
-    public ventas listarVendSinCargo(String codPerfil, String codUnidad, String codEquipo) throws Exception{
-        System.out.println("ORACLEDAO SEGURIDAD(listarVendSinCargo)");  
+    public ventas listarVendSinCargo(String codPerfil, String codUnidad, String codEquipo) throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(listarVendSinCargo)");
         ArrayList<ventas> listarVendSinCargo;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs; 
-        System.out.println("codPerfil: " +codPerfil +"// codUnidad: "+codUnidad+"// codEquipo: " +codEquipo);
+        ResultSet rs;
+        System.out.println("codPerfil: " + codPerfil + "// codUnidad: " + codUnidad + "// codEquipo: " + codEquipo);
         try {
             String sql = "{call PKG_COMERCIAL.USP_LIST_VENDSINCARGO(?,?,?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -273,7 +285,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(4);
             listarVendSinCargo = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_desArea(rs.getString("AREA"));
                 ven.setV_usuario(rs.getString("USU_NOMBRE"));
@@ -286,18 +298,19 @@ public class ventasOracleDAO implements ventasDAO {
                 listarVendSinCargo.add(ven);
             }
             ventas.setListVendedoresSinCargo(listarVendSinCargo);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(5) + " Mensaje: " +(String)cs.getObject(6));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return ventas;
     }
-    
+
     @Override
     public String darbajaEstructuraEquipo(String codEstructura, String usuario) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(darbajaEstructuraEquipo)");  
+        System.out.println("ORACLEDAO SEGURIDAD(darbajaEstructuraEquipo)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -307,14 +320,15 @@ public class ventasOracleDAO implements ventasDAO {
             cn = OracleDAOFactory.obtenerConexion(base);
             cs = cn.prepareCall(sql);
             cs.setInt(1, Integer.valueOf(codEstructura));
-            cs.setString(2, usuario);            
+            cs.setString(2, usuario);
             cs.registerOutParameter(3, java.sql.Types.VARCHAR);
             cs.registerOutParameter(4, java.sql.Types.VARCHAR);
             cs.execute();
             String seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
-            respuesta = seguridad + "_"+mensaje;
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            respuesta = seguridad + "_" + mensaje;
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
         } finally {
         }
@@ -322,8 +336,9 @@ public class ventasOracleDAO implements ventasDAO {
     }
 
     @Override
-    public String actualizarEstructuraEquipo(String codEstructura, String codPerfil, String numOrden, String usuario) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(actualizarEstructuraEquipo)");  
+    public String actualizarEstructuraEquipo(String codEstructura, String codPerfil, String numOrden, String usuario)
+            throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(actualizarEstructuraEquipo)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -335,14 +350,15 @@ public class ventasOracleDAO implements ventasDAO {
             cs.setInt(1, Integer.valueOf(codEstructura));
             cs.setInt(2, Integer.valueOf(codPerfil));
             cs.setInt(3, Integer.valueOf(numOrden));
-            cs.setString(4, usuario);            
+            cs.setString(4, usuario);
             cs.registerOutParameter(5, java.sql.Types.VARCHAR);
             cs.registerOutParameter(6, java.sql.Types.VARCHAR);
             cs.execute();
             String seguridad = (String) cs.getObject(5);
             String mensaje = (String) cs.getObject(6);
-            respuesta = seguridad + "_"+mensaje;
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(5) + " Mensaje: " +(String)cs.getObject(6));
+            respuesta = seguridad + "_" + mensaje;
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
         } catch (Exception e) {
         } finally {
         }
@@ -363,6 +379,37 @@ public class ventasOracleDAO implements ventasDAO {
             cn = OracleDAOFactory.obtenerConexion(base);
             cs = cn.prepareCall(sql);
             cs.setInt(1, Integer.valueOf(codEstructura));
+            cs.registerOutParameter(2, OracleTypes.CURSOR);
+            cs.registerOutParameter(3, OracleTypes.VARCHAR);
+            cs.registerOutParameter(4, OracleTypes.VARCHAR);
+            listarEstructuraEquipoDatos = new ArrayList<>();
+            rs = (ResultSet) cs.getObject(2);
+            while(rs.next()) {
+                ventas ven = new ventas();
+                ven.setV_codEstructura(rs.getString("COD_ESTRUCTURA"));
+                ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
+                ven.setV_desUnidad(rs.getString("DES_UNIDAD"));
+                ven.setV_codEquipo(rs.getString("COD_EQUIPO"));
+                ven.setV_desEquipo(rs.getString("DES_EQUIPO"));
+                ven.setV_codPerfil(rs.getString("COD_PERFIL"));
+                ven.setV_desPerfil(rs.getString("DES_PERFIL"));
+                ven.setV_numOrden(rs.getString("NUM_ORDEN"));
+                ven.setV_estado(rs.getString("FLAG_ESTADO"));
+                ven.setV_usuarioCreacion(rs.getString("U_CREACION"));
+                listarEstructuraEquipoDatos.add(ven);
+            }
+            ventas.setListEstrucutraEquipoDatos(listarEstructuraEquipoDatos);
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+        } catch (Exception e) {
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
+        } finally {
+            cn.close();
+        }
+        return ventas;
+    }
+            
+
     /**
      * autor: Victor Rosales Arones fecha: 06/09/2022 description: ORACLE
      * listaVendedores
@@ -372,10 +419,11 @@ public class ventasOracleDAO implements ventasDAO {
      * @param codEquipo
      * @return
      * @throws Exception
-     */
+     **/
+     
+
     @Override
     public ventas listaVendedores(int codVendedor, int codUnidad, int codEquipo) throws Exception {
-        System.out.println("*/*************************************** codVendedor"+codVendedor);
         System.out.println("ORACLEDAO SEGURIDAD(listarVendedores)");
         Connection cn = null;
         String base = "elclan";
@@ -386,7 +434,6 @@ public class ventasOracleDAO implements ventasDAO {
         try {
             String sql = "{call PKG_COMERCIAL.USP_LISTA_VENDEDORES(?,?,?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
-
             cs = cn.prepareCall(sql);
             cs.setInt(1, codVendedor);
             cs.setInt(2, codUnidad);
@@ -396,7 +443,6 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(6, OracleTypes.VARCHAR);
             cs.execute();
             rs = (ResultSet) cs.getObject(4);
-
             while (rs.next()) {
                 ventas ventas = new ventas();
                 ventas.setV_cod_Vendedor(rs.getString("COD_VENDEDOR"));
@@ -412,14 +458,11 @@ public class ventasOracleDAO implements ventasDAO {
                 ventas.setV_desUnidad(rs.getString("DES_UNIDAD"));
                 ventas.setV_desEquipo(rs.getString("DES_EQUIPO"));
                 ventas.setV_cargo(rs.getString("CARGO"));
-
-                System.out.println("*************************************NOMBRE ****"+rs.getString("USU_NOMBRE"));
                 listarVendedores.add(ventas);
             }
-
             listarVende.setListaVendedores(listarVendedores);
-
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(5) + " Mensaje: " + (String) cs.getObject(6));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -427,6 +470,7 @@ public class ventasOracleDAO implements ventasDAO {
         }
         return listarVende;
     }
+
 
     /**
      * autor: Victor Rosales Arones fecha: 06/09/2022 description: ORACLE
@@ -436,17 +480,16 @@ public class ventasOracleDAO implements ventasDAO {
      * @return
      * @throws Exception
      */
+
     @Override
     public ventas listaUnidad(int codUnidad) throws Exception {
         System.out.println("ORACLEDAO SEGURIDAD(listarUnidad)");
-
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
         ResultSet rs;
         ventas listarUnidad = new ventas();
         ArrayList<ventas> ListaUnidades = new ArrayList<ventas>();
-
         try {
             String sql = "{call PKG_COMERCIAL.USP_LISTAR_UNIDADES(?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -457,8 +500,48 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(4, OracleTypes.VARCHAR);
             cs.execute();
             rs = (ResultSet) cs.getObject(2);
-            listarEstructuraEquipoDatos = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
+                ventas ventas = new ventas();
+                ventas.setV_codUnidad(rs.getString("COD_UNIDAD"));
+                ventas.setV_desUnidad(rs.getString("DES_UNIDAD"));
+                ventas.setV_estado(rs.getString("ESTADO"));
+                ventas.setV_usuario(rs.getString("U_CREACION"));
+                ventas.setV_fechaCreacion(rs.getString("F_CREACION"));
+                ListaUnidades.add(ventas);
+            }
+            listarUnidad.setListarUnidad(ListaUnidades);
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+        } catch (Exception e) {
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
+        } finally {
+            cn.close();
+        }
+        return listarUnidad;
+    }
+
+
+    @Override
+    public ventas listarEstructuraEquipos(String codEquipo) throws Exception {
+        System.out.println("ORACLEDAO SEGURIDAD(listarEstructuraEquipos)");
+        ArrayList<ventas> listarEstructuraEquipos;
+        ventas ventas = new ventas();
+        Connection cn = null;
+        String base = "elclan";
+        CallableStatement cs;
+        ResultSet rs;
+        listarEstructuraEquipos = new ArrayList<>();
+        try {
+            String sql = "{call PKG_COMERCIAL.USP_LIS_ESTRUCEQUIPOS(?,?,?,?)}";
+            cn = OracleDAOFactory.obtenerConexion(base);
+            cs = cn.prepareCall(sql);
+            cs.setInt(1, Integer.valueOf(codEquipo));
+            cs.registerOutParameter(2, OracleTypes.CURSOR);
+            cs.registerOutParameter(3, OracleTypes.VARCHAR);
+            cs.registerOutParameter(4, OracleTypes.VARCHAR);
+            cs.execute();
+            rs = (ResultSet) cs.getObject(2); 
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codEstructura(rs.getString("COD_ESTRUCTURA"));
                 ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
@@ -470,52 +553,19 @@ public class ventasOracleDAO implements ventasDAO {
                 ven.setV_numOrden(rs.getString("NUM_ORDEN"));
                 ven.setV_estado(rs.getString("FLAG_ESTADO"));
                 ven.setV_usuarioCreacion(rs.getString("U_CREACION"));
-                listarEstructuraEquipoDatos.add(ven);
+                listarEstructuraEquipos.add(ven);
             }
-            ventas.setListEstrucutraEquipoDatos(listarEstructuraEquipoDatos);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            ventas.setListEstrucutraEquipos(listarEstructuraEquipos);
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return ventas;
     }
 
-    @Override
-    public ventas listarEstructuraEquipos(String codEquipo) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(listarEstructuraEquipos)");  
-        ArrayList<ventas> listarEstructuraEquipos;
-        ventas ventas = new ventas();
-        Connection cn = null;
-        String base = "elclan";
-        CallableStatement cs;
-        ResultSet rs; 
-        try {
-            String sql = "{call PKG_COMERCIAL.USP_LIS_ESTRUCEQUIPOS(?,?,?,?)}";
-            cn = OracleDAOFactory.obtenerConexion(base);
-            cs = cn.prepareCall(sql);
-            cs.setInt(1, Integer.valueOf(codEquipo));
-
-            while (rs.next()) {
-                ventas ventas = new ventas();
-                ventas.setV_codUnidad(rs.getString("COD_UNIDAD"));
-                ventas.setV_desUnidad(rs.getString("DES_UNIDAD"));
-                ventas.setV_estado(rs.getString("ESTADO"));
-                ventas.setV_usuario(rs.getString("U_CREACION"));
-                ventas.setV_fechaCreacion(rs.getString("F_CREACION"));
-                ListaUnidades.add(ventas);
-
-            }
-            listarUnidad.setListarUnidad(ListaUnidades);
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
-        } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
-        } finally {
-            cn.close();
-        }
-        return listarUnidad;
-    }
 
     /**
      * autor: Victor Rosales Arones fecha: 06/09/2022 description: ORACLE
@@ -529,14 +579,12 @@ public class ventasOracleDAO implements ventasDAO {
     @Override
     public ventas listaEquipos(int codEquipo, int codUnidad) throws Exception {
         System.out.println("ORACLEDAO SEGURIDAD(listaEquipos)");
-
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
         ResultSet rs;
         ventas listarEquipo = new ventas();
         ArrayList<ventas> listarEquipos = new ArrayList<ventas>();
-
         try {
             String sql = "{call PKG_COMERCIAL.USP_LISTAR_EQUIPOS(?,?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -560,7 +608,8 @@ public class ventasOracleDAO implements ventasDAO {
                 listarEquipos.add(ventas);
             }
             listarEquipo.setListarEquipos(listarEquipos);
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -584,10 +633,8 @@ public class ventasOracleDAO implements ventasDAO {
         String base = "elclan";
         CallableStatement cs;
         ResultSet rs;
-
         ventas listarCategoria = new ventas();
         ArrayList<ventas> listarCategorias = new ArrayList<ventas>();
-
         try {
             String consulta = "{call PKG_COMERCIAL.USP_LISTAR_CATEGORIAS(?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -597,30 +644,25 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(3, OracleTypes.VARCHAR);
             cs.registerOutParameter(4, OracleTypes.VARCHAR);
             cs.execute();
-            rs = (ResultSet) cs.getObject(2);
-            listarEstructuraEquipos = new ArrayList<>();
-            while (rs.next()) {          
-                ventas ven = new ventas();
-                ven.setV_codEstructura(rs.getString("COD_ESTRUCTURA"));
-                ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
-                ven.setV_desUnidad(rs.getString("DES_UNIDAD"));
-                ven.setV_codEquipo(rs.getString("COD_EQUIPO"));
-                ven.setV_desEquipo(rs.getString("DES_EQUIPO"));
-                ven.setV_codPerfil(rs.getString("COD_PERFIL"));
-                ven.setV_desPerfil(rs.getString("DES_PERFIL"));
-                ven.setV_numOrden(rs.getString("NUM_ORDEN"));
-                ven.setV_estado(rs.getString("FLAG_ESTADO"));
-                ven.setV_usuarioCreacion(rs.getString("U_CREACION"));
-                listarEstructuraEquipos.add(ven);
+            rs = (ResultSet) cs.getObject(2);            
+            while (rs.next()) {
+                ventas ventas = new ventas();
+                ventas.setV_codCategoria(rs.getString("COD_CATEGVEND"));
+                ventas.setV_desCategoria(rs.getString("DES_CATEGVEND"));
+                ventas.setV_estado(rs.getString("FLAG_ESTADO"));
+                ventas.setV_usuario(rs.getString("U_CREACION"));
+                ventas.setV_fechaCreacion(rs.getString("F_CREACION"));
+                listarCategorias.add(ventas);
             }
-            ventas.setListEstrucutraEquipos(listarEstructuraEquipos);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            listarCategoria.setListarCategoria(listarCategorias);            
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
-        return ventas;
+        return listarCategoria;
     }
 
     @Override
@@ -646,24 +688,11 @@ public class ventasOracleDAO implements ventasDAO {
             respuesta = seguridad + "_"+mensaje;
             System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(5) + " Mensaje: " +(String)cs.getObject(6));
         } catch (Exception e) {
-        } finally {
-            while (rs.next()) {
-                ventas ventas = new ventas();
-                ventas.setV_codCategoria(rs.getString("COD_CATEGVEND"));
-                ventas.setV_desCategoria(rs.getString("DES_CATEGVEND"));
-                ventas.setV_estado(rs.getString("FLAG_ESTADO"));
-                ventas.setV_usuario(rs.getString("U_CREACION"));
-                ventas.setV_fechaCreacion(rs.getString("F_CREACION"));
-                listarCategorias.add(ventas);
-            }
-            listarCategoria.setListarCategoria(listarCategorias);
-
-        } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
-        return listarCategoria;
+        return respuesta;
     }
 
     /**
@@ -693,12 +722,13 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(4, java.sql.Types.VARCHAR);
             cs.execute();
 
-            //Respuesta al realizar la operación
+            // Respuesta al realizar la operación
             seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
             respuesta = seguridad + '_' + mensaje;
 
-            System.out.println("MySQL-> CodMensaje : " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "MySQL-> CodMensaje : " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
 
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
@@ -710,13 +740,13 @@ public class ventasOracleDAO implements ventasDAO {
 
     @Override
     public ventas listarPerfilesComer() throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(listarPerfilesComer)");  
+        System.out.println("ORACLEDAO SEGURIDAD(listarPerfilesComer)");
         ArrayList<ventas> listarPerfilesComer;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs; 
+        ResultSet rs;
         try {
             String sql = "{call PKG_COMERCIAL.USP_LISTAR_PERFILCOMER(?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -727,7 +757,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(1);
             listarPerfilesComer = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codPerfil(rs.getString("COD_PERFIL"));
                 ven.setV_desPerfil(rs.getString("DES_PERFIL"));
@@ -735,13 +765,16 @@ public class ventasOracleDAO implements ventasDAO {
                 listarPerfilesComer.add(ven);
             }
             ventas.setListPerfilesComer(listarPerfilesComer);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(2) + " Mensaje: " +(String)cs.getObject(3));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return ventas;
+    }
+
     /**
      * autor: Victor Rosales Arones fecha: 06/09/2022 description: ORACLE
      * ActualizarCategoria
@@ -771,11 +804,12 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(5, java.sql.Types.VARCHAR);
             cs.execute();
 
-            //Respuesta al realizar la operación
+            // Respuesta al realizar la operación
             seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
 
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
@@ -802,8 +836,7 @@ public class ventasOracleDAO implements ventasDAO {
         String seguridad = "";
         String respuesta = "";
         try {
-           
-            
+
             String consulta = "call PKG_COMERCIAL.USP_DARBAJA_CATEGORIA(?,?,?,?,?)";
             cn = OracleDAOFactory.obtenerConexion(base);
             cs = cn.prepareCall(consulta);
@@ -814,11 +847,12 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(5, java.sql.Types.VARCHAR);
             cs.execute();
 
-            //Respuesta al realizar la operación
+            // Respuesta al realizar la operación
             seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
 
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
@@ -853,11 +887,12 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(4, java.sql.Types.VARCHAR);
             cs.execute();
 
-            //Respuesta al realizar la operación
+            // Respuesta al realizar la operación
             seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
         }
         return respuesta;
@@ -905,7 +940,8 @@ public class ventasOracleDAO implements ventasDAO {
 
             listarVariCategoria.setV_listaVariableCat(listarVariCategorias);
 
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -955,7 +991,8 @@ public class ventasOracleDAO implements ventasDAO {
 
             listarVariCategoria.setV_listaVariableCat(listarVariCategorias);
 
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -994,11 +1031,12 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(5, java.sql.Types.VARCHAR);
             cs.execute();
 
-            //Respuesta al realizar la operación
+            // Respuesta al realizar la operación
             seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
         }
         return respuesta;
@@ -1031,11 +1069,12 @@ public class ventasOracleDAO implements ventasDAO {
             cs.registerOutParameter(4, java.sql.Types.VARCHAR);
             cs.execute();
 
-            //Respuesta al realizar la operación
+            // Respuesta al realizar la operación
             seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
         }
         return respuesta;
@@ -1060,7 +1099,8 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
         } finally {
@@ -1088,7 +1128,8 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
         } finally {
@@ -1098,7 +1139,7 @@ public class ventasOracleDAO implements ventasDAO {
 
     @Override
     public String guardarEquipo(String desEquipo, String codUnidad, String usuario) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(guardarEquipo)");  
+        System.out.println("ORACLEDAO SEGURIDAD(guardarEquipo)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -1116,7 +1157,8 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
         } finally {
         }
@@ -1125,13 +1167,13 @@ public class ventasOracleDAO implements ventasDAO {
 
     @Override
     public ventas listarEquipos(String codEquipo, String codUnidad) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(listarEquipos)");  
+        System.out.println("ORACLEDAO SEGURIDAD(listarEquipos)");
         ArrayList<ventas> listarEquipos;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs;        
+        ResultSet rs;
         try {
             String sql = "{call PKG_COMERCIAL.USP_LISTAR_EQUIPOS(?,?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -1144,7 +1186,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(3);
             listarEquipos = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codEquipo(rs.getString("COD_EQUIPO"));
                 ven.setV_desEquipo(rs.getString("DES_EQUIPO"));
@@ -1155,7 +1197,8 @@ public class ventasOracleDAO implements ventasDAO {
                 listarEquipos.add(ven);
             }
             ventas.setListEquipos(listarEquipos);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(4) + " Mensaje: " +(String)cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -1203,7 +1246,8 @@ public class ventasOracleDAO implements ventasDAO {
 
             }
             listaCondicion.setListaCondicionVar(listaCondiciones);
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -1246,7 +1290,8 @@ public class ventasOracleDAO implements ventasDAO {
 
             }
             listaValore.setListaRefValor(listaValores);
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -1295,7 +1340,8 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(7);
             String mensaje = (String) cs.getObject(8);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(7) + " Mensaje: " + (String) cs.getObject(8));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(7) + " Mensaje: " + (String) cs.getObject(8));
         } catch (Exception e) {
         } finally {
         }
@@ -1313,6 +1359,7 @@ public class ventasOracleDAO implements ventasDAO {
      * @return
      * @throws Exception
      */
+
     @Override
     public String prioridadVariable(int codVariableCat, int cod_categoria, String usuario) throws Exception {
         System.out.println("ORACLEDAO SEGURIDAD(prioridadVariable)");
@@ -1335,11 +1382,12 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("**************************************************" + cod_categoria + "************************" + codVariableCat + "************" + usuario);
-            System.out.println("**************************************************" + cod_categoria + "************************" + codVariableCat + "************" + usuario);
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
+
         } finally {
+
         }
         return respuesta;
 
@@ -1391,7 +1439,8 @@ public class ventasOracleDAO implements ventasDAO {
 
             }
             listaConfVariable.setListaConfVariables(listaConfVariables);
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -1431,7 +1480,8 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
         } finally {
@@ -1465,13 +1515,15 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(2);
             String mensaje = (String) cs.getObject(3);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(2) + " Mensaje: " + (String) cs.getObject(3));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
         } finally {
         }
         return respuesta;
     }
+
 
     /**
      * autor: yasub huaman ramos fecha: 03/09/2022 description: ORACLE
@@ -1483,6 +1535,7 @@ public class ventasOracleDAO implements ventasDAO {
      * @return
      * @throws Exception
      */
+
     @Override
     public String actualizarUnidad(String codUnidad, String desUnidad, String usuario) throws Exception {
         System.out.println("SQLDAO SEGURIDAD(actualizarUnidad)");
@@ -1503,7 +1556,8 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(4);
             String mensaje = (String) cs.getObject(5);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(4) + " Mensaje: " + (String) cs.getObject(5));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>> " + e);
         } finally {
@@ -1511,6 +1565,7 @@ public class ventasOracleDAO implements ventasDAO {
         return respuesta;
     }
 
+    
     /**
      * autor: yasub huaman ramos fecha: 03/09/2022 description: ORACLE guardar
      * unidad
@@ -1522,7 +1577,7 @@ public class ventasOracleDAO implements ventasDAO {
      */
     @Override
     public String guardarUnidad(String desUnidad, String usuario) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(guardarUnidad)");  
+        System.out.println("ORACLEDAO SEGURIDAD(guardarUnidad)");
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
@@ -1539,14 +1594,16 @@ public class ventasOracleDAO implements ventasDAO {
             String seguridad = (String) cs.getObject(3);
             String mensaje = (String) cs.getObject(4);
             respuesta = seguridad + "_" + mensaje;
-            System.out.println("ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
-            System.out.println("EXCEPTION =>>>>>>>>>>>> "+e);
+            System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
             cn.close();
         }
         return respuesta;
     }
+
 
     /**
      * autor: yasub huaman ramos fecha: 03/09/2022 description: ORACLE
@@ -1556,15 +1613,16 @@ public class ventasOracleDAO implements ventasDAO {
      * @return
      * @throws Exception
      */
+
     @Override
     public ventas listarUnidades(String codUnidad) throws Exception {
-        System.out.println("ORACLEDAO SEGURIDAD(listarUnidades)");  
-        ArrayList<ventas>  listarUnidades;
+        System.out.println("ORACLEDAO SEGURIDAD(listarUnidades)");
+        ArrayList<ventas> listarUnidades;
         ventas ventas = new ventas();
         Connection cn = null;
         String base = "elclan";
         CallableStatement cs;
-        ResultSet rs;        
+        ResultSet rs;
         try {
             String sql = "{call PKG_COMERCIAL.USP_LISTAR_UNIDADES(?,?,?,?)}";
             cn = OracleDAOFactory.obtenerConexion(base);
@@ -1576,7 +1634,7 @@ public class ventasOracleDAO implements ventasDAO {
             cs.execute();
             rs = (ResultSet) cs.getObject(2);
             listarUnidades = new ArrayList<>();
-            while (rs.next()) {          
+            while (rs.next()) {
                 ventas ven = new ventas();
                 ven.setV_codUnidad(rs.getString("COD_UNIDAD"));
                 ven.setV_desUnidad(rs.getString("DES_UNIDAD"));
@@ -1586,7 +1644,8 @@ public class ventasOracleDAO implements ventasDAO {
                 listarUnidades.add(ven);
             }
             ventas.setListUnidades(listarUnidades);
-            System.out.println("ORACLE > CodMensaje: " +(String)cs.getObject(3) + " Mensaje: " +(String)cs.getObject(4));
+            System.out.println(
+                    "ORACLE > CodMensaje: " + (String) cs.getObject(3) + " Mensaje: " + (String) cs.getObject(4));
         } catch (Exception e) {
             System.out.println("EXCEPTION =>>>>>>>>>>>> " + e);
         } finally {
@@ -1594,7 +1653,5 @@ public class ventasOracleDAO implements ventasDAO {
         }
         return ventas;
     }
-
-
 
 }

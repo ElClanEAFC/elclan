@@ -686,7 +686,7 @@ public class ventasServlet extends HttpServlet {
         response.getWriter().write(json);
     }
         
-    
+    /**
      * @Autor : Victor Rosales Arones
      * @fecha creacion: 06-09-2022
      * @Descripcion : listar unidades
