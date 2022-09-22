@@ -8796,7 +8796,7 @@ html[dir=ltr] body .p-l-0{
     height: 8px;    /* Tamaño del scroll en horizontal */
 }
 .page-wrapper::-webkit-scrollbar-thumb {
-    background: rgb(231, 4, 21);
+    background: #ec5e35;
     border-radius: 4px;
 }
 .page-wrapper>.container-fluid,.page-wrapper>.container-lg,.page-wrapper>.container-md,.page-wrapper>.container-sm,.page-wrapper>.container-xl,.page-wrapper>.container-xxl{
