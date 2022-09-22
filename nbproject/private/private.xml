@@ -20,13 +20,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/src/conf/MANIFEST.MF</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/vendedores/modals/vendedores.jsp</file>
             <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/vistas/layout/ventas/unidades-equipos.jsp</file>
-            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/unidades.jsp</file>
-            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/organigramaUnidad.jsp</file>
-            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/equipos.jsp</file>
-            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/estructuraGeneral.jsp</file>
-            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/components/ventas/unidadesEquipos/modals/estructura.jsp</file>
-            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/vistas/assets/libs/chartOrg/css/jHTree.css</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/.gitignore</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>
