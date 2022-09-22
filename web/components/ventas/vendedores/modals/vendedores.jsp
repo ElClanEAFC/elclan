@@ -231,7 +231,7 @@
 
 
 
-    listarUnidades(null);
+    listarUnidades(0);
     async function listarUnidades(codUnidad) {
         var param = "selectUnidad=" + codUnidad;
         await $.ajax({
@@ -247,13 +247,13 @@
         });
     }
      
-    async function listaEquipos(codEquipo, codUnidad) {
+    async function listaEquipos(codEquipo=0, codUnidad=0) {
         var param1 = "codEquipo=" + codEquipo;
         var param2 = "selectUnidad=" + codUnidad;
         await $.ajax({
             type: 'POST',
             url: '../../ventasServlet?Accion=listaEquipos',
-            data: param1 + param2,
+            data:  param2,
             beforeSend: function () {
             }, success: function (resultado) {
                 $("#selectEquipo").html(resultado);
