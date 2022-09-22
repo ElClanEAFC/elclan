@@ -233,7 +233,7 @@
 
     listarUnidades(0);
     async function listarUnidades(codUnidad) {
-        var param = "selectUnidad=" + codUnidad;
+        var param = "codUnidad=" + codUnidad;
         await $.ajax({
             type: 'POST',
             url: '../../ventasServlet?Accion=listarUnidades',
