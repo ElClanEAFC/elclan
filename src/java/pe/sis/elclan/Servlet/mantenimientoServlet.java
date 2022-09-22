@@ -73,9 +73,11 @@ public class mantenimientoServlet extends HttpServlet {
         
 //      DATA TYPE JSON
         ObjectMapper mapper = new ObjectMapper();
+        
         ArrayList<mantenimiento> listamodulo = lista.getListaModulos();
-        ArrayList<mantenimiento> listaMenu;
-        listaMenu = new ArrayList<>();
+        
+        ArrayList<mantenimiento> listaMenu= new ArrayList<>();
+//        listaMenu = new ArrayList<>();
         for (mantenimiento mo : listamodulo) {
             ArrayList<mantenimiento> lisSub = seguridadService.listarSubMenu(codUsuario,mo.getCodModulo());
             if(!lisSub.isEmpty()){
@@ -83,6 +85,7 @@ public class mantenimientoServlet extends HttpServlet {
             }
             listaMenu.add(mo);
         }
+        
         String json = mapper.writeValueAsString(listaMenu);
         System.out.println("JSON =>>>> "+json );
         response.getWriter().write(json);

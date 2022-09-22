@@ -2,18 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
-            <url>web/vistas/assets/libs/chartOrg/data/myJsonFile.json</url>
-            <bookmark id="2">
+            <url>src/java/pe/sis/elclan/OracleDAO/reHumanosOracleDAO.java</url>
+            <bookmark id="1">
                 <name/>
-                <line>0</line>
+                <line>984</line>
                 <key/>
             </bookmark>
         </file>
         <file>
-            <url>src/java/pe/sis/elclan/OracleDAO/reHumanosOracleDAO.java</url>
-            <bookmark id="1">
+            <url>src/java/pe/sis/elclan/Servlet/ventasServlet.java</url>
+            <bookmark id="2">
                 <name/>
-                <line>978</line>
+                <line>68</line>
                 <key/>
             </bookmark>
         </file>
@@ -26,6 +26,17 @@
             <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/.gitignore</file>
             <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/nbproject/private/private.xml</file>
             <file>file:/C:/Users/sistemas03/Desktop/ProyectoClan/elclan/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/java/pe/sis/elclan/OracleDAO/OracleDAOFactory.java</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/java/pe/sis/elclan/OracleDAO/ventasOracleDAO.java</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/java/pe/sis/elclan/Servlet/reHumanosServlet.java</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/java/pe/sis/elclan/Servlet/ventasServlet.java</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/conf/MANIFEST.MF</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/java/pe/sis/elclan/DAO/ventasDAO.java</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/.gitignore</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/web/components/ventas/vendedores/modals/vendedores.jsp</file>
+            <file>file:/C:/Users/sistemas02/Desktop/elclan/src/java/pe/sis/elclan/Services/ventasServices.java</file>
         </group>
     </open-files>
 </project-private>
